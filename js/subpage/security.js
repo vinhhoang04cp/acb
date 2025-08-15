@@ -5,14 +5,6 @@
  * ========================================
  */
 
-/**
- * Hàm load nội dung HTML từ file vào element có id tương ứng
- * Sử dụng Fetch API để load file HTML và insert vào DOM
- * 
- * @param {string} targetId - ID của element đích trong DOM
- * @param {string} file - Đường dẫn file HTML cần load
- * @returns {Promise<void>}
- */
 async function loadSection(targetId, file) {
     try {
       // Fetch nội dung HTML từ file
