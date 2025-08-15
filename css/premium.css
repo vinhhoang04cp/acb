@@ -1,0 +1,232 @@
+/* ===========================
+   ACB HEADER – MATCH MOCKUP
+   =========================== */
+
+/* Màu & biến dùng chung */
+:root{
+  --acb-bg: #262e36;          /* nền tối tổng thể */
+  --acb-bg-2: #2a333c;        /* nền dải dưới */
+  --acb-text: #cfd6de;        /* chữ topbar */
+  --acb-text-strong: #ffffff; /* chữ đậm/active */
+  --acb-text-dim: #9eabb8;    /* chữ mờ */
+  --acb-accent: #00a6e0;      /* xanh ACB */
+  --acb-border: #3b4652;      /* viền chia */
+  --wrap-max: 1280px;
+}
+
+/* Ghi đè class bg-white từ bootstrap nếu có */
+.acb-header.bg-white{ background-color: var(--acb-bg) !important; }
+
+/* Sticky + đổ bóng nhẹ */
+.acb-header.sticky-top{
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Container hẹp giữa */
+.wrap{
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   TOPBAR
+   =========================== */
+.acb-topbar{
+  background: var(--acb-bg);
+  border-color: var(--acb-border) !important;
+}
+.topbar-row{
+  height: 44px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.top-links a{
+  font-size: 14px;
+  color: var(--acb-text);
+  text-decoration: none;
+  margin-right: 24px;
+  transition: color .15s ease;
+}
+.top-links a:last-child{ margin-right: 0; }
+.top-links a:hover{ color: var(--acb-text-strong); }
+
+/* Actions phải */
+.top-actions{
+  display: flex; align-items: center; gap: 14px;
+}
+.top-actions a{
+  display: inline-flex; align-items: center;
+  font-size: 14px;
+  color: var(--acb-text);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.top-actions a:hover{ color: var(--acb-text-strong); }
+
+.icon-btn{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--acb-text);
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.icon-btn:hover{
+  border-color: var(--acb-border);
+  background: rgba(255,255,255,0.04);
+  color: var(--acb-text-strong);
+}
+
+.lang-btn{
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 4px 10px 4px 6px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--acb-border);
+  background: transparent;
+  color: var(--acb-text);
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.lang-btn:hover{
+  background: rgba(255,255,255,0.04);
+  color: var(--acb-text-strong);
+  border-color: #4a5663;
+}
+.lang-btn img{
+  width: 18px; height: 18px; border-radius: 2px; display: block;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.acb-navbar{
+  background: var(--acb-bg);
+  border-color: var(--acb-border) !important;
+}
+.nav-row{
+  height: 88px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* Trái: logo + menu */
+.nav-left{
+  display: flex; align-items: center; gap: 22px;
+}
+
+/* Logo chữ "ACB" lớn như mockup */
+.brand{
+  display: inline-flex; align-items: center;
+  text-decoration: none;
+}
+.logo-text{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: .5px;
+  font-size: 56px;                 /* kích cỡ lớn */
+  line-height: 1;
+  color: var(--acb-text-strong);
+  position: relative;
+}
+/* chấm xanh trong chữ giống logo ACB */
+.logo-text::after{
+  content: "";
+  position: absolute;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--acb-accent);
+  /* căn vào giữa khoảng chữ, tùy font có thể tinh chỉnh 1-2px */
+  left: 57px; top: 24px;
+}
+
+/* Nút bật menu mobile */
+.mobile-nav-toggle{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 10px;
+  background: transparent; color: var(--acb-text);
+  border: 1px solid var(--acb-border);
+  cursor: pointer;
+}
+
+/* Menu chính – cỡ chữ lớn trắng như ảnh */
+.main-nav{
+  display: flex; align-items: center; gap: 36px;
+}
+.main-nav a{
+  text-decoration: none;
+  font-size: 24px;                /* menu lớn */
+  font-weight: 700;
+  color: #e6edf4;
+  opacity: .75;
+  transition: opacity .15s ease, color .15s ease;
+}
+.main-nav a:hover{ opacity: 1; }
+.main-nav a.active{
+  color: var(--acb-text-strong);
+  opacity: 1;
+}
+
+/* Phải: chia vạch + nút ACBONE */
+.nav-right{
+  display: flex; align-items: center; gap: 16px;
+}
+.nav-split{
+  width: 1px; height: 36px; background: var(--acb-border);
+  display: inline-block;
+}
+
+/* Nút Đăng nhập ACBONE – pill + viền như ảnh */
+.btn-acbone{
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid #505d6b;
+  color: #eaf1f8;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn-acbone strong{
+  letter-spacing: .5px;
+}
+.btn-acbone .opacity-75{ opacity: .75; }
+.btn-acbone:hover{
+  background: rgba(255,255,255,0.04);
+  border-color: #5b6a79;
+  color: #ffffff;
+}
+
+/* ===========================
+   Generic utilities (đủ dùng nếu không có Bootstrap)
+   =========================== */
+.border-bottom{ border-bottom: 1px solid var(--acb-border) !important; }
+.me-2{ margin-right: .5rem; }
+.ms-1{ margin-left: .25rem; }
+.ms-2{ margin-left: .5rem; }
+.small{ font-size: 12px; }
+
+/* Ẩn/hiện theo breakpoint ~lg (992px) */
+.d-none{ display: none !important; }
+.d-lg-flex{ display: none !important; }
+.d-lg-none{ display: inline-flex !important; }
+@media (min-width: 992px){
+  .d-lg-flex{ display: flex !important; }
+  .d-lg-none{ display: none !important; }
+  .main-nav a{ font-size: 26px; } /* to hơn chút ở desktop lớn */
+  .nav-row{ height: 92px; }
+}
+
+/* Trạng thái focus cho accessibility */
+a:focus, button:focus{
+  outline: 2px solid var(--acb-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Tinh chỉnh icon bootstrap cho đồng đều */
+.bi{ line-height: 1; font-size: 16px; }
