@@ -1,0 +1,69 @@
+:root{
+  --wrap-max: 1240px;     /* bề rộng tối đa của khung */
+  --radius-xl: 24px;      /* bo góc lớn cho card */
+  --blue: #1463ff;        /* xanh chủ đạo */
+  --text-2: #5b6770;      /* xám đậm cho mô tả */
+  --line: #e6ebf2;        /* kẻ mảnh */
+  --shadow-xxs: 0 1px 2px rgba(16,24,40,.04), 0 0 0 1px rgba(16,24,40,.03);
+}
+
+/* --------- Bọc khung & heading ---------- */
+.offers-wrap{
+  max-width: var(--wrap-max);
+  margin-inline: auto;
+  padding-inline: 12px; /* chống dính mép khi viewport < wrap-max */
+}
+
+/* --------- CARD ---------- */
+.offer-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xxs);
+  overflow: hidden;                 /* ẩn phần ảnh khi phóng to */
+  display:flex; flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Ảnh bo góc trên + tỉ lệ 4:3 (ổn định layout) */
+.offer-card .thumb{
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+  background:#f2f5fb;
+}
+.offer-card .thumb img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .3s ease;
+}
+
+/* Phần nội dung */
+.offer-card .body{ padding: 16px 18px 18px; }
+.offer-card .title{ color:#0b1324; }
+.offer-card .meta{ color: var(--text-2); }
+.offer-card .meta .dot{
+  width:4px; height:4px; border-radius:50%;
+  background:#c7d0dc; display:inline-block; margin:0 8px;
+}
+.offer-card .excerpt{ color: var(--text-2); }
+.offer-card .divider{ border:0; border-top:1px solid var(--line); opacity:1; }
+
+/* Link hành động */
+.offer-card .read-more{ color: var(--blue); text-decoration: none; }
+.offer-card .read-more i{ transition: transform .2s ease; }
+.offer-card:hover .read-more i{ transform: translateX(2px); }
+
+/* Hover nhẹ nhàng */
+.offer-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(20,99,255,.08), 0 0 0 1px rgba(20,99,255,.06);
+}
+.offer-card:hover .thumb img{ transform: scale(1.03); }
+
+/* --------- Responsive tinh chỉnh ---------- */
+@media (min-width: 992px){
+  .offer-card .body{ padding: 18px 20px 20px; }
+}

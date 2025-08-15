@@ -1,0 +1,59 @@
+<!-- Hero Carousel -->
+<link rel="stylesheet" href="css/homepage/carousel.css" />
+
+<!-- Hero section chính -->
+<section class="position-relative w-100">
+  <!-- Bootstrap Carousel với fade effect -->
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    
+    <!-- ========================================
+         CAROUSEL INDICATORS - Dots navigation
+         ======================================== -->
+    <div class="carousel-indicators mb-3">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- ========================================
+         CAROUSEL INNER - Container chứa slides
+         ======================================== -->
+    <div class="carousel-inner">
+      
+      <!-- Slide 1: ACB Rewards - Slide chính -->
+      <div class="carousel-item active hero-60 bg-cover" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container-fluid h-100 d-flex align-items-center px-5">
+          <div class="col-12 col-lg-6 text-white">
+            <h1 class="display-5 fw-bold mb-2 text-white">ACB Rewards – sẵn quà đổi ngay</h1>
+            <p class="mb-3 text-white">Tích điểm khi chi tiêu, đổi ưu đãi dễ dàng trên ứng dụng.</p>
+            <a href="#" class="btn btn-light rounded-pill px-4">Tìm hiểu thêm</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Background image only -->
+      <div class="carousel-item hero-60 bg-cover" style="background-image:url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Slide 3: Background image only -->
+      <div class="carousel-item hero-60 bg-cover" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop');">
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         CAROUSEL CONTROLS - Nút prev/next
+         ======================================== -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+

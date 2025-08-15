@@ -1,0 +1,90 @@
+/* Hero Carousel Styles */
+@import url('../../css/base.css');
+
+/* Utility Classes */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ========================================
+   HERO SECTION - Styles cho hero section
+   ======================================== */
+
+/* Hero Container */
+.hero-60 {
+  --hero-min-height: 400px;
+  --hero-max-height: 80vh;
+  
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  position: relative;
+  max-height: var(--hero-max-height);
+  min-height: var(--hero-min-height);
+  transition: all var(--transition-normal);
+}
+
+/* Hero Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(var(--primary-color), 0.55) 0%,
+    rgba(var(--primary-color), 0.15) 40%, 
+    rgba(0,0,0,0) 70%
+  );
+}
+
+/* ========================================
+   CAROUSEL INDICATORS - Styles cho dots navigation
+   ======================================== */
+
+/* Custom styles cho carousel indicators */
+#heroCarousel .carousel-indicators [data-bs-target] {
+  width: var(--spacing-sm);                      /* Kích thước dot */
+  height: var(--spacing-sm);                     /* Kích thước dot */
+  border-radius: var(--border-radius-pill);      /* Bo tròn hoàn toàn */
+  margin: 0 var(--spacing-xs);                   /* Khoảng cách giữa các dot */
+  border: 0;                                     /* Bỏ viền mặc định */
+  background-color: rgba(255,255,255,.6);        /* Màu nền trong suốt */
+  opacity: 1;                                    /* Độ trong suốt */
+  transition: all var(--transition-fast);        /* Hiệu ứng chuyển đổi nhanh */
+}
+
+/* Dot active */
+#heroCarousel .carousel-indicators .active {
+  background-color: white;                       /* Màu nền trắng cho dot active */
+  transform: scale(1.2);                         /* Phóng to dot active */
+}
+
+/* Container cho indicators */
+#heroCarousel .carousel-indicators {
+  gap: var(--spacing-xs);                        /* Khoảng cách giữa các dot */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Mobile styles
+   ======================================== */
+
+/* Mobile breakpoint */
+@media (max-width: 576px) {
+  .hero-60 {
+    aspect-ratio: 4 / 3;                         /* Tỷ lệ khung hình 4:3 trên mobile */
+    min-height: 300px;                           /* Chiều cao nhỏ hơn */
+  }
+  
+  .carousel-item .container-fluid {
+    padding: 1rem;                               /* Padding nhỏ hơn */
+  }
+  
+  .carousel-item h1 {
+    font-size: 1.75rem;                          /* Font size nhỏ hơn cho tiêu đề */
+  }
+  
+  .carousel-item p {
+    font-size: 1rem;                             /* Font size nhỏ hơn cho text */
+  }
+}
+  

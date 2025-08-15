@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACB Rewards – UI Clone (Bootstrap 5)</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/subpage/reward.css" />
+  
+</head>
+<body>
+  <header>
+  <div id="header-container"></div>
+  <div id="hero"></div>
+  </header>
+  <main>
+  <!-- Features / Benefits -->
+   <section id="features" class="section">
+    <div class="container benefit-slider">
+      <h2 class="display-5 fw-bold benefit-heading">Thêm gắn kết cùng ACB Rewards</h2>
+
+      <div id="featuresCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-receipt"></i></div>
+                  <h5 class="title mb-2">Thanh toán hóa đơn bằng điểm thưởng</h5>
+                  <p class="desc mb-0">Biến điểm thưởng thành giá trị tiết kiệm thực tế mỗi khi thanh toán hóa đơn Nước, Internet, Nạp di động trả trước...</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-arrow-down-up"></i></div>
+                  <h5 class="title mb-2">Dễ dàng chuyển điểm</h5>
+                  <p class="desc mb-0">Khi là khách hàng ưu tiên hoặc tham gia gói sản phẩm "Dịch vụ tài chính Gia Đình Việt"</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-stars"></i></div>
+                  <h5 class="title mb-2">Kho quà hấp dẫn</h5>
+                  <p class="desc mb-0">Từ các thương hiệu yêu thích</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-lightning-charge"></i></div>
+                  <h5 class="title mb-2">Săn quà mỗi ngày</h5>
+                  <p class="desc mb-0">Deal HOT chỉ từ 1 điểm. Nhận ưu đãi quanh năm.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-credit-card-2-front"></i></div>
+                  <h5 class="title mb-2">Tích điểm không giới hạn</h5>
+                  <p class="desc mb-0">Khi chi tiêu bằng thẻ tín dụng ACB.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-heart"></i></div>
+                  <h5 class="title mb-2">Đổi quà theo sở thích</h5>
+                  <p class="desc mb-0">Mua sắm, Ăn uống, Giải trí và hơn thế nữa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 (active) to match the screenshot state) -->
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-receipt"></i></div>
+                  <h5 class="title mb-2">Thanh toán hóa đơn bằng điểm thưởng</h5>
+                  <p class="desc mb-0">Biến điểm thưởng thành giá trị tiết kiệm thực tế mỗi khi thanh toán hóa đơn Nước, Internet, Nạp di động trả trước...</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-arrow-down-up"></i></div>
+                  <h5 class="title mb-2">Dễ dàng chuyển điểm</h5>
+                  <p class="desc mb-0">Khi là khách hàng ưu tiên hoặc tham gia gói sản phẩm "Dịch vụ tài chính Gia Đình Việt"</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-stars"></i></div>
+                  <h5 class="title mb-2">Kho quà hấp dẫn</h5>
+                  <p class="desc mb-0">Từ các thương hiệu yêu thích</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-gift-fill"></i></div>
+                  <h5 class="title mb-2">Ưu đãi dịp đặc biệt</h5>
+                  <p class="desc mb-0">Sự kiện lễ tết, Black Friday, sinh nhật ACB...</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-shield-check"></i></div>
+                  <h5 class="title mb-2">An toàn bảo mật</h5>
+                  <p class="desc mb-0">Chuẩn xác và minh bạch khi đổi quà/chi tiêu điểm.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-bag-check"></i></div>
+                  <h5 class="title mb-2">Mua sắm linh hoạt</h5>
+                  <p class="desc mb-0">Đổi e‑voucher, thanh toán hóa đơn, nạp dịch vụ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-receipt"></i></div>
+                  <h5 class="title mb-2">Thanh toán hóa đơn bằng điểm thưởng</h5>
+                  <p class="desc mb-0">Biến điểm thưởng thành tiết kiệm thực tế cho gia đình.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-arrow-down-up"></i></div>
+                  <h5 class="title mb-2">Dễ dàng chuyển điểm</h5>
+                  <p class="desc mb-0">Chia sẻ điểm linh hoạt cho người thân.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="card p-4 text-center h-100">
+                  <div class="benefit-icon"><i class="bi bi-stars"></i></div>
+                  <h5 class="title mb-2">Kho quà hấp dẫn</h5>
+                  <p class="desc mb-0">Nhiều thương hiệu và danh mục yêu thích.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev" aria-label="Prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next" aria-label="Next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <!-- Indicators (5 dots, 3rd active) -->
+        <div class="carousel-indicators benefit-indicators">
+          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" class="active" aria-current="true" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+   <section id="categories" class="section section-muted">
+    <div class="container">
+      <div class="category-wrap mx-auto">
+        <h2 class="display-6 category-title mb-4">Lựa chọn quà tặng theo sở thích từ kho quà đa dạng</h2>
+
+        <div class="accordion category-list" id="categoryAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFood">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">Ăn uống</button>
+            </h2>
+            <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">
+                <!-- Nội dung gợi ý (có thể thay bằng grid voucher) -->
+                Gợi ý: nhà hàng, cà phê, fast food, e‑voucher giảm giá...
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFun">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFun" aria-expanded="false" aria-controls="collapseFun">Giải trí</button>
+            </h2>
+            <div id="collapseFun" class="accordion-collapse collapse" aria-labelledby="headingFun" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">Rạp phim, công viên giải trí, gói streaming...</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBeauty">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBeauty" aria-expanded="false" aria-controls="collapseBeauty">Làm đẹp</button>
+            </h2>
+            <div id="collapseBeauty" class="accordion-collapse collapse" aria-labelledby="headingBeauty" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">Spa, chăm sóc tóc/da, mỹ phẩm...</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingShop">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShop" aria-expanded="false" aria-controls="collapseShop">Mua sắm</button>
+            </h2>
+            <div id="collapseShop" class="accordion-collapse collapse" aria-labelledby="headingShop" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">Siêu thị, thời trang, điện máy...</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingUtil">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUtil" aria-expanded="false" aria-controls="collapseUtil">Tiện ích</button>
+            </h2>
+            <div id="collapseUtil" class="accordion-collapse collapse" aria-labelledby="headingUtil" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">Nạp điện thoại, thanh toán hóa đơn, dịch vụ số...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily deals CTA -->
+  <section id="deals" class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <!-- Left copy -->
+        <div class="col-lg-6">
+          <h2 class="deals-title h2 mb-2">Đặc biệt Săn quà mỗi ngày</h2>
+          <p class="deals-desc mb-4">Ngập tràn quà HOT chỉ từ 1 điểm trên ACB Rewards, thỏa thích săn quà quanh năm với ưu đãi mỗi ngày và ưu đãi dịp đặc biệt từ các thương hiệu yêu thích.</p>
+
+          <div class="d-flex align-items-center deals-qrbadges mb-4">
+            <img class="deals-qr" alt="QR ACB ONE" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=ACB%20ONE"/>
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <a class="store-badge" href="#" aria-label="Get it on Google Play">
+                <i class="bi bi-google-play"></i>
+                <span>
+                  <small>GET IT ON</small><br/>Google Play
+                </span>
+              </a>
+              <a class="store-badge" href="#" aria-label="Download on the App Store">
+                <i class="bi bi-apple"></i>
+                <span>
+                  <small>Download on the</small><br/>App Store
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <a class="btn btn-primary btn-cta" href="#">Khám phá ngay <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+
+        <!-- Right visual (phones) -->
+        <div class="col-lg-6">
+          <div class="deals-phones">
+            <div class="phone phone-left"></div>
+            <div class="phone phone-right"></div>
+            <div class="float-app">SĂN QUÀ MỖI NGÀY</div>
+            <div class="float-chip">Từ 1 điểm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Point categories (Thẻ, Ưu tiên, Bảo hiểm) -->
+ 
+  <section id="point-categories" class="section section-muted">
+    <div class="container">
+      <h2 class="pointcats-title display-6 mb-4">Danh mục tích điểm</h2>
+      <div class="row g-4 row-cols-1 row-cols-md-3">
+        <!-- Card 1: Thẻ -->
+        <div class="col">
+          <div class="pcard h-100">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" alt="Thẻ"/>
+            <div class="pcard-gradient"></div>
+            <div class="pcard-content">
+              <div class="pcard-title">Thẻ</div>
+              <a href="#" class="btn btn-chip">Xem thêm <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Khách hàng ưu tiên -->
+        <div class="col">
+          <div class="pcard h-100">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Khách hàng ưu tiên"/>
+            <div class="pcard-gradient"></div>
+            <div class="pcard-content">
+              <div class="pcard-title">Khách hàng ưu tiên</div>
+              <a href="#" class="btn btn-chip">Xem thêm <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Bảo hiểm -->
+        <div class="col">
+          <div class="pcard h-100">
+            <img src="https://images.unsplash.com/photo-1520975682031-a603130fc8a1?q=80&w=1200&auto=format&fit=crop" alt="Bảo hiểm"/>
+            <div class="pcard-gradient"></div>
+            <div class="pcard-content">
+              <div class="pcard-title">Bảo hiểm</div>
+              <a href="#" class="btn btn-chip">Xem thêm <i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides -->
+  <section id="guides" class="section">
+    <div class="container">
+      <h3 class="h5 mb-4">Hướng dẫn sử dụng ACB Rewards</h3>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="mb-3">Cách đổi quà E‑Voucher</h6>
+              <div class="stepper">
+                <ol>
+                  <li>Chọn mục “ACB Rewards” tại màn hình chính.</li>
+                  <li>Nhấn vào danh mục quà tặng muốn đổi.</li>
+                  <li>Xem quà tặng trong từng danh mục.</li>
+                  <li>Xem chi tiết quà tặng, chọn giá trị đổi và nhấn <em>Đổi ngay</em>.</li>
+                  <li>Nhấn <em>Xác nhận</em> để hoàn tất.</li>
+                  <li>Màn hình hiển thị đổi quà thành công, chọn <em>Xem quà đã đổi</em>.</li>
+                  <li>Xem chi tiết quà tặng đã đổi.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h6 class="mb-3">Cách thanh toán hóa đơn bằng điểm</h6>
+              <div class="stepper">
+                <ol>
+                  <li>Chọn <em>Thanh toán</em> tại trang chủ ACB ONE.</li>
+                  <li>Chọn hóa đơn cần thanh toán tại mục <em>Tất cả dịch vụ</em>.</li>
+                  <li>Chọn <em>Số tài khoản (VND)</em> để thay đổi nguồn tiền.</li>
+                  <li>Chọn nguồn tiền là <em>Điểm ACB Rewards</em>.</li>
+                  <li>Kiểm tra thông tin và chọn <em>Tiếp tục</em>.</li>
+                  <li>Chọn <em>Xác nhận</em> thông tin giao dịch.</li>
+                  <li>Nhập mật mã <em>Safekey</em>.</li>
+                  <li>Chọn <em>Nhập OTP – Xác nhận</em>.</li>
+                  <li>Vào <em>Lịch sử điểm Rewards</em> để xem lại giao dịch.</li>
+                  <li>Xem trạng thái giao dịch.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section id="terms" class="section section-muted">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <h3 class="h5 mb-1">Thể lệ chương trình ACB Rewards</h3>
+          <p class="mb-0 text-body-secondary">Vui lòng tham khảo chi tiết thể lệ trước khi tham gia chương trình.</p>
+        </div>
+        <a class="btn btn-outline-primary" href="#">Xem chi tiết</a>
+      </div>
+    </div>
+  </section>
+  </main>
+  
+  <footer>
+  <div id="footer-container"></div>
+
+  </footer>
+  
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/subpage/reward.js"></script>
+
+</body>
+</html>

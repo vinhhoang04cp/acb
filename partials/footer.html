@@ -1,0 +1,153 @@
+<!-- ========================================
+     FILE: footer.html - Footer chung của website
+     CHỨC NĂNG: Thông tin liên hệ, links và CTA tải ứng dụng
+     ======================================== -->
+
+<!-- Import CSS cho footer -->
+<link rel="stylesheet" href="css/partials-css/footer.css" />
+
+<!-- ========================================
+     SECTION 1: CTA TẢI ỨNG DỤNG
+     ======================================== -->
+<section class="app-cta">
+  <div class="wrap">
+    <div class="cta-grid">
+      <!-- Ảnh mockup điện thoại (bên trái) -->
+      <div>
+        <img class="phone-mock"
+             src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=900&auto=format&fit=crop"
+             alt="ACB ONE App" loading="lazy">
+      </div>
+
+      <!-- Nội dung + QR + badge stores (bên phải) -->
+      <div>
+        <h3 class="fw-bold text-white" style="margin:0 0 8px">Tải ứng dụng ACB ONE</h3>
+        <p class="text-white" style="margin:0 0 20px; opacity:.95">Khám phá muôn ngàn tiện ích từ dịch vụ ngân hàng số ACB ONE</p>
+
+        <!-- QR code và badge stores -->
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap">
+          <!-- QR code để tải app -->
+          <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https%3A%2F%2Facb.com.vn" alt="QR tải ACB ONE" loading="lazy">
+
+          <!-- Badge stores (Google Play & App Store) -->
+          <div class="badges">
+            <a href="#" class="badge-store" aria-label="Tải trên Google Play">
+              <img src="https://developer.android.com/images/brand/vi_generic_rgb_wo_60.png" alt="Google Play">
+            </a>
+            <a href="#" class="badge-store" aria-label="Tải trên App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 2: FOOTER LINKS - 5 cột thông tin
+     ======================================== -->
+<section class="footer-links">
+  <div class="wrap">
+    <div class="footer-cols">
+      
+      <!-- Cột 1: Về ACB -->
+      <div class="col">
+        <h6 class="footer-hd">Về ACB</h6>
+        <ul class="footer-list">
+          <li><a href="#">Về chúng tôi</a></li>
+          <li><a href="#">Nhà đầu tư</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Lãi suất cá nhân</a></li>
+          <li><a href="#">Lãi suất doanh nghiệp</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 2: Cá nhân -->
+      <div class="col">
+        <h6 class="footer-hd">Cá nhân</h6>
+        <ul class="footer-list">
+          <li><a href="#">Tài khoản thanh toán</a></li>
+          <li><a href="#">Gửi tiết kiệm</a></li>
+          <li><a href="#">Thẻ</a></li>
+          <li><a href="#">Vay vốn</a></li>
+          <li><a href="#">Bảo hiểm</a></li>
+          <li><a href="#">Giao dịch cùng ACB</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Doanh nghiệp -->
+      <div class="col">
+        <h6 class="footer-hd">Doanh nghiệp</h6>
+        <ul class="footer-list">
+          <li><a href="#">Vay vốn</a></li>
+          <li><a href="#">Tài trợ xuất nhập khẩu</a></li>
+          <li><a href="#">Dịch vụ tài chính</a></li>
+          <li><a href="#">Tiền gửi có kỳ hạn</a></li>
+          <li><a href="#">Giải pháp thanh toán</a></li>
+          <li><a href="#">Thẻ doanh nghiệp</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Thư viện -->
+      <div class="col">
+        <h6 class="footer-hd">Thư viện</h6>
+        <ul class="footer-list">
+          <li><a href="#">Thông báo từ ACB</a></li>
+          <li><a href="#">Thông cáo báo chí</a></li>
+          <li><a href="#">Ưu đãi khách hàng cá nhân</a></li>
+          <li><a href="#">Ưu đãi cho Ngân hàng số</a></li>
+          <li><a href="#">Biểu mẫu, biểu phí cá nhân</a></li>
+          <li><a href="#">Biểu mẫu, biểu phí DN</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 5: Hỗ trợ -->
+      <div class="col">
+        <h6 class="footer-hd">Hỗ trợ</h6>
+        <div class="support-group">
+          <!-- Nút liên hệ -->
+          <a href="#" class="support-btn" aria-label="Liên hệ">
+            <span class="ico"><i class="bi bi-geo-alt"></i></span>
+            <span class="label">Liên hệ</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+          
+          <!-- Hotline 1900 -->
+          <a href="tel:1900545486" class="support-btn" aria-label="Gọi 1900 54 54 86">
+            <span class="ico"><i class="bi bi-telephone"></i></span>
+            <span class="label">1900 54 54 86</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+          
+          <!-- Số điện thoại văn phòng -->
+          <a href="tel:02838247247" class="support-btn" aria-label="Gọi (028) 38 247 247">
+            <span class="ico"><i class="bi bi-telephone-forward"></i></span>
+            <span class="label">(028) 38 247 247</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+
+          <!-- Social media links -->
+          <div class="socials">
+            <a href="#" class="social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 3: BOTTOM - Copyright
+     ======================================== -->
+<section class="footer-bottom">
+  <div class="wrap" style="display:flex; align-items:center; gap:12px;">
+    <span class="brand">ACB</span>
+    <span class="copy">© 2023 Ngân hàng thương mại cổ phần Á Châu</span>
+  </div>
+</section>
+
+<!-- Import Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">

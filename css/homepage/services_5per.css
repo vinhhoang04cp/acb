@@ -1,0 +1,159 @@
+/**
+ * ========================================
+ * FILE: services_5per.css - CSS cho services section
+ * CHỨC NĂNG: Styles cho section hiển thị 5 dịch vụ ngân hàng
+ * ========================================
+ */
+
+/* Import base styles */
+@import url('../../css/base.css');
+
+/* ========================================
+   CSS VARIABLES - Biến cho services section
+   ======================================== */
+:root {
+  --services-carousel-max: 900px;                /* Chiều rộng tối đa carousel */
+  --services-carousel-gutter: var(--spacing-xl); /* Khoảng cách 2 bên */
+  --services-rail-width: 950px;                  /* Chiều rộng rail chứa services */
+  --services-item-width: 150px;                  /* Chiều rộng mỗi service item */
+  --services-icon-size: var(--spacing-xl);       /* Kích thước icon */
+  --services-row-height: 128px;                  /* Chiều cao hàng services */
+  --services-control-offset: var(--spacing-sm);  /* Offset cho control buttons */
+  --services-control-size: var(--spacing-md);    /* Kích thước control buttons */
+}
+
+/* ========================================
+   SERVICES SECTION - Container chính
+   ======================================== */
+.services5 {
+  background: white;                              /* Nền trắng */
+  padding: var(--spacing-lg) 0;                   /* Padding trên dưới */
+}
+
+/* ========================================
+   CAROUSEL CONTAINER - Container cho carousel
+   ======================================== */
+.services5 #services5Carousel {
+  width: min(var(--services-carousel-max), calc(100% - var(--services-carousel-gutter)*2)); /* Responsive width */
+  margin-inline: auto;                            /* Căn giữa */
+  position: relative;                             /* Position relative cho controls */
+}
+
+/* ========================================
+   SERVICES RAIL - Grid chứa 5 services
+   ======================================== */
+.services5 .services-rail {
+  max-width: var(--services-rail-width);         /* Chiều rộng tối đa */
+  margin: 0 auto;                                 /* Căn giữa */
+  min-height: var(--services-row-height);        /* Chiều cao tối thiểu */
+  display: grid;                                  /* CSS Grid layout */
+  grid-template-columns: repeat(5, var(--services-item-width)); /* 5 cột bằng nhau */
+  justify-content: space-between;                 /* Căn đều các cột */
+  align-items: center;                            /* Căn giữa theo chiều dọc */
+  gap: var(--spacing-md);                         /* Khoảng cách giữa các items */
+}
+
+/* ========================================
+   SERVICE ITEM - Mỗi dịch vụ
+   ======================================== */
+.services5 .service-item {
+  padding: var(--spacing-md);                     /* Padding bên trong */
+  border-radius: var(--border-radius-lg);         /* Bo góc */
+  transition: all var(--transition-normal);       /* Hiệu ứng chuyển đổi */
+  user-select: none;                              /* Không cho select text */
+  cursor: pointer;                                /* Con trỏ pointer */
+}
+
+/* Hover effect cho service item */
+.services5 .service-item:hover {
+  background-color: var(--gray-100);              /* Màu nền khi hover */
+  transform: translateY(-2px);                    /* Di chuyển lên trên */
+}
+
+/* ========================================
+   SERVICE ICON - Icon cho mỗi dịch vụ
+   ======================================== */
+.services5 .service-item i {
+  display: block;                                 /* Hiển thị block */
+  font-size: var(--services-icon-size);          /* Kích thước icon */
+  line-height: 1;                                 /* Line height */
+  color: var(--primary-color);                   /* Màu xanh ACB */
+  margin-bottom: var(--spacing-sm);              /* Khoảng cách dưới */
+}
+
+/* ========================================
+   SERVICE LABEL - Text mô tả dịch vụ
+   ======================================== */
+.services5 .service-item .label {
+  margin-top: 10px;                               /* Khoảng cách trên */
+  font-weight: 600;                               /* Độ đậm font */
+  font-size: var(--label-size);                  /* Kích thước font */
+  color: var(--label-color);                     /* Màu chữ */
+  line-height: 1.3;                               /* Line height */
+}
+
+/* ========================================
+   CAROUSEL CONTROLS - Nút prev/next
+   ======================================== */
+
+/* Container cho control buttons */
+.services5 .carousel-control-prev,
+.services5 .carousel-control-next {
+  width: 44px;                                    /* Chiều rộng button */
+  opacity: 1;                                     /* Độ trong suốt */
+}
+
+/* Vị trí button prev */
+.services5 .carousel-control-prev {
+  left: var(--control-offset);                    /* Offset từ trái */
+}
+
+/* Vị trí button next */
+.services5 .carousel-control-next {
+  right: var(--control-offset);                   /* Offset từ phải */
+}
+
+/* ========================================
+   CUSTOM CONTROL ICONS - Icon tùy chỉnh
+   ======================================== */
+
+/* Pseudo-element cho custom icons */
+.services5 .carousel-control-prev::before,
+.services5 .carousel-control-next::before {
+  content: "";                                    /* Nội dung rỗng */
+  display: block;                                 /* Hiển thị block */
+  width: var(--control-size);                     /* Kích thước icon */
+  height: var(--control-size);                    /* Kích thước icon */
+  background-repeat: no-repeat;                   /* Không lặp lại */
+  background-position: center;                    /* Căn giữa */
+  background-size: 100% 100%;                     /* Kích thước 100% */
+}
+
+/* Icon cho button prev (mũi tên trái) */
+.services5 .carousel-control-prev::before {
+  background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M14.5 4 L6.5 12 L14.5 20' stroke='%23343a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* Icon cho button next (mũi tên phải) */
+.services5 .carousel-control-next::before {
+  background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M9.5 4 L17.5 12 L9.5 20' stroke='%23343a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* Ẩn icon mặc định của Bootstrap */
+.services5 .carousel-control-prev-icon,
+.services5 .carousel-control-next-icon {
+  display: none;                                  /* Ẩn icon mặc định */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Tablet styles
+   ======================================== */
+
+/* Tablet breakpoint */
+@media (max-width: 1200px) {
+  :root {
+    --carousel-max: 900px;                        /* Carousel nhỏ hơn */
+    --rail-width: 940px;                          /* Rail nhỏ hơn */
+    --item-width: 160px;                          /* Item rộng hơn */
+  }
+}

@@ -1,0 +1,78 @@
+<!-- Header Component -->
+<link rel="stylesheet" href="css/partials-css/header.css" />
+
+<!-- Header chính - sticky top để luôn hiển thị khi scroll -->
+<header class="acb-header sticky-top bg-white">
+  
+  <!-- ========================================
+       TOPBAR - Thanh thông tin phụ trên cùng
+       ======================================== -->
+  <div class="acb-topbar border-bottom">
+    <div class="wrap topbar-row">
+      
+      <!-- Menu links chính - ẩn trên mobile -->
+      <nav class="top-links d-none d-lg-flex">
+        <a href="/about.html">Về chúng tôi</a>
+        <a href="/investors.html">Nhà đầu tư</a>
+        <a href="#">Tuyển dụng</a>
+        <a href="/reward.html">ACB Rewards</a>
+        <a href="/library.html">Thư viện</a>
+        <a href="/security.html">An toàn</a>
+        <a href="/liquidation.html">Thanh lý tài sản</a>
+      </nav>
+      
+      <!-- Các action buttons bên phải -->
+      <div class="top-actions">
+        <a href="#"><i class="bi bi-telephone-outbound me-2"></i>Hỗ trợ 24/7</a>
+        <a href="#"><i class="bi bi-geo-alt me-2"></i>Liên hệ</a>
+        <button class="icon-btn" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button>
+        <button class="lang-btn" aria-label="Ngôn ngữ">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="VN">
+          <i class="bi bi-caret-down-fill ms-1 small"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       NAVBAR - Menu chính của website
+       ======================================== -->
+  <nav class="acb-navbar border-bottom">
+    <div class="wrap nav-row">
+      
+      <!-- Phần bên trái: Logo + Menu chính -->
+      <div class="nav-left">
+        <!-- Logo ACB -->
+        <a href="/index.html" class="brand"><span class="logo-text">ACB</span></a>
+        
+        <!-- Button toggle menu mobile -->
+        <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle menu">
+          <i class="bi bi-list"></i>
+        </button>
+        
+        <!-- Menu navigation chính -->
+        <nav class="main-nav">
+          <a class="active" href="/e-bank.html">Ngân hàng số</a>
+          <a href="#">Cá nhân</a>
+          <a href="#">Doanh nghiệp</a>
+          <a href="#">Ngân hàng Ưu tiên</a>
+        </nav>
+      </div>
+      
+      <!-- Phần bên phải: Button đăng nhập -->
+      <div class="nav-right">
+        <span class="nav-split"></span>
+        <a href="#" class="btn-acbone">
+          Đăng nhập&nbsp;<strong>ACB<span class="opacity-75">ONE</span></strong>
+          <i class="bi bi-chevron-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Import Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Import JavaScript cho header -->
+<script src="/js/partials/header.js" defer></script>

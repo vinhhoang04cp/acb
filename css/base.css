@@ -1,0 +1,318 @@
+/**
+ * ========================================
+ * FILE: base.css - CSS cơ bản cho toàn bộ website
+ * CHỨC NĂNG: Định nghĩa biến CSS, reset styles và utility classes
+ * ========================================
+ */
+
+/* ========================================
+   CSS VARIABLES - Biến màu sắc và thiết kế
+   ======================================== */
+:root {
+  /* ========================================
+     MÀU SẮC CHÍNH - Brand colors của ACB
+     ======================================== */
+  --primary-color: #004f9f;      /* Xanh ACB chính */
+  --primary-dark: #003d7a;       /* Xanh ACB đậm */
+  --primary-light: #3378b5;      /* Xanh ACB nhạt */
+  --secondary-color: #ff6b00;    /* Cam accent */
+  --secondary-dark: #cc5500;     /* Cam đậm */
+  --secondary-light: #ff8533;    /* Cam nhạt */
+  --success-color: #28a745;      /* Xanh lá - thành công */
+  --warning-color: #ffc107;      /* Vàng - cảnh báo */
+  --danger-color: #dc3545;       /* Đỏ - lỗi */
+  --light-color: #f8f9fa;        /* Xám nhạt - background */
+  --dark-color: #343a40;         /* Xám đậm - text */
+  
+  /* ========================================
+     THANG MÀU XÁM - Gray scale
+     ======================================== */
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  /* ========================================
+     TYPOGRAPHY - Font chữ và kích thước
+     ======================================== */
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+  --letter-spacing-base: -0.01em;
+  
+  /* Kích thước font cho các heading */
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2rem;
+  --h4-font-size: 1.75rem;
+  --h5-font-size: 1.5rem;
+  --h6-font-size: 1.25rem;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================
+     SPACING - Khoảng cách và padding
+     ======================================== */
+  --spacing-unit: 8px;
+  --spacing-xxs: calc(var(--spacing-unit) * 0.5);  /* 4px */
+  --spacing-xs: calc(var(--spacing-unit) * 1);     /* 8px */
+  --spacing-sm: calc(var(--spacing-unit) * 2);     /* 16px */
+  --spacing-md: calc(var(--spacing-unit) * 3);     /* 24px */
+  --spacing-lg: calc(var(--spacing-unit) * 4);     /* 32px */
+  --spacing-xl: calc(var(--spacing-unit) * 6);     /* 48px */
+  --spacing-xxl: calc(var(--spacing-unit) * 8);    /* 64px */
+
+  /* ========================================
+     BORDER RADIUS - Bo góc
+     ======================================== */
+  --border-radius-xs: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-xxl: 24px;
+  --border-radius-pill: 9999px;
+
+  /* ========================================
+     SHADOWS - Bóng đổ
+     ======================================== */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --shadow-lg: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-xl: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+  --shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
+
+  /* ========================================
+     TRANSITIONS - Hiệu ứng chuyển đổi
+     ======================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ========================================
+     Z-INDEX - Thứ tự hiển thị
+     ======================================== */
+  --z-index-dropdown: 1000;                      /* Dropdown menu */
+  --z-index-sticky: 1020;                        /* Sticky header */
+  --z-index-fixed: 1030;                         /* Fixed elements */
+  --z-index-modal: 1040;                         /* Modal popup */
+  --z-index-popover: 1050;                       /* Tooltip */
+  --z-index-tooltip: 1060;                       /* Tooltip cao nhất */
+}
+
+/* ========================================
+   RESET CSS & GLOBAL STYLES
+   ======================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--gray-900);
+  background-color: var(--gray-50);
+}
+
+/* ========================================
+   TYPOGRAPHY STYLES
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--gray-900);
+}
+
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+h4 { font-size: var(--h4-font-size); }
+h5 { font-size: var(--h5-font-size); }
+h6 { font-size: var(--h6-font-size); }
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--gray-700);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ========================================
+   UTILITY CLASSES - Các class tiện ích
+   ======================================== */
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ========================================
+   CARD STYLES
+   ======================================== */
+.card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--gray-900);
+  background-color: white;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 79, 159, 0.1);
+}
+
+/* ========================================
+   ANIMATIONS - Hiệu ứng animation
+   ======================================== */
+.fade-in {
+  animation: fadeIn var(--transition-normal);   /* Animation fade in */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }                          /* Bắt đầu: trong suốt */
+  to { opacity: 1; }                            /* Kết thúc: hiển thị */
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - Điểm break responsive
+   ======================================== */
+
+/* Mobile - Màn hình nhỏ */
+@media (max-width: 575.98px) {
+  :root {
+    --font-size-base: 14px;                     /* Font nhỏ hơn trên mobile */
+  }
+}
+
+/* Small devices - Tablet nhỏ */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;                           /* Container nhỏ */
+  }
+}
+
+/* Medium devices - Tablet */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;                           /* Container vừa */
+  }
+}
+
+/* Large devices - Desktop nhỏ */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;                           /* Container lớn */
+  }
+}
+
+/* Extra large devices - Desktop lớn */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;                          /* Container rất lớn */
+  }
+}

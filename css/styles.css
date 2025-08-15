@@ -1,0 +1,160 @@
+/**
+ * ========================================
+ * FILE: styles.css
+ * 
+ * CHỨC NĂNG CHÍNH:
+ * - Định nghĩa styles chung cho toàn bộ website
+ * - Import và extend base styles
+ * - Quản lý responsive breakpoints
+ * - Định nghĩa CSS variables và theme
+ * 
+ * CẤU TRÚC CSS:
+ * 1. Variables & Imports
+ * 2. Base Styles
+ * 3. Layout & Grid
+ * 4. Components
+ * 5. Utilities
+ * 6. Responsive
+ * 
+ * CONVENTION:
+ * - BEM Methodology cho class names
+ * - Mobile-first approach
+ * - CSS Custom Properties cho theme
+ * ========================================
+ */
+
+/* Import base styles và CSS variables */
+@import url('base.css');
+
+/* CSS Variables - Định nghĩa các biến dùng chung */
+:root {
+  /* Colors */
+  --primary-color: #003C71;      /* ACB Blue */
+  --secondary-color: #FF9E1B;    /* ACB Orange */
+  --text-color: #333333;
+  --light-gray: #F5F5F5;
+  --border-color: #E0E0E0;
+  
+  /* Spacing */
+  --section-spacing: 4rem;
+  --card-spacing: 1.5rem;
+  
+  /* Shadows */
+  --card-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --hover-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  
+  /* Transitions */
+  --hover-transition: all 0.3s ease;
+  
+  /* Border Radius */
+  --border-radius: 8px;
+  
+  /* Font Sizes */
+  --h1-size: 2.5rem;
+  --h2-size: 2rem;
+  --body-size: 1rem;
+}
+
+/* ========================================
+   HEADER STYLES - Styles cho header
+   ======================================== */
+#header-container {
+  background: white;
+  box-shadow: var(--card-shadow);
+}
+
+#hero {
+  background-size: cover;
+  background-position: center;
+  min-height: var(--hero-height, 500px);
+}
+
+/* ========================================
+   SERVICES SECTION - Styles cho section dịch vụ
+   ======================================== */
+.service-card {
+  transition: transform 0.3s ease;               /* Hiệu ứng hover mượt mà */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);                   /* Di chuyển lên trên khi hover */
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - Điểm break responsive
+   ======================================== */
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  #hero {
+    min-height: 350px;                           /* Chiều cao nhỏ hơn trên mobile */
+  }
+  
+  .section-title {
+    font-size: 1.75rem;                          /* Font size nhỏ hơn */
+    margin-bottom: 1.5rem;                       /* Khoảng cách dưới */
+  }
+
+  .container {
+    padding: 0 20px;                             /* Padding nhỏ hơn */
+  }
+
+  .service-card {
+    margin-bottom: 25px;                         /* Khoảng cách giữa các card */
+  }
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #hero {
+    min-height: 400px;                           /* Chiều cao vừa cho tablet */
+  }
+}
+
+/* Large devices (desktops, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .service-card {
+    margin-bottom: 20px;                         /* Khoảng cách vừa */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;                           /* Container rộng hơn */
+    padding: 0 30px;                             /* Padding lớn hơn */
+  }
+  
+  .section-title {
+    font-size: 2.5rem;                           /* Font size lớn */
+    margin-bottom: 3rem;                         /* Khoảng cách lớn */
+  }
+
+  .service-card {
+    padding: 2rem;                               /* Padding lớn cho card */
+    margin-bottom: 30px;                         /* Khoảng cách lớn */
+  }
+}
+
+/* ========================================
+   CUSTOM UTILITY CLASSES - Các class tiện ích tùy chỉnh
+   ======================================== */
+.text-primary-custom {
+  color: var(--primary-color);                   /* Màu chữ xanh ACB */
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color);        /* Màu nền xanh ACB */
+}
+
+/* ========================================
+   ANIMATION CLASSES - Các class animation
+   ======================================== */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;                /* Animation fade in */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }                           /* Bắt đầu: trong suốt */
+  to { opacity: 1; }                             /* Kết thúc: hiển thị */
+}

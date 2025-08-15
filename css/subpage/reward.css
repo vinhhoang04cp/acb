@@ -1,0 +1,317 @@
+:root{
+      --brand:#0d6efd;
+      --soft:#f5f7fb;
+      --ink:#0b2239;
+      --container-width: 1140px;
+      
+      /* Effects */
+      --transition-fast: all 0.2s ease-out;
+      --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --shadow-hover: 0 12px 32px rgba(13, 110, 253, 0.12);
+      --gradient-shine: linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 0.2) 60%,
+        transparent 100%
+      );
+    }
+    body{ color:#20314a; }
+    .navbar{ box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    /* Hero */
+    .hero{ background: radial-gradient(1200px 500px at 80% -10%, rgba(13,110,253,.15), transparent),
+                    linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+           padding: 4rem 0 3rem; }
+    .hero h1{ font-weight: 800; letter-spacing:-.02em; }
+    .hero .lead{ font-size:1.15rem; }
+
+    /* Feature cards */
+    .benefit-slider {
+      padding: 3rem 0;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .benefit-heading {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .benefit-slider .card {
+      background: #ffffff;
+      border: none;
+      border-radius: 1.25rem;
+      box-shadow: 0 8px 24px rgba(9,30,66,0.06);
+      transition: var(--transition-bounce);
+      padding: 2rem;
+      height: 100%;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-slider .card::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background-image: var(--gradient-shine);
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+
+    .benefit-slider .card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .benefit-slider .card:hover::before {
+      opacity: 1;
+      transform: translateX(100%);
+      transition: transform 1s linear;
+    }
+
+    .benefit-icon {
+      font-size: 2.75rem;
+      line-height: 1;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #0066FF, #00A8FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .benefit-slider .card .title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      min-height: 2.8rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .benefit-slider .card .desc {
+      color: #506580;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Carousel controls */
+    .benefit-slider .carousel-control-prev,
+    .benefit-slider .carousel-control-next {
+      width: 3rem;
+      height: 3rem;
+      background: white;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: all 0.2s ease;
+    }
+
+    .benefit-slider .carousel-control-prev {
+      left: -1.5rem;
+    }
+
+    .benefit-slider .carousel-control-next {
+      right: -1.5rem;
+    }
+
+    .benefit-slider .carousel-control-prev:hover,
+    .benefit-slider .carousel-control-next:hover {
+      background: var(--brand);
+      box-shadow: 0 6px 20px rgba(13,110,253,0.2);
+    }
+
+    .benefit-slider .carousel-control-prev:hover .carousel-control-prev-icon,
+    .benefit-slider .carousel-control-next:hover .carousel-control-next-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    .benefit-slider .carousel-control-prev-icon,
+    .benefit-slider .carousel-control-next-icon {
+      filter: invert(40%) sepia(90%) saturate(2000%) hue-rotate(200deg);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .carousel-indicators.benefit-indicators {
+      position: static;
+      margin-top: 2rem;
+    }
+
+    .carousel-indicators.benefit-indicators [data-bs-target] {
+      width: 0.625rem;
+      height: 0.625rem;
+      border-radius: 50%;
+      background: #cbd5e1;
+      opacity: 1;
+      transition: all 0.3s ease;
+      margin: 0 0.5rem;
+      border: none;
+    }
+
+    .carousel-indicators.benefit-indicators .active {
+      width: 0.625rem;
+      background: var(--brand);
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 991.98px) {
+      .benefit-heading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .benefit-slider .card {
+        padding: 2rem 1.5rem;
+      }
+
+      .benefit-slider .carousel-control-prev,
+      .benefit-slider .carousel-control-next {
+        display: none;
+      }
+    }
+
+    /* Category filter */
+    .pill-filter .btn{ border-radius:999px; }
+
+    /* Daily deals */
+    .cta-card{ background: linear-gradient(135deg, rgba(13,110,253,.06), rgba(13,110,253,.16)); border:0; }
+
+    /* Stepper */
+    .stepper ol{ counter-reset: step; list-style:none; padding:0; margin:0; }
+    .stepper li{ position:relative; padding-left:3rem; padding-bottom:1rem; }
+    .stepper li::before{ counter-increment: step; content: counter(step); position:absolute; left:0; top:.15rem; width:2rem; height:2rem; border-radius:50%; display:grid; place-items:center; background:var(--brand); color:#fff; font-weight:700; }
+    .stepper li:not(:last-child)::after{ content:""; position:absolute; left:.95rem; top:2rem; width:2px; height:calc(100% - 2rem); background:rgba(13,110,253,.25); }
+
+    /* Common section styles */
+    .section{ padding: 4rem 0; }
+    .section-muted{ background: var(--soft); }
+    
+    .section > .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer{ background:#0f1d33; color:#a9b6c9; }
+    footer a{ color:#d9e6ff; text-decoration:none; }
+      /* Benefit carousel (ACB-style) */
+    .benefit-heading{ margin-bottom:1.25rem; }
+    .benefit-slider .card{ background:#f4f7fb; border:0; border-radius:2rem; box-shadow:0 8px 24px rgba(9,30,66,.05); }
+    .benefit-slider .card .title{ font-weight:700; }
+    .benefit-slider .card .desc{ color:#6b7b8d; }
+    .benefit-icon{ font-size:3rem; line-height:1; margin-bottom:.75rem; background:linear-gradient(180deg,#00A8FF,#0066FF); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .carousel-indicators.benefit-indicators{ position:static; margin-top:1rem; }
+    .carousel-indicators.benefit-indicators [data-bs-target]{ width:.55rem; height:.55rem; border-radius:50%; background:#c6d1e3; opacity:1; }
+    .carousel-indicators.benefit-indicators .active{ background:#0d6efd; }
+    .benefit-slider .carousel-control-prev, .benefit-slider .carousel-control-next{ width:3rem; height:3rem; top:50%; transform:translateY(-50%); opacity:.9; }
+    .benefit-slider .carousel-control-prev{ left:-1rem; }
+    .benefit-slider .carousel-control-next{ right:-1rem; }
+    .benefit-slider .carousel-control-prev-icon, .benefit-slider .carousel-control-next-icon{ filter: invert(40%); }
+      /* Category list (ACB-style accordion) */
+    .category-wrap{ 
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 4rem 0;
+    }
+    .category-title{ 
+      text-align: center; 
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+    .accordion.category-list{ --bs-accordion-border-width:0; }
+    .accordion.category-list .accordion-item{ background:transparent; border:0; border-bottom:1px solid #e6edf5; border-radius:0; }
+    .accordion.category-list .accordion-button{ background:transparent; box-shadow:none; padding-left:0; padding-right:0; font-weight:700; color:#0d6efd; font-size:1.5rem; }
+    .accordion.category-list .accordion-button:focus{ box-shadow:none; }
+    .accordion.category-list .accordion-button::after{ background-image:none; content:'+'; font-weight:700; color:#0d6efd; transform:none; }
+    .accordion.category-list .accordion-button:not(.collapsed){ color:#0b2239; }
+    .accordion.category-list .accordion-button:not(.collapsed)::after{ content:'–'; color:#0b2239; }
+    .accordion.category-list .accordion-body{ padding:1rem 0 1.25rem; color:#5c6f82; }
+      /* Deals (Săn quà mỗi ngày) */
+    .deals-title{ font-weight:800; letter-spacing:-.01em; }
+    .deals-desc{ color:#6b7b8d; max-width:56ch; }
+    .deals-qrbadges{ gap:1rem; }
+    .deals-qr{ width:110px; height:110px; border-radius:.5rem; background:#fff; box-shadow:0 6px 18px rgba(16,24,40,.06); }
+    .store-badge{ display:inline-flex; align-items:center; gap:.5rem; background:#111; color:#fff; text-decoration:none; border-radius:.75rem; padding:.55rem .9rem; font-weight:700; }
+    .store-badge .bi{ font-size:1.2rem; }
+    .store-badge small{ display:block; font-weight:500; line-height:1; opacity:.9; }
+    .store-badge span{ line-height:1; }
+    .btn-cta{ padding:.95rem 1.4rem; border-radius:999px; font-weight:700; }
+    .deals-phones{ position:relative; min-height:360px; }
+    .phone{ position:absolute; width:230px; height:470px; border-radius:2rem; background:#fff; box-shadow:0 18px 50px rgba(0,0,0,.16); border:10px solid #0d1b2a; }
+    .phone::after{ content:""; position:absolute; inset:12px; border-radius:1.2rem; background:linear-gradient(180deg,#f7fbff,#eaf2ff); box-shadow: inset 0 0 0 1px rgba(13,110,253,.15); }
+    .phone-left{ left:10%; bottom:-40px; transform:rotate(-14deg); }
+    .phone-right{ right:10%; top:-20px; transform:rotate(12deg); }
+    .float-chip, .float-app{ position:absolute; border-radius:1rem; background:#fff; box-shadow:0 10px 30px rgba(13,110,253,.25); }
+    .float-chip{ left:6%; top:46%; padding:.6rem 1rem; font-weight:700; }
+    .float-app{ left:34%; top:8%; padding:.45rem .7rem; font-weight:800; color:#1849ff; border-radius:1rem; }
+      /* Point categories (image cards like screenshot) */
+    .pointcats-title{ text-align:center; font-weight:800; }
+    .pcard{ 
+      position: relative;
+      border-radius: 2.25rem;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(16,24,40,.18);
+      background: #000;
+      aspect-ratio: 16/9;
+      transition: var(--transition-normal);
+    }
+    .pcard > img{ 
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .92;
+      transition: var(--transition-bounce);
+      transform-origin: center;
+    }
+    .pcard:hover {
+      box-shadow: 0 24px 60px rgba(16,24,40,.25);
+      transform: translateY(-8px);
+    }
+    .pcard:hover > img {
+      transform: scale(1.05);
+      opacity: .85;
+    }
+    .pcard::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(13, 110, 253, 0.1) 100%
+      );
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+    .pcard:hover::after {
+      opacity: 1;
+    }
+    .pcard .pcard-gradient{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 74%, rgba(0,0,0,.75) 100%); }
+    .pcard .pcard-content{ position:absolute; left:1.8rem; right:1.8rem; bottom:1.6rem; color:#fff; }
+    .pcard .pcard-title{ font-size:2rem; font-weight:800; margin:0 0 1rem; line-height:1.1; text-shadow:0 2px 10px rgba(0,0,0,.25); }
+    .btn-chip{ border:0; background:linear-gradient(90deg,#247CFF,#0D6EFD); color:#fff; border-radius:999px; padding:.9rem 1.25rem; font-weight:700; box-shadow:0 8px 24px rgba(13,110,253,.35); }
+    .btn-chip .bi{ margin-left:.35rem; }

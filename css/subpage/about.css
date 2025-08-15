@@ -1,0 +1,459 @@
+/* About Page Styles */
+:root {
+  /* Brand Colors */
+  --acb-blue: #0664d2;
+  --acb-blue-dark: #0a3d91;
+  --acb-blue-light: #e8f1ff;
+  --acb-accent: #6ecb63;
+
+  /* Neutral Colors */
+  --gray-700: #495057;
+  --gray-600: #6c757d;
+  --gray-200: #e9ecef;
+  --white: #ffffff;
+}
+
+/* Reset nhẹ cho body để màu chữ dễ đọc */
+body{
+  color: var(--gray-700);
+  background-color: #fff;
+}
+
+/* Link primary dùng tông xanh */
+a{
+  color: var(--acb-blue);
+}
+a:hover{
+  color: var(--acb-blue-dark);
+}
+
+/* -----------------------------
+   2) TOPBAR & NAVBAR
+   ----------------------------- */
+.topbar{
+  background: var(--acb-blue-dark);
+}
+
+.navbar .navbar-brand{
+  letter-spacing: 0.2px;
+}
+
+.navbar .nav-link{
+  padding: .5rem .75rem;
+  color: #1f2937;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{
+  color: var(--acb-blue);
+}
+
+/* Mega-menu đơn giản: mở rộng chiều rộng menu */
+.mega-menu{
+  min-width: 420px;
+}
+
+/* -----------------------------
+   3) HERO / PAGE HEADER
+   ----------------------------- */
+.page-hero {
+  background: linear-gradient(180deg, var(--acb-blue-light), #fff);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(6,100,210,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(6,100,210,0.08) 0%, transparent 50%);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Thiết lập container width cho tất cả các section */
+.container {
+  max-width: 1000px !important;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.page-hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.page-hero .breadcrumb{
+  --bs-breadcrumb-divider: '›';
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.page-hero .breadcrumb a{
+  text-decoration: none;
+}
+
+/* -----------------------------
+   4) CORE VALUE (giá trị cốt lõi)
+   ----------------------------- */
+.core-value {
+  border: 1px solid var(--gray-200);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.core-value::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, 
+    rgba(6,100,210,0.05) 0%,
+    rgba(6,100,210,0) 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.core-value:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 1.5rem 3rem rgba(10,61,145,0.15);
+  border-color: rgba(6,100,210,0.2);
+}
+
+.core-value:hover::before {
+  opacity: 1;
+}
+
+.core-value h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: var(--acb-blue);
+}
+
+.core-value p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin-bottom: 0;
+}
+
+.cv-index{
+  /* Chỉ số 01-05 nổi bật, đặt cùng dấu chấm accent */
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--acb-blue);
+  position: relative;
+  line-height: 1;
+}
+.cv-index::after{
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--acb-accent);
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: .5rem;
+  transform: translateY(-2px);
+}
+
+/* -----------------------------
+   5) THỐNG KÊ (STAT CARDS)
+   ----------------------------- */
+.stat-card {
+  border: 1px solid var(--gray-200);
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(6,100,210,0.08) 0%,
+    rgba(6,100,210,0) 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2.5rem rgba(10,61,145,0.12);
+  border-color: rgba(6,100,210,0.15);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card .stat-value {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  color: var(--acb-blue-dark);
+  background: linear-gradient(135deg, var(--acb-blue), var(--acb-blue-dark));
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s infinite linear;
+  background-size: 200% 100%;
+}
+
+.stat-card .stat-label {
+  color: var(--gray-600);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* -----------------------------
+   6) FOOTER
+   ----------------------------- */
+.footer{
+  background: var(--acb-blue-dark);
+  /* Tạo pattern rất nhẹ bằng gradient để bề mặt thú vị hơn */
+  background-image:
+    radial-gradient(ellipse at top left, rgba(255,255,255,.06), transparent 40%),
+    radial-gradient(ellipse at bottom right, rgba(255,255,255,.04), transparent 35%);
+}
+
+/* -----------------------------
+   7) TIỆN ÍCH NHỎ
+   ----------------------------- */
+/* Nút back-to-top nổi góc dưới phải */
+.back-to-top{
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  border: none;
+  z-index: 1030;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.back-to-top.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+.back-to-top:active{
+  transform: translateY(1px);
+}
+
+
+
+.hero-h { height: 280px; }
+@media (min-width: 992px) { .hero-h { height: 420px; } }
+
+
+
+.hero-board {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    min-height: 360px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1rem 3rem rgba(6,23,55,0.15);
+  }
+  
+  @media (min-width: 992px) { 
+    .hero-board { 
+      min-height: 400px; 
+    } 
+  }
+
+  /* Ảnh nền hero */
+  .hero-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/img/anh2k.jpg") center/cover no-repeat;
+    transition: transform 0.5s ease;
+  }
+
+  /* Lớp phủ gradient tối bên phải */
+  .hero-board::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+                rgba(0,0,0,0) 18%,
+                rgba(6,23,55,.75) 65%,
+                rgba(6,23,55,.92) 100%);
+    backdrop-filter: blur(0px);
+    transition: all 0.5s ease;
+  }
+
+  .hero-board:hover::before {
+    transform: scale(1.05);
+  }
+
+  .hero-board:hover::after {
+    backdrop-filter: blur(2px);
+    background: linear-gradient(90deg,
+                rgba(0,0,0,0.1) 18%,
+                rgba(6,23,55,.8) 65%,
+                rgba(6,23,55,.95) 100%);
+  }
+  /* Nội dung hero dịch sang phải, nổi trên ảnh */
+  .hero-board .content{
+    position:relative; z-index:1;
+    color:#fff;
+    max-width:520px;
+    margin-left:auto;              /* đẩy khối chữ sang phải */
+    padding:24px 28px;
+  }
+
+  /* TILE (Tầm nhìn / Sứ mệnh) */
+  .info-tile{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    background:#f3efe9;            /* nền be nhạt như ảnh */
+    box-shadow:0 6px 24px rgba(16,24,40,.06);
+    min-height:460px;
+    padding:24px;
+  }
+  @media (min-width: 992px){
+    .info-tile{ min-height: 500px; padding:28px; }
+  }
+  /* Ảnh nằm sát đáy, phủ ngang, giữ tỉ lệ */
+  .info-tile .tile-img{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    width:100%; height:60%;
+    object-fit:cover;
+  }
+
+
+
+   /* Nền xám rất nhẹ như mock */
+  .values-section{ background:#f3f6f9; }
+
+  /* Khung nội dung hẹp, căn giữa đã làm bằng col-xl-8 */
+  .v-item{
+    padding: 18px 0;
+  }
+
+  /* Đường phân cách mảnh */
+  .v-item.border-bottom{
+    border-color: rgba(2,16,43,.12) !important;
+  }
+
+  /* Chỉ số 01., 02. */
+  .v-index{
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #9aa5b1;
+    margin-bottom: .25rem;
+  }
+
+  /* Tiêu đề xanh giống link */
+  .v-title{
+    color: #0d6efd;               /* có thể đổi theo brand */
+    font-weight: 700;
+  }
+
+  /* Mô tả xám, giãn dòng thoáng */
+  .v-desc{
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* Tiêu đề section */
+  #values h2{
+    color:#0a2540;
+  }
+
+  @media (max-width: 991.98px){
+    /* Tách cột dưới mobile: giữ đúng thứ tự 01-02-03-04-05 */
+    .values-section .row.g-0 > .col-lg-6:first-child{ order: 0; }
+    .values-section .row.g-0 > .col-lg-6:last-child{ order: 1; }
+  }
+
+   /* Responsive container */
+@media (max-width: 991.98px){
+  .container {
+    max-width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Card giải thưởng giống mock */
+  .award-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    padding: 24px 24px 180px;
+    min-height: 520px;
+    background:
+      radial-gradient(120% 90% at 10% 0%, #e8f7ff 0%, #e8f7ff 30%, transparent 60%) top left,
+      linear-gradient(180deg, #cfeefe 0%, #e8f7ff 70%);
+    box-shadow: 0 15px 40px rgba(16, 24, 40, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .award-card:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(16, 24, 40, 0.15);
+  }
+
+  .award-card:hover .award-figure {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  /* Viền sáng nhẹ như kính */
+  .award-card::after{
+    content:"";
+    position:absolute; inset:0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(13,110,253,.08);
+    pointer-events:none;
+  }
+  /* Hình cúp bám đáy, giữ tỉ lệ */
+  .award-figure{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 82%;
+    height: 58%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Tinh chỉnh responsive */
+  @media (max-width: 991.98px){
+    .award-card{ min-height: 480px; padding-bottom: 160px; }
+    .award-figure{ height: 54%; }
+  }
+  @media (max-width: 575.98px){
+    .award-card{ min-height: 440px; padding-bottom: 150px; }
+    .award-figure{ width: 88%; height: 50%; }
+  }

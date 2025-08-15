@@ -1,0 +1,192 @@
+<link rel="stylesheet" href="css/homepage/tools_acb.css" />
+<section class="tools-section py-5 bg-white">
+  <div class="container">
+    <h3 class="fw-bold mb-4">Công cụ</h3>
+
+    <!-- HAI CỘT BẰNG NHAU & CAO BẰNG NHAU -->
+    <!-- g-eq: gutter tuỳ chỉnh để mép ngoài 2 bên cân tuyệt đối -->
+    <div class="row g-eq align-items-stretch">
+
+      <!-- LEFT: Tỷ giá & lãi suất -->
+      <!-- d-flex + h-100 giúp panel cao bằng cột phải -->
+      <div class="col-12 col-lg-6 d-flex">
+        <div class="panel-soft rounded-5 p-4 p-lg-4 h-100 w-100">
+          <h4 class="fw-bold mb-3">Tỷ giá và lãi suất tiết kiệm</h4>
+
+          <!-- Tabs -->
+          <ul class="nav tab-underline small fw-semibold">
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-fx">Bảng cập nhật tỷ giá</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-gold">Giá vàng</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-rate">Lãi suất</button>
+            </li>
+          </ul>
+          <hr class="mt-0 mb-3">
+
+          <div class="tab-content">
+            <!-- FX tab -->
+            <div class="tab-pane fade show active" id="tab-fx">
+              <div id="fxCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active">
+                    <div class="vstack gap-3">
+                      <!-- USD -->
+                      <div class="rate-row p-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                          <img src="https://flagcdn.com/w40/us.png" width="32" height="24" class="rounded border" alt="US">
+                          <div class="fw-bold fs-5">USD <span class="text-secondary fw-normal">(50,100)</span></div>
+                          <div class="text-secondary small ms-2">Đô la Mỹ</div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row text-secondary small">
+                          <div class="col-6">Mua vào chuyển khoản</div>
+                          <div class="col-6 text-end">Bán ra chuyển khoản</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 fw-bold fs-5">26,050</div>
+                          <div class="col-6 fw-bold fs-5 text-end">26,400</div>
+                        </div>
+                      </div>
+                      <!-- AUD -->
+                      <div class="rate-row p-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                          <img src="https://flagcdn.com/w40/au.png" width="32" height="24" class="rounded border" alt="AU">
+                          <div class="fw-bold fs-5">AUD</div>
+                          <div class="text-secondary small ms-2">Đô la Úc</div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row text-secondary small">
+                          <div class="col-6">Mua vào chuyển khoản</div>
+                          <div class="col-6 text-end">Bán ra chuyển khoản</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 fw-bold fs-5">16,851</div>
+                          <div class="col-6 fw-bold fs-5 text-end">17,421</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="carousel-item">
+                    <div class="vstack gap-3">
+                      <div class="rate-row p-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                          <img src="https://flagcdn.com/w40/eu.png" width="32" height="24" class="rounded border" alt="EU">
+                          <div class="fw-bold fs-5">EUR</div>
+                          <div class="text-secondary small ms-2">Euro</div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row text-secondary small">
+                          <div class="col-6">Mua vào chuyển khoản</div>
+                          <div class="col-6 text-end">Bán ra chuyển khoản</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 fw-bold fs-5">28,220</div>
+                          <div class="col-6 fw-bold fs-5 text-end">28,690</div>
+                        </div>
+                      </div>
+                      <div class="rate-row p-3">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                          <img src="https://flagcdn.com/w40/jp.png" width="32" height="24" class="rounded border" alt="JP">
+                          <div class="fw-bold fs-5">JPY</div>
+                          <div class="text-secondary small ms-2">Yên Nhật</div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row text-secondary small">
+                          <div class="col-6">Mua vào chuyển khoản</div>
+                          <div class="col-6 text-end">Bán ra chuyển khoản</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 fw-bold fs-5">173.20</div>
+                          <div class="col-6 fw-bold fs-5 text-end">177.50</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Dots (trái) -->
+                <div class="carousel-indicators indicators-left mt-3">
+                  <button type="button" data-bs-target="#fxCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                  <button type="button" data-bs-target="#fxCarousel" data-bs-slide-to="1"></button>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <a href="#" class="link-primary fw-semibold">Xem thêm <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Gold tab -->
+            <div class="tab-pane fade" id="tab-gold">
+              <div class="placeholder-box">Dữ liệu giá vàng (demo)…</div>
+            </div>
+
+            <!-- Rate tab -->
+            <div class="tab-pane fade" id="tab-rate">
+              <div class="placeholder-box">Bảng lãi suất (demo)…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Biểu mẫu biểu phí -->
+      <div class="col-12 col-lg-6 d-flex">
+        <div class="panel-soft rounded-5 p-4 p-lg-4 h-100 w-100">
+          <h4 class="fw-bold mb-3">Biểu mẫu biểu phí</h4>
+
+          <div class="vstack gap-3">
+            <div class="doc-row">
+              <div class="fw-semibold">Giấy đề nghị mở tài khoản và đăng ký dịch vụ (dành cho cá nhân)</div>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                Tải xuống <i class="bi bi-download"></i>
+              </a>
+            </div>
+
+            <div class="doc-row">
+              <div class="fw-semibold">Giấy đề nghị cấp thẻ tín dụng</div>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                Tải xuống <i class="bi bi-download"></i>
+              </a>
+            </div>
+
+            <div class="doc-row">
+              <div class="fw-semibold">Giấy đề nghị cấp thẻ ghi nợ</div>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                Tải xuống <i class="bi bi-download"></i>
+              </a>
+            </div>
+
+            <div class="doc-row">
+              <div class="fw-semibold">Giấy đề nghị cấp thẻ trả trước</div>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                Tải xuống <i class="bi bi-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bên phải yêu cầu “Xem thêm” ở giữa -->
+          <div class="text-center mt-3">
+            <a href="#" class="link-primary fw-semibold">Xem thêm <i class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+

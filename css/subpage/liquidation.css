@@ -1,0 +1,60 @@
+:root{
+      --card-radius: 2rem; /* bo góc lớn như thiết kế */
+    }
+    .assets-section{
+      padding-block: 32px 56px;
+    }
+    .breadcrumb-mini{
+      color:#6c757d;
+      font-size: .95rem;
+    }
+
+    /* Card chung */
+    .asset-card{
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--card-radius);
+      min-height: 460px;              /* chiều cao nhìn đã mắt trên desktop */
+      display: flex;
+      align-items: flex-start;
+      isolation: isolate;             /* để overlay không tràn ra ngoài */
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+      background: #f8f9fa;
+    }
+    .asset-card img.bg{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .6s ease;
+      z-index: 0;
+    }
+    .asset-card::before{
+      /* lớp phủ làm dịu ảnh để chữ xanh dễ đọc (tươi như mockup) */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.12) 60%);
+      z-index: 1;
+    }
+    .asset-card:hover img.bg{
+      transform: scale(1.06);
+    }
+    .asset-content{
+      position: relative;
+      z-index: 2;
+      padding: 28px;
+    }
+    .asset-title{
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+
+    /* Mobile tối ưu chiều cao */
+    @media (max-width: 767.98px){
+      .asset-card{ min-height: 360px; }
+      .asset-content{ padding: 22px; }
+    }

@@ -1,0 +1,77 @@
+.tools-section .container{ max-width: 1240px; }  /* khung cố định giống mock */
+
+/* === THU NHỎ CẶP PANEL (chỉnh ở đây) === */
+:root{
+  --tools-max: 1120px;  /* bề rộng tối đa cho HAI panel cộng lại (nhỏ hơn container) */
+  --tools-gap: 28px;    /* khoảng cách giữa 2 cột sau khi thu nhỏ */
+}
+
+/* Hàng chứa 2 panel: bó chiều rộng + căn giữa + set gutter đồng bộ */
+.row.g-eq{
+  width: 100%;
+  margin-inline: auto;
+  --bs-gutter-x: 32px;          /* mặc định cho mobile/tablet */
+  --bs-gutter-y: 32px;
+}
+@media (min-width: 992px){
+  .tools-section .row.g-eq{
+    width: min(100%, var(--tools-max)); /* THU NHỎ cặp panel */
+    --bs-gutter-x: var(--tools-gap);    /* thu khoảng cách giữa 2 cột */
+  }
+  /* tùy chọn: giảm padding ngang panel chút cho gọn mắt */
+  .tools-section .panel-soft{
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Tiêu đề khu vực */
+.tools-section h3{ font-weight:800; letter-spacing:.2px; }
+
+/* ===== PANEL CHUẨN HOÁ (hai bên giống hệt) ===== */
+.panel-soft{
+  background:#eef4fb;
+  border-radius:28px;
+  box-shadow:0 1px 0 rgba(16,24,40,.02);
+  display:flex; flex-direction:column; /* để “Xem thêm” đẩy xuống cuối nếu muốn */
+}
+
+/* ===== Tabs gạch chân xanh ===== */
+.tab-underline{ gap:16px; }
+.tab-underline .nav-link{ color:#6b7785; padding:.5rem .25rem; border:0; }
+.tab-underline .nav-link.active{ color:#1463ff; border-bottom:3px solid #1463ff; }
+
+/* đường kẻ trong panel */
+.panel-soft hr{ opacity:1; border:0; border-top:1px solid #e6ebf2; margin:0 0 16px; }
+
+/* ===== Hàng tỷ giá ===== */
+.rate-row{
+  background:#fff; border:1px solid #e6ebf2; border-radius:18px;
+}
+.rate-row hr{ border-top:1px solid #e6ebf2; opacity:1; }
+
+/* ===== Dots bên trái ===== */
+#fxCarousel .carousel-indicators{ position:static; margin:8px 0 0; justify-content:flex-start; gap:10px; }
+#fxCarousel .carousel-indicators [data-bs-target]{ width:10px; height:10px; border-radius:50%; background:#cfd7e5; opacity:1; }
+#fxCarousel .carousel-indicators .active{ background:#b7f15e; box-shadow:0 0 0 4px #eef7c8; }
+
+/* ===== Biểu mẫu – nút pill outline xanh ===== */
+.doc-row{
+  background:#fff; border:1px solid #e6ebf2; border-radius:18px;
+  padding:16px 18px; display:flex; align-items:center; justify-content:space-between;
+}
+.doc-row .btn{ height:42px; border-width:1.5px; }
+.btn-outline-primary{
+  --bs-btn-color:#1463ff; --bs-btn-border-color:#1463ff;
+  --bs-btn-hover-bg:#e9f1ff; --bs-btn-hover-border-color:#1463ff;
+}
+
+/* Link xem thêm */
+.panel-soft a.link-primary{ color:#1463ff; text-decoration:none; }
+.panel-soft a.link-primary:hover{ text-decoration:underline; }
+
+/* ===== Responsive: vẫn chuẩn layout khi thu nhỏ ===== */
+@media (max-width: 991.98px){
+  .row.g-eq{ --bs-gutter-x: 20px; --bs-gutter-y: 20px; }
+  .panel-soft{ border-radius:22px; }
+}

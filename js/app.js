@@ -1,0 +1,72 @@
+/**
+ * ========================================
+ * FILE: app.js - JavaScript chính của trang chủ
+ * CHỨC NĂNG: Load các component HTML vào trang một cách động
+ * ========================================
+ */
+
+/**
+ * Hàm load nội dung HTML từ file vào element có id tương ứng
+ * Sử dụng Fetch API để load file HTML và insert vào DOM
+ * 
+ * @param {string} targetId - ID của element đích trong DOM
+ * @param {string} file - Đường dẫn file HTML cần load
+ * @returns {Promise<void>}
+ */
+async function loadSection(targetId, file) {
+  try {
+    // Fetch nội dung HTML từ file
+    const response = await fetch(file);
+    
+    // Kiểm tra nếu request thành công
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    // Lấy text content từ response
+    const htmlContent = await response.text();
+    
+    // Insert HTML vào element đích
+    document.getElementById(targetId).innerHTML = htmlContent;
+  } catch (error) {
+    // Xử lý lỗi nếu có
+    // console.error(`Error loading ${file}:`, error);
+  }
+}
+
+/**
+ * ========================================
+ * LOAD CÁC COMPONENT KHI TRANG ĐÃ SẴN SÀNG
+ * ========================================
+ */
+
+// Đợi DOM load xong hoàn toàn trước khi thực hiện
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // ========================================
+  // LOAD CÁC COMPONENT CHUNG (HEADER & FOOTER)
+  // ========================================
+  
+  // Load header và footer
+  loadSection('header-container', 'partials/header.html');
+  loadSection('footer-container', 'partials/footer.html');
+
+  // ========================================
+  // LOAD CÁC SECTION CỦA TRANG CHỦ
+  // ========================================
+  
+  // Load hero section - banner chính với carousel
+  loadSection('hero', 'homepage/carousel.html');
+  
+  // Load services section - giới thiệu dịch vụ ngân hàng
+  loadSection('services', 'homepage/services_5per.html');
+  
+  // Load features section - tính năng nổi bật
+  loadSection('features', 'homepage/features.html');
+  
+  // Load tools section - công cụ tiện ích
+  loadSection('tools', 'homepage/tools_acb.html');
+  
+  // Load offers section - ưu đãi khuyến mãi
+  loadSection('offers', 'homepage/offers.html');
+});
