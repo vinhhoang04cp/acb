@@ -6,8 +6,34 @@
   <meta name="description" content="Về chúng tôi - Ngân hàng thương mại cổ phần ACB, một trong những ngân hàng hàng đầu Việt Nam" />
   <title>Về chúng tôi - ACB Bank</title>
 
+  <!--
+  ======================== CHEAT SHEET BOOTSTRAP 5 ========================
+  Breakpoints (chiều rộng viewport):
+    - sm ≥ 576px, md ≥ 768px, lg ≥ 992px, xl ≥ 1200px, xxl ≥ 1400px
+  .container (max-width theo breakpoint):
+    - <576px: 100% ; sm: 540px ; md: 720px ; lg: 960px ; xl: 1140px ; xxl: 1320px
+  Spacing scale (m*, p*, g*): 0..5 tương ứng: 0, .25rem, .5rem, 1rem, 1.5rem, 3rem
+    - Ví dụ: px-4 → padding-left/right: 1.5rem (~24px)
+    - py-5 → padding-top/bottom: 3rem (~48px)
+    - g-4 → gutter 1.5rem cả trục X & Y cho lưới
+  Một số utilities thường gặp:
+    - fw-bold → font-weight: 700 ; opacity-75 → opacity: .75
+    - text-center → căn giữa text ; h-100 → height: 100%
+    - rounded-4 → border-radius cỡ XL (~1rem) ; rounded-pill → 50rem (viên)
+    - ms-1 → margin-left 0.25rem (hỗ trợ RTL bằng *start-end*)
+    - img-fluid → max-width:100%; height:auto (ảnh responsive)
+    - d-flex + flex-column → bật Flexbox, xếp con theo trục dọc
+    - align-items-center → căn giữa theo trục *cross* (trục dọc trong .row)
+    - text-bg-primary (v5.2+) → đặt nền & tự động màu chữ phù hợp
+    - link-body-emphasis (v5.3) → màu link theo *--bs-emphasis-color*
+    - stretched-link → mở rộng vùng click toàn bộ thẻ (cần ancestor *positioned*)
+  Lưu ý: Các lớp như hero2, info-tile, v-item... là *tùy chỉnh*, không thuộc Bootstrap.
+  ========================================================================
+  -->
+
   <!-- External & Custom CSS -->
   <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- bootstrap-icons: nạp bộ icon; dùng qua các lớp .bi .bi-<tên-icon> -->
   <link rel="stylesheet" href="/css/subpage/about.css" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23006bd6'/%3E%3Ctext x='50' y='58' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E">
@@ -18,9 +44,9 @@
        ======================================== -->
   <header>
     <div id="header-container"></div>
-    <div class="hero2">
-      <img src="/img/about1.jpg" alt="Ngân hàng số" class="hero2__img" loading="lazy">
-      <div class="hero2__content"></div>
+    <div class="hero2"> <!-- TUỲ CHỈNH: khối hero; không phải class của Bootstrap -->
+      <img src="/img/about1.jpg" alt="Ngân hàng số" class="hero2__img" loading="lazy"> <!-- TUỲ CHỈNH: style hero img -->
+      <div class="hero2__content"></div> <!-- TUỲ CHỈNH: vùng nội dung phủ trên ảnh -->
     </div>
   </header>
 
@@ -32,18 +58,18 @@
     <!-- ========================================
          PAGE HERO - Banner đầu trang
          ======================================== -->
-    <section class="page-hero py-5">
-      <div class="container">
+    <section class="page-hero py-5"> <!-- py-5: padding trên & dưới 3rem tạo khoảng thở cho banner -->
+      <div class="container"> <!-- container: cố định max-width theo breakpoint, căn giữa nội dung -->
         <!-- Breadcrumb navigation -->
-        <nav aria-label="breadcrumb" class="mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" class="link-body-emphasis">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Về chúng tôi</li>
+        <nav aria-label="breadcrumb" class="mb-3"> <!-- mb-3: margin dưới 1rem tạo khoảng cách với tiêu đề -->
+          <ol class="breadcrumb mb-0"> <!-- breadcrumb: style danh sách đường dẫn; mb-0: loại bỏ margin dưới mặc định -->
+            <li class="breadcrumb-item"><a href="#" class="link-body-emphasis">Trang chủ</a></li> <!-- link-body-emphasis: màu link theo tông chữ nổi bật của body; dễ đọc trong light/dark -->
+            <li class="breadcrumb-item active" aria-current="page">Về chúng tôi</li> <!-- active: đánh dấu mục hiện tại, áp style nhạt & vô hiệu hoá link -->
           </ol>
         </nav>
 
         <!-- Tiêu đề và mô tả -->
-        <h1 class="fw-bold mb-2">Ngân hàng thương mại cổ phần ACB</h1>
+        <h1 class="fw-bold mb-2">Ngân hàng thương mại cổ phần ACB</h1> <!-- fw-bold: font-weight 700; mb-2: 0.5rem -->
         <p>
           ACB là một trong những ngân hàng thương mại cổ phần hàng đầu tại Việt Nam, 
           với hệ thống mạng lưới chi nhánh và phòng giao dịch trải dài 49 tỉnh thành 
@@ -51,16 +77,16 @@
         </p>
 
         <!-- Hình ảnh chính -->
-        <div class="rounded-4 shadow-sm overflow-hidden mb-3">
+        <div class="rounded-4 shadow-sm overflow-hidden mb-3"> <!-- rounded-4: bo góc lớn (~1rem); shadow-sm: bóng nhẹ; overflow-hidden: cắt phần ảnh tràn để bo góc "ăn" vào ảnh -->
           <img src="/img/anh2k.jpg"
                alt="Ảnh minh hoạ ngân hàng"
                class="d-block"
-               style="width:100%; height:100%; object-fit:cover;" />
+               style="width:100%; height:100%; object-fit:cover;" /> <!-- d-block: ảnh là block để xoá khoảng trống inline, tránh khe trắng -->
         </div>
 
         <!-- Nút call-to-action -->
-        <a href="#mission" class="btn btn-primary rounded-pill px-4">
-          Xem thêm <span class="ms-1">›</span>
+        <a href="#mission" class="btn btn-primary rounded-pill px-4"> <!-- btn: nút cơ bản; btn-primary: nền & viền màu chủ đạo; rounded-pill: bo 50rem; px-4: 1.5rem mỗi bên -->
+          Xem thêm <span class="ms-1">›</span> <!-- ms-1: margin-start 0.25rem (tôn trọng hướng viết RTL/LTR) -->
         </a>
       </div>
     </section>
@@ -68,40 +94,40 @@
     <!-- ========================================
          MISSION SECTION - Thông điệp, tầm nhìn, sứ mệnh
          ======================================== -->
-    <section id="mission" class="py-5">
-      <div class="container">
-        <h2 class="h3 fw-bold mb-4">Thông điệp, tầm nhìn và sứ mệnh của ACB</h2>
+    <section id="mission" class="py-5"> <!-- py-5: tạo nhịp dọc 3rem giữa các section -->
+      <div class="container"> <!-- giữ nội dung không chảy rộng toàn màn, tăng khả năng đọc -->
+        <h2 class="h3 fw-bold mb-4">Thông điệp, tầm nhìn và sứ mệnh của ACB</h2> <!-- .h3: utility đặt size như <h3>; giữ semantic của <h2> -->
 
         <!-- Thông điệp từ Chủ tịch -->
-        <div class="hero-board shadow-sm mb-4">
-          <div class="content">
-            <h3 class="h4 fw-bold mb-2">Thông điệp từ Chủ tịch</h3>
-            <p class="mb-3 opacity-75">
+        <div class="hero-board shadow-sm mb-4"> <!-- TUỲ CHỈNH: hero-board; shadow-sm thêm chiều sâu; mb-4: 1.5rem -->
+          <div class="content"> <!-- TUỲ CHỈNH: bố cục nội dung -->
+            <h3 class="h4 fw-bold mb-2">Thông điệp từ Chủ tịch</h3> <!-- .h4: size như h4; fw-bold: đậm; mb-2: 0.5rem -->
+            <p class="mb-3 opacity-75"> <!-- opacity-75: giảm độ đậm chữ → nhấn mạnh hệ thống phân cấp thị giác -->
               Chỉ đạo việc đổi mới tư duy, nâng cao nhận thức về việc áp dụng công nghệ 
               vào công việc và quy trình. Việc số hoá không phải việc riêng của đơn vị 
               chuyên môn mà là việc của tất cả.
             </p>
-            <a href="#" class="btn btn-primary px-4 rounded-pill">
+            <a href="#" class="btn btn-primary px-4 rounded-pill"> <!-- px-4: 24px mỗi bên giúp nút rộng, dễ click -->
               Xem chi tiết <span class="ms-1">›</span>
             </a>
           </div>
         </div>
 
         <!-- Grid tầm nhìn và sứ mệnh -->
-        <div class="row g-4">
+        <div class="row g-4"> <!-- row: kích hoạt hệ thống lưới; g-4: gutter 1.5rem cả ngang dọc giữa các .col-* -->
           <!-- Tầm nhìn -->
-          <div class="col-12 col-lg-6">
-            <div class="info-tile">
-              <h3 class="h5 fw-bold mb-1">Tầm nhìn</h3>
-              <p class="text-secondary pe-lg-5 mb-0">
+          <div class="col-12 col-lg-6"> <!-- col-12: chiếm 100% dưới lg; col-lg-6: 50% từ ≥992px → 2 cột trên màn lớn -->
+            <div class="info-tile"> <!-- TUỲ CHỈNH: thẻ nội dung -->
+              <h3 class="h5 fw-bold mb-1">Tầm nhìn</h3> <!-- .h5: size nhỏ hơn; mb-1: 0.25rem tránh khoảng trắng dư -->
+              <p class="text-secondary pe-lg-5 mb-0"> <!-- text-secondary: màu phụ (#6c757d theo theme mặc định); pe-lg-5: padding-right 3rem chỉ khi ≥992px để chừa chỗ cho ảnh -->
                 Phát triển bền vững với tinh thần chuyển đổi để nâng cao khả năng cạnh tranh.
               </p>
-              <img src="/img/download (2).jpg" class="tile-img" alt="Tầm nhìn" loading="lazy">
+              <img src="/img/download (2).jpg" class="tile-img" alt="Tầm nhìn" loading="lazy"> <!-- TUỲ CHỈNH: tile-img kiểm soát kích thước/định vị ảnh -->
             </div>
           </div>
 
           <!-- Sứ mệnh -->
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6"> <!-- giữ bố cục đối xứng với khối bên trái -->
             <div class="info-tile">
               <h3 class="h5 fw-bold mb-1">Sứ mệnh</h3>
               <p class="text-secondary pe-lg-5 mb-0">
@@ -118,21 +144,21 @@
     <!-- ========================================
          VALUES SECTION - Giá trị cốt lõi
          ======================================== -->
-    <section id="values" class="py-5 values-section">
+    <section id="values" class="py-5 values-section"> <!-- values-section: TUỲ CHỈNH; py-5: nhịp dọc lớn -->
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-xl-8">
-            <h2 class="h4 fw-bold text-center mb-4">
+        <div class="row justify-content-center"> <!-- justify-content-center: căn giữa các cột theo trục ngang của row -->
+          <div class="col-12 col-xl-8"> <!-- 100% dưới xl; 8/12 khi ≥1200px → giới hạn độ rộng để đọc dễ hơn -->
+            <h2 class="h4 fw-bold text-center mb-4"> <!-- text-center: căn giữa tiêu đề; mb-4: 1.5rem -->
               ACB hoạt động dựa trên năm nền tảng giá trị cốt lõi
             </h2>
 
-            <div class="row g-0">
+            <div class="row g-0"> <!-- g-0: loại bỏ hoàn toàn gutter giữa 2 cột con → dính sát -->
               <!-- Cột trái: 01, 03, 05 -->
-              <div class="col-12 col-lg-6 pe-lg-4">
+              <div class="col-12 col-lg-6 pe-lg-4"> <!-- pe-lg-4: thêm padding-right 1.5rem chỉ khi ≥992px để tạo khe giữa hai cột -->
                 <!-- Giá trị 01: Chính trực -->
-                <div class="v-item border-bottom">
+                <div class="v-item border-bottom"> <!-- border-bottom: kẻ đường phân cách mảnh dưới mỗi mục -->
                   <div class="v-index">01.</div>
-                  <h3 class="v-title h6 mb-1">Chính trực</h3>
+                  <h3 class="v-title h6 mb-1">Chính trực</h3> <!-- .h6: kích thước nhỏ gọn; mb-1: 0.25rem -->
                   <p class="v-desc mb-0">
                     Chúng tôi đề cao sự trung thực, xử lý vấn đề một cách thẳng thắn và minh bạch,
                     không khoan nhượng với sự không trung thực.
@@ -150,7 +176,7 @@
                 </div>
 
                 <!-- Giá trị 05: Hiệu quả -->
-                <div class="v-item">
+                <div class="v-item"> <!-- bỏ border-bottom ở mục cuối để không kẻ đường dư -->
                   <div class="v-index">05.</div>
                   <h3 class="v-title h6 mb-1">Hiệu quả</h3>
                   <p class="v-desc mb-0">
@@ -161,7 +187,7 @@
               </div>
 
               <!-- Cột phải: 02, 04 -->
-              <div class="col-12 col-lg-6 ps-lg-4 mt-4 mt-lg-0">
+              <div class="col-12 col-lg-6 ps-lg-4 mt-4 mt-lg-0"> <!-- ps-lg-4: padding-left 1.5rem từ ≥992px; mt-4: 1.5rem khoảng cách trên mobile; mt-lg-0: huỷ khoảng cách khi lên màn lớn -->
                 <!-- Giá trị 02: Cẩn trọng -->
                 <div class="v-item border-bottom">
                   <div class="v-index">02.</div>
@@ -191,24 +217,24 @@
     <!-- ========================================
          GOVERNANCE SECTION - Cơ cấu quản trị
          ======================================== -->
-    <section class="py-5">
+    <section class="py-5"> <!-- py-5: 3rem trên & dưới để tách section -->
       <div class="container">
-        <div class="row align-items-center g-4">
+        <div class="row align-items-center g-4"> <!-- align-items-center: căn giữa theo trục dọc giúp ảnh & nội dung thẳng hàng -->
           <!-- Hình ảnh -->
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6"> <!-- 1 cột đầy trên mobile; 1/2 chiều ngang từ lg trở lên -->
             <img src="/img/anh2k.jpg"
                  class="img-fluid rounded-4 shadow-sm"
                  alt="Sơ đồ quản trị"
-                 loading="lazy">
+                 loading="lazy"> <!-- img-fluid: ảnh tự co theo cột; rounded-4: bo góc lớn; shadow-sm: tạo tầng thị giác -->
           </div>
           <!-- Nội dung -->
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6"> <!-- cột nội dung đối xứng -->
             <h2 class="h3 fw-bold mb-3">Cơ cấu quản trị ngân hàng</h2>
             <p>
               Hệ thống quản trị bao gồm các khối chức năng chính, đảm bảo vận hành minh bạch và hiệu quả.
               Đội ngũ lãnh đạo dày dạn kinh nghiệm, tuân thủ chuẩn mực quản trị hiện đại.
             </p>
-            <a href="#" class="btn btn-outline-primary">Đọc thêm</a>
+            <a href="#" class="btn btn-outline-primary">Đọc thêm</a> <!-- btn-outline-primary: chỉ viền & chữ màu primary; nền trong suốt, hover sẽ đổi nền -->
           </div>
         </div>
       </div>
@@ -217,19 +243,19 @@
     <!-- ========================================
          ACHIEVEMENTS SECTION - Thành tựu
          ======================================== -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light"> <!-- bg-light: nền xám nhạt (var(--bs-light)); hữu ích để phân tách khối nội dung -->
       <div class="container">
         <h2 class="h3 fw-bold mb-1">Thành tựu đạt được</h2>
         <p class="text-secondary mb-4">Giải thưởng, các sự kiện đáng chú ý mới nhất của ACB</p>
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center"> <!-- justify-content-center: căn giữa 3 card nếu không đủ chiều ngang -->
           <!-- Giải thưởng 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="award-card">
+          <div class="col-12 col-md-6 col-lg-4"> <!-- col-md-6: 2 cột từ ≥768px; col-lg-4: 3 cột từ ≥992px -->
+            <article class="award-card"> <!-- TUỲ CHỈNH: thay vì .card để toàn quyền style -->
               <h3 class="h6 fw-bold mb-2">
                 Enterprise Asia – ACB – Doanh nghiệp có thương hiệu truyền cảm hứng tốt nhất 2022
               </h3>
-              <img src="/img/anh2k.jpg" alt="Giải thưởng 1" class="award-figure" loading="lazy">
+              <img src="/img/anh2k.jpg" alt="Giải thưởng 1" class="award-figure" loading="lazy"> <!-- TUỲ CHỈNH: kiểm soát tỉ lệ khung hình, bo góc... -->
             </article>
           </div>
 
@@ -255,7 +281,7 @@
         </div>
 
         <!-- Nút xem thêm -->
-        <div class="text-center mt-4">
+        <div class="text-center mt-4"> <!-- text-center: căn giữa nút; mt-4: 1.5rem cách phần trên -->
           <a href="#" class="btn btn-primary rounded-pill px-4">
             Xem thêm <span class="ms-1">›</span>
           </a>
@@ -266,13 +292,13 @@
     <!-- ========================================
          STATISTICS SECTION - Thống kê quy mô
          ======================================== -->
-    <section class="py-5">
+    <section class="py-5"> <!-- đặt section stats ở nền trắng để tương phản với bg-light phía trên -->
       <div class="container">
         <h2 class="h3 fw-bold mb-4">Quy mô ngân hàng</h2>
-        <div class="row g-4">
+        <div class="row g-4"> <!-- g-4: khoảng cách 1.5rem giữa các cột thống kê -->
           <!-- Số liệu nhân viên -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xxl-2">
-            <div class="stat-card p-4 bg-white rounded-4 shadow-sm text-center h-100">
+          <div class="col-12 col-sm-6 col-lg-4 col-xxl-2"> <!-- đáp ứng tốt nhiều kích thước: 1 cột trên mobile, 2 cột từ sm, 3 cột từ lg, 5 cột từ xxl -->
+            <div class="stat-card p-4 bg-white rounded-4 shadow-sm text-center h-100"> <!-- p-4: padding 1.5rem; text-center: căn giữa nội dung; h-100: giúp các thẻ cao đều khi đặt trong .row -->
               <div class="stat-value">13.000+</div>
               <div class="stat-label">Nhân viên</div>
             </div>
@@ -314,21 +340,21 @@
     </section>
 
     <!-- ========================================
-         NEWS SECTION - Thông cáo báo chí
+         NEWS SECTION - Thông cáo báo chí (dùng .card Bootstrap)
          ======================================== -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light"> <!-- nền nhạt giúp *card* nổi bật -->
       <div class="container">
         <h2 class="h3 fw-bold mb-4">Thông cáo báo chí</h2>
-        <div class="row g-4">
+        <div class="row g-4"> <!-- bố cục 3 card hàng ngang khi đủ rộng -->
           <!-- Tin tức 1 -->
           <div class="col-12 col-md-6 col-lg-4">
-            <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-              <img src="/img/anh2k.jpg" class="card-img-top" alt="Nâng cấp hạ tầng thanh toán" loading="lazy">
-              <div class="card-body d-flex flex-column">
-                <span class="badge text-bg-primary align-self-start mb-2">30/07/2025</span>
+            <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"> <!-- .card có position: relative; cần thiết cho .stretched-link -->
+              <img src="/img/anh2k.jpg" class="card-img-top" alt="Nâng cấp hạ tầng thanh toán" loading="lazy"> <!-- card-img-top: ảnh full-width bo theo góc card -->
+              <div class="card-body d-flex flex-column"> <!-- d-flex + flex-column: cho phép đẩy link xuống đáy bằng *margin-top:auto* (nếu thêm) -->
+                <span class="badge text-bg-primary align-self-start mb-2">30/07/2025</span> <!-- text-bg-primary: tiện ích mới set cả nền & chữ đồng bộ với theme -->
                 <h3 class="h5 card-title">Nâng cấp hạ tầng thanh toán quốc tế</h3>
                 <p class="card-text text-secondary">Chuyển đổi định dạng theo chuẩn ISO 20022, tăng tốc xử lý & mở rộng kết nối.</p>
-                <a href="#" class="stretched-link">Xem thêm</a>
+                <a href="#" class="stretched-link">Xem thêm</a> <!-- stretched-link: pseudo-element ::after phủ full card; yêu cầu ancestor có position (card đã có) -->
               </div>
             </article>
           </div>
@@ -373,16 +399,16 @@
   <!-- ========================================
        BACK TO TOP BUTTON - Nút lên đầu trang
        ======================================== -->
-  <button id="backToTop" class="btn btn-primary rounded-circle back-to-top" aria-label="Lên đầu trang">
+  <button id="backToTop" class="btn btn-primary rounded-circle back-to-top" aria-label="Lên đầu trang"> <!-- btn: style nút; btn-primary: màu chủ đạo; rounded-circle: bo 50% tạo nút tròn; back-to-top: TUỲ CHỈNH để định vị fixed & hiệu ứng -->
     ↑
   </button>
 
   <!-- ========================================
        JAVASCRIPT IMPORTS
        ======================================== -->
-  <!-- Bootstrap 5 JS -->
+  <!-- Bootstrap 5 JS → bundle gồm Popper cho dropdown, tooltip, v.v. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- JavaScript tùy chỉnh cho trang about -->
+  <!-- JavaScript tuỳ chỉnh cho trang about -->
   <script src="/js/subpage/about.js"></script>
 </body>
 </html>

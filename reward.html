@@ -4,11 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ACB Rewards – UI Clone (Bootstrap 5)</title>
+  
+  <!--
+  ===================== BOOTSTRAP 5 QUICK SHEET (v5.3.x) =====================
+  Breakpoints (min-width): sm≥576px, md≥768px, lg≥992px, xl≥1200px, xxl≥1400px
+  Container max-width: 540 / 720 / 960 / 1140 / 1320 theo breakpoint (full<576)
+  Grid: .row (gutter x/y), .col-*, .row-cols-*, .g-* (khoảng cách 2 chiều)
+  Spacing: m|p{t|b|s|e|x|y}-{0..5}  → 0, .25, .5, 1, 1.5, 3rem
+  Flex: d-flex, flex-column, flex-sm-row, align-items-*, justify-content-*, gap-*
+  Typography: .display-*, .h1..h6 (utilities), .lead, .text-body-secondary/.text-secondary
+  Colors & backgrounds: .btn-*, .link-*, .bg-*, .text-* (theo CSS vars của theme)
+  Radius: .rounded-1..5, .rounded-pill (50rem), .rounded-circle (50%),
+  Shadows: .shadow-sm | .shadow | .shadow-lg | .shadow-none
+  Visually hidden: .visually-hidden (cho SR, ẩn thị giác)
+  Icons: Bootstrap Icons dùng lớp .bi .bi-<tên-icon>
+  JS components: Carousel, Collapse/Accordion… yêu cầu bootstrap.bundle.js (có Popper)
+  Lưu ý: các lớp như section, benefit-slider, benefit-heading… là TUỲ CHỈNH (không thuộc Bootstrap)
+  ==========================================================================
+  -->
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons: dùng .bi .bi-<tên-icon> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/subpage/reward.css" />
+  <link rel="stylesheet" href="/css/subpage/reward.css" /> <!-- CSS TUỲ CHỈNH -->
   
 </head>
 <body>
@@ -18,32 +37,32 @@
   </header>
   <main>
   <!-- Features / Benefits -->
-   <section id="features" class="section">
-    <div class="container benefit-slider">
-      <h2 class="display-5 fw-bold benefit-heading">Thêm gắn kết cùng ACB Rewards</h2>
+   <section id="features" class="section"> <!-- section: TUỲ CHỈNH (spacing/màu riêng) -->
+    <div class="container benefit-slider"> <!-- container: bọc & căn giữa; benefit-slider: TUỲ CHỈNH -->
+      <h2 class="display-5 fw-bold benefit-heading">Thêm gắn kết cùng ACB Rewards</h2> <!-- display-5: tiêu đề lớn; fw-bold: đậm; benefit-heading: TUỲ CHỈNH -->
 
-      <div id="featuresCarousel" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
+      <div id="featuresCarousel" class="carousel slide" data-bs-ride="false"> <!-- carousel slide: kích hoạt Carousel; data-bs-ride="false": không auto chạy (auto: 'carousel') -->
+        <div class="carousel-inner"> <!-- vùng chứa các .carousel-item; 1 item phải có .active -->
           <!-- Slide 1 -->
-          <div class="carousel-item">
-            <div class="row g-4">
-              <div class="col-12 col-lg-4">
-                <div class="card p-4 text-center h-100">
-                  <div class="benefit-icon"><i class="bi bi-receipt"></i></div>
-                  <h5 class="title mb-2">Thanh toán hóa đơn bằng điểm thưởng</h5>
-                  <p class="desc mb-0">Biến điểm thưởng thành giá trị tiết kiệm thực tế mỗi khi thanh toán hóa đơn Nước, Internet, Nạp di động trả trước...</p>
+          <div class="carousel-item"> <!-- mỗi slide -->
+            <div class="row g-4"> <!-- row: hệ lưới; g-4: gutter 1.5rem cả trục X/Y -->
+              <div class="col-12 col-lg-4"> <!-- 100% dưới lg; 4/12 (1/3) từ ≥992px -->
+                <div class="card p-4 text-center h-100"> <!-- card: khối thẻ; p-4: padding 1.5rem; text-center: căn giữa; h-100: cao 100% để các thẻ đều nhau -->
+                  <div class="benefit-icon"><i class="bi bi-receipt"></i></div> <!-- .bi .bi-receipt: icon hoá đơn -->
+                  <h5 class="title mb-2">Thanh toán hóa đơn bằng điểm thưởng</h5> <!-- mb-2: 0.5rem -->
+                  <p class="desc mb-0">Biến điểm thưởng thành giá trị tiết kiệm thực tế mỗi khi thanh toán hóa đơn Nước, Internet, Nạp di động trả trước...</p> <!-- mb-0: sát đáy thẻ -->
                 </div>
               </div>
               <div class="col-12 col-lg-4">
                 <div class="card p-4 text-center h-100">
-                  <div class="benefit-icon"><i class="bi bi-arrow-down-up"></i></div>
+                  <div class="benefit-icon"><i class="bi bi-arrow-down-up"></i></div> <!-- icon swap -->
                   <h5 class="title mb-2">Dễ dàng chuyển điểm</h5>
                   <p class="desc mb-0">Khi là khách hàng ưu tiên hoặc tham gia gói sản phẩm "Dịch vụ tài chính Gia Đình Việt"</p>
                 </div>
               </div>
               <div class="col-12 col-lg-4">
                 <div class="card p-4 text-center h-100">
-                  <div class="benefit-icon"><i class="bi bi-stars"></i></div>
+                  <div class="benefit-icon"><i class="bi bi-stars"></i></div> <!-- icon stars -->
                   <h5 class="title mb-2">Kho quà hấp dẫn</h5>
                   <p class="desc mb-0">Từ các thương hiệu yêu thích</p>
                 </div>
@@ -79,7 +98,7 @@
           </div>
 
           <!-- Slide 3 (active) to match the screenshot state) -->
-          <div class="carousel-item active">
+          <div class="carousel-item active"> <!-- active: slide hiển thị ban đầu -->
             <div class="row g-4">
               <div class="col-12 col-lg-4">
                 <div class="card p-4 text-center h-100">
@@ -161,20 +180,20 @@
         </div>
 
         <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev" aria-label="Prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev" aria-label="Prev"> <!-- nút lùi slide; data-bs-slide="prev": hành động -->
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- icon mũi tên (dùng background-image) -->
+          <span class="visually-hidden">Previous</span> <!-- chỉ đọc bởi screen reader, ẩn thị giác -->
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next" aria-label="Next">
+        <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next" aria-label="Next"> <!-- nút tiến slide -->
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
 
         <!-- Indicators (5 dots, 3rd active) -->
-        <div class="carousel-indicators benefit-indicators">
-          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
+        <div class="carousel-indicators benefit-indicators"> <!-- indicators: các nút chấm; benefit-indicators: TUỲ CHỈNH vị trí/kiểu -->
+          <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button> <!-- data-bs-slide-to: chỉ số 0-based -->
           <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" class="active" aria-current="true" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" class="active" aria-current="true" data-bs-target="#featuresCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> <!-- active + aria-current="true": trạng thái đang chọn -->
           <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
           <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
@@ -183,17 +202,17 @@
   </section>
 
   <!-- Categories -->
-   <section id="categories" class="section section-muted">
+   <section id="categories" class="section section-muted"> <!-- section-muted: TUỲ CHỈNH (thường nền xám nhạt) -->
     <div class="container">
-      <div class="category-wrap mx-auto">
-        <h2 class="display-6 category-title mb-4">Lựa chọn quà tặng theo sở thích từ kho quà đa dạng</h2>
+      <div class="category-wrap mx-auto"> <!-- mx-auto: margin-left/right auto → căn giữa block có width cố định -->
+        <h2 class="display-6 category-title mb-4">Lựa chọn quà tặng theo sở thích từ kho quà đa dạng</h2> <!-- display-6: tiêu đề lớn vừa; category-title: TUỲ CHỈNH; mb-4: 1.5rem -->
 
-        <div class="accordion category-list" id="categoryAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFood">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">Ăn uống</button>
+        <div class="accordion category-list" id="categoryAccordion"> <!-- accordion: component Collapse dạng danh sách; category-list: TUỲ CHỈNH -->
+          <div class="accordion-item"> <!-- phần tử accordion -->
+            <h2 class="accordion-header" id="headingFood"> <!-- tiêu đề accordion; id dùng cho aria-controls -->
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">Ăn uống</button> <!-- accordion-button: nút mở/đóng; collapsed: trạng thái đóng ban đầu; data-bs-target: liên kết vùng sập -->
             </h2>
-            <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood" data-bs-parent="#categoryAccordion">
+            <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood" data-bs-parent="#categoryAccordion"> <!-- accordion-collapse collapse: vùng nội dung sập; data-bs-parent: chỉ 1 mục mở -->
               <div class="accordion-body">
                 <!-- Nội dung gợi ý (có thể thay bằng grid voucher) -->
                 Gợi ý: nhà hàng, cà phê, fast food, e‑voucher giảm giá...
@@ -242,18 +261,18 @@
   </section>
 
   <!-- Daily deals CTA -->
-  <section id="deals" class="section">
+  <section id="deals" class="section"> <!-- khối CTA download app -->
     <div class="container">
-      <div class="row align-items-center g-4">
+      <div class="row align-items-center g-4"> <!-- align-items-center: căn giữa dọc giữa 2 cột; g-4: gutter 1.5rem -->
         <!-- Left copy -->
-        <div class="col-lg-6">
-          <h2 class="deals-title h2 mb-2">Đặc biệt Săn quà mỗi ngày</h2>
+        <div class="col-lg-6"> <!-- 6/12 từ ≥992px; dưới lg full width -->
+          <h2 class="deals-title h2 mb-2">Đặc biệt Săn quà mỗi ngày</h2> <!-- h2 (utility): kiểu chữ như <h2>; deals-title: TUỲ CHỈNH; mb-2: 0.5rem -->
           <p class="deals-desc mb-4">Ngập tràn quà HOT chỉ từ 1 điểm trên ACB Rewards, thỏa thích săn quà quanh năm với ưu đãi mỗi ngày và ưu đãi dịp đặc biệt từ các thương hiệu yêu thích.</p>
 
-          <div class="d-flex align-items-center deals-qrbadges mb-4">
+          <div class="d-flex align-items-center deals-qrbadges mb-4"> <!-- d-flex: xếp ngang QR & badge; align-items-center: căn giữa theo dọc; mb-4: 1.5rem -->
             <img class="deals-qr" alt="QR ACB ONE" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=ACB%20ONE"/>
-            <div class="d-flex flex-column flex-sm-row gap-2">
-              <a class="store-badge" href="#" aria-label="Get it on Google Play">
+            <div class="d-flex flex-column flex-sm-row gap-2"> <!-- flex-column: xếp dọc trên mobile; flex-sm-row: chuyển ngang từ ≥576px; gap-2: 0.5rem -->
+              <a class="store-badge" href="#" aria-label="Get it on Google Play"> <!-- store-badge: TUỲ CHỈNH; có thể đặt .btn nếu muốn BS -->
                 <i class="bi bi-google-play"></i>
                 <span>
                   <small>GET IT ON</small><br/>Google Play
@@ -268,12 +287,12 @@
             </div>
           </div>
 
-          <a class="btn btn-primary btn-cta" href="#">Khám phá ngay <i class="bi bi-arrow-right ms-1"></i></a>
+          <a class="btn btn-primary btn-cta" href="#">Khám phá ngay <i class="bi bi-arrow-right ms-1"></i></a> <!-- btn btn-primary: nút chính; ms-1: margin-start 0.25rem tạo khoảng giữa chữ & icon; btn-cta: TUỲ CHỈNH -->
         </div>
 
         <!-- Right visual (phones) -->
-        <div class="col-lg-6">
-          <div class="deals-phones">
+        <div class="col-lg-6"> <!-- cột hình minh hoạ -->
+          <div class="deals-phones"> <!-- TUỲ CHỈNH: xếp ảnh điện thoại chồng lớp -->
             <div class="phone phone-left"></div>
             <div class="phone phone-right"></div>
             <div class="float-app">SĂN QUÀ MỖI NGÀY</div>
@@ -286,18 +305,18 @@
 
   <!-- Point categories (Thẻ, Ưu tiên, Bảo hiểm) -->
  
-  <section id="point-categories" class="section section-muted">
+  <section id="point-categories" class="section section-muted"> <!-- nền phụ nhạt -->
     <div class="container">
-      <h2 class="pointcats-title display-6 mb-4">Danh mục tích điểm</h2>
-      <div class="row g-4 row-cols-1 row-cols-md-3">
+      <h2 class="pointcats-title display-6 mb-4">Danh mục tích điểm</h2> <!-- display-6: cỡ lớn vừa; pointcats-title: TUỲ CHỈNH -->
+      <div class="row g-4 row-cols-1 row-cols-md-3"> <!-- row-cols-1: 1 cột/row dưới md; row-cols-md-3: 3 cột/row từ ≥768px; g-4: 1.5rem -->
         <!-- Card 1: Thẻ -->
-        <div class="col">
-          <div class="pcard h-100">
+        <div class="col"> <!-- col: cột auto trong row-cols -->
+          <div class="pcard h-100"> <!-- pcard: TUỲ CHỈNH card ảnh phủ; h-100: cao đầy ô để đồng đều -->
             <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" alt="Thẻ"/>
-            <div class="pcard-gradient"></div>
-            <div class="pcard-content">
+            <div class="pcard-gradient"></div> <!-- lớp phủ gradient TUỲ CHỈNH -->
+            <div class="pcard-content"> <!-- nội dung overlay -->
               <div class="pcard-title">Thẻ</div>
-              <a href="#" class="btn btn-chip">Xem thêm <i class="bi bi-chevron-right"></i></a>
+              <a href="#" class="btn btn-chip">Xem thêm <i class="bi bi-chevron-right"></i></a> <!-- btn: style nút; btn-chip: TUỲ CHỈNH để làm chip -->
             </div>
           </div>
         </div>
@@ -330,15 +349,15 @@
   </section>
 
   <!-- Guides -->
-  <section id="guides" class="section">
+  <section id="guides" class="section"> <!-- hướng dẫn từng bước -->
     <div class="container">
-      <h3 class="h5 mb-4">Hướng dẫn sử dụng ACB Rewards</h3>
+      <h3 class="h5 mb-4">Hướng dẫn sử dụng ACB Rewards</h3> <!-- .h5: cỡ chữ như <h5>; mb-4: 1.5rem -->
       <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="card h-100 border-0 shadow-sm">
+        <div class="col-lg-6"> <!-- 6/12 từ ≥992px -->
+          <div class="card h-100 border-0 shadow-sm"> <!-- border-0: bỏ viền; shadow-sm: bóng nhẹ -->
             <div class="card-body">
-              <h6 class="mb-3">Cách đổi quà E‑Voucher</h6>
-              <div class="stepper">
+              <h6 class="mb-3">Cách đổi quà E‑Voucher</h6> <!-- h6: nhỏ gọn -->
+              <div class="stepper"> <!-- TUỲ CHỈNH: style danh sách bước -->
                 <ol>
                   <li>Chọn mục “ACB Rewards” tại màn hình chính.</li>
                   <li>Nhấn vào danh mục quà tặng muốn đổi.</li>
@@ -378,14 +397,14 @@
   </section>
 
   <!-- Terms -->
-  <section id="terms" class="section section-muted">
+  <section id="terms" class="section section-muted"> <!-- nền phụ + call-to-action phụ -->
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3"> <!-- d-flex: bố cục 2 bên; flex-wrap: xuống dòng trên mobile; align-items-center: căn giữa dọc; justify-content-between: dàn 2 đầu; gap-3: 1rem -->
         <div>
-          <h3 class="h5 mb-1">Thể lệ chương trình ACB Rewards</h3>
-          <p class="mb-0 text-body-secondary">Vui lòng tham khảo chi tiết thể lệ trước khi tham gia chương trình.</p>
+          <h3 class="h5 mb-1">Thể lệ chương trình ACB Rewards</h3> <!-- mb-1: 0.25rem -->
+          <p class="mb-0 text-body-secondary">Vui lòng tham khảo chi tiết thể lệ trước khi tham gia chương trình.</p> <!-- text-body-secondary: màu chữ phụ (phụ thuộc theme) -->
         </div>
-        <a class="btn btn-outline-primary" href="#">Xem chi tiết</a>
+        <a class="btn btn-outline-primary" href="#">Xem chi tiết</a> <!-- btn-outline-primary: viền & chữ primary, nền trong suốt -->
       </div>
     </div>
   </section>
@@ -398,8 +417,8 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="/js/subpage/reward.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- bundle: gồm Popper (cho tooltip, dropdown) & JS components -->
+  <script src="/js/subpage/reward.js"></script> <!-- JS TUỲ CHỈNH cho trang Rewards -->
 
 </body>
 </html>

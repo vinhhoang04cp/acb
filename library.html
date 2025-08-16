@@ -6,31 +6,46 @@
   <meta name="description" content="Thư viện tài liệu ACB - Hướng dẫn sử dụng, biểu mẫu, tài liệu tham khảo và video hướng dẫn" />
   <title>Thư viện • ACB</title>
   
+  <!--
+  ===================== BOOTSTRAP 5 QUICK NOTES (v5.3.x) =====================
+  Breakpoints (min-width): sm≥576px, md≥768px, lg≥992px, xl≥1200px, xxl≥1400px
+  Container max-width: 540 / 720 / 960 / 1140 / 1320 (full width khi <576px)
+  Grid: .row (kích hoạt lưới, âm margin để tạo gutter), .col-*, .row-cols-*, .g-*
+  Spacing: m|p{t|b|s|e|x|y}-{0..5} → 0, .25, .5, 1, 1.5, 3rem
+  Flex helpers: d-flex, align-items-*, justify-content-*, flex-wrap, gap-*
+  Typography: .h1..h6 (utilities gán size), .display-*, .text-secondary/.text-body-secondary
+  Colors & bg: .text-*, .bg-*, .text-bg-* (badge), .border (1px viền mặc định)
+  Radius/Shadows: .rounded-*, .shadow-sm|.shadow|.shadow-lg|.shadow-none
+  Icons: Bootstrap Icons dùng .bi .bi-<tên-icon>
+  Lưu ý: các lớp như library-hero, tiles, tile-*, btn-cta… là TUỲ CHỈNH, không thuộc Bootstrap.
+  ===========================================================================
+  -->
+  
   <!-- External & Custom CSS -->
-  <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/subpage/library.css" />
+  <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> <!-- bootstrap + bộ icon .bi -->
+  <link rel="stylesheet" href="/css/subpage/library.css" /> <!-- CSS tuỳ chỉnh của trang Library -->
 </head>
 <body>
   <!-- Top utility bar -->
   <header>
-  <div id="header-container"></div>
+  <div id="header-container"></div> <!-- KHÔNG PHẢI class BS; sẽ được JS/SSR chèn header chung -->
   </header>
 
-  <div id="hero"></div>
+  <div id="hero"></div> <!-- TUỲ CHỈNH: hero hình/ảnh, không dùng class BS -->
 
   <!-- Breadcrumb + title -->
-  <div class="library-hero">
-    <div class="container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb mb-2">
-          <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Thư viện</li>
+  <div class="library-hero"> <!-- TUỲ CHỈNH: nền/spacing của hero thư viện -->
+    <div class="container"> <!-- container: căn giữa + max-width theo breakpoint -->
+      <nav aria-label="breadcrumb"> <!-- nav + aria: hỗ trợ truy cập -->
+        <ol class="breadcrumb mb-2"> <!-- breadcrumb: style đường dẫn; mb-2: margin-bottom 0.5rem -->
+          <li class="breadcrumb-item"><a href="#">Trang chủ</a></li> <!-- .breadcrumb-item: phần tử cấp 1 -->
+          <li class="breadcrumb-item active" aria-current="page">Thư viện</li> <!-- active: trạng thái hiện tại (text nhạt, không link) -->
         </ol>
       </nav>
-      <h1 class="page-title h3 mb-3">Thư viện</h1>
-      <div class="search-hints d-flex align-items-center flex-wrap gap-2">
-        <span class="text-secondary">Gợi ý tìm kiếm:</span>
-        <a href="#" class="badge text-bg-light border">Thẻ tín dụng ACB Visa</a>
+      <h1 class="page-title h3 mb-3">Thư viện</h1> <!-- .h3: utility đặt cỡ như <h3> nhưng vẫn giữ semantic <h1>; mb-3: 1rem -->
+      <div class="search-hints d-flex align-items-center flex-wrap gap-2"> <!-- d-flex: xếp ngang; align-items-center: căn giữa theo trục dọc; flex-wrap: xuống dòng khi chật; gap-2: khoảng cách 0.5rem giữa items -->
+        <span class="text-secondary">Gợi ý tìm kiếm:</span> <!-- text-secondary: màu chữ phụ -->
+        <a href="#" class="badge text-bg-light border">Thẻ tín dụng ACB Visa</a> <!-- badge: huy hiệu nhỏ; text-bg-light: nền & chữ auto tông sáng; border: viền 1px mặc định -->
         <a href="#" class="badge text-bg-light border">Gửi tiết kiệm online</a>
         <a href="#" class="badge text-bg-light border">Bảo hiểm nhân thọ</a>
         <a href="#" class="badge text-bg-light border">Vay mua nhà</a>
@@ -40,14 +55,14 @@
   </div>
 
   <!-- Tiles: Guides -->
-  <section class="tiles">
+  <section class="tiles"> <!-- tiles: TUỲ CHỈNH wrapper; không phải BS -->
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="tile tile-acb-one">
+      <div class="row row-cols-1 row-cols-md-2 g-4"> <!-- row-cols-1: 1 cột/row dưới md; row-cols-md-2: 2 cột/row từ ≥768px; g-4: gutter 1.5rem 2 chiều -->
+        <div class="col"> <!-- col: cột auto khi dùng row-cols-* -->
+          <div class="tile tile-acb-one"> <!-- tile-*: TUỲ CHỈNH: card lớn dạng banner -->
             <h3>Hướng dẫn sử dụng ACB ONE</h3>
             <p>Khám phá các tính năng mới nhất của ACB ONE: Chuyển tiền nhanh 24/7, Thanh toán QR, Đặt lệnh chứng khoán, Mở tài khoản online và nhiều tiện ích khác.</p>
-            <a href="#" class="btn-cta">Xem hướng dẫn <span class="icon"><i class="bi bi-chevron-right"></i></span></a>
+            <a href="#" class="btn-cta">Xem hướng dẫn <span class="icon"><i class="bi bi-chevron-right"></i></span></a> <!-- btn-cta: TUỲ CHỈNH; icon dùng Bootstrap Icons (.bi-chevron-right) -->
           </div>
         </div>
         <div class="col">
@@ -62,9 +77,9 @@
   </section>
 
   <!-- Tiles: All sub components in the same style -->
-  <section class="tiles">
+  <section class="tiles"> <!-- lặp lại cùng phong cách tile -->
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="row row-cols-1 row-cols-md-2 g-4"> <!-- 2 cột/row từ md trở lên -->
         <div class="col">
           <div class="tile tile-personal">
             <h3>Ưu đãi cho Khách hàng Cá nhân</h3>
@@ -127,10 +142,10 @@
 
   <!-- Footer -->
   <footer>
-  <div id="footer-container"></div>
+  <div id="footer-container"></div> <!-- KHÔNG phải BS, vùng nhúng footer chung -->
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/js/subpage/library.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- bundle: gồm Popper + JS components cho dropdown/collapse v.v. -->
+    <script src="/js/subpage/library.js"></script> <!-- JS tuỳ chỉnh của trang Library -->
 </body>
 </html>

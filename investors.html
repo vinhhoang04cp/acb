@@ -6,9 +6,24 @@
     <meta name="description" content="Thông tin quan hệ nhà đầu tư của Ngân hàng ACB - Báo cáo tài chính, thông tin cổ đông, quản trị doanh nghiệp" />
     <title>Quan hệ Nhà đầu tư • ACB</title>
     
+    <!--
+    ===================== BOOTSTRAP 5 QUICK NOTES (v5.3.x) =====================
+    Breakpoints (min-width): sm≥576px, md≥768px, lg≥992px, xl≥1200px, xxl≥1400px
+    Container widths: 100%, 540px, 720px, 960px, 1140px, 1320px theo breakpoint.
+    Grid: .row (gutter = --bs-gutter-x/y), .col-*, .row-cols-* (auto chia cột).
+    Spacing: m|p{t|b|s|e|x|y}-{0..5}  → 0, .25, .5, 1, 1.5, 3rem.
+    Flex helpers: d-flex, flex-column, flex-wrap, justify-content-*, align-items-*, gap-*.
+    Typography: .display-*, .lead, .small, .fw-semibold (≈600), .fw-bold (700), .text-secondary.
+    Colors: .bg-*, .text-*, .link-primary; .bg-body-tertiary dùng CSS vars theme.
+    Borders/Radii/Shadows: .rounded-1..5, .shadow-sm|.shadow|.shadow-lg, (không có .shadow-0 → dùng .shadow-none).
+    Components dùng JS: Carousel, Dropdown, Collapse… cần bundle JS (đã nạp bên dưới).
+    Lưu ý: các lớp như hero-section, hero-card, panel-xl, side-filter, btn-hero… là TUỲ CHỈNH (không thuộc Bootstrap).
+    ==========================================================================
+    -->
+    
     <!-- External & Custom CSS -->
-    <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/subpage/investor.css" />
+    <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> <!-- bootstrap + icon font .bi -->
+    <link rel="stylesheet" href="/css/subpage/investor.css" /> <!-- CSS tuỳ chỉnh của trang này -->
   </head>
   <body>
     <!-- Top bar -->
@@ -21,32 +36,32 @@
 
     <main>
     <!-- Breadcrumb -->
-    <div class="bg-body-tertiary py-2">
-      <div class="container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb mb-0 small">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Nhà Đầu tư</li>
+    <div class="bg-body-tertiary py-2"> <!-- bg-body-tertiary: nền trung tính dựa trên biến theme; py-2: padding trục dọc .5rem -->
+      <div class="container"> <!-- container: căn giữa + max-width theo breakpoint -->
+        <nav aria-label="breadcrumb"> <!-- breadcrumb cần danh sách .breadcrumb -->
+          <ol class="breadcrumb mb-0 small"> <!-- breadcrumb: style đường dẫn; mb-0: bỏ margin dưới; small: giảm font-size -->
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li> <!-- .breadcrumb-item: phần tử cấp 1 -->
+            <li class="breadcrumb-item active" aria-current="page">Nhà Đầu tư</li> <!-- active: đánh dấu mục hiện tại, text mờ hơn, không phải link -->
           </ol>
         </nav>
       </div>
     </div>
 
     <!-- Hero -->
-    <section class="hero-section">
+    <section class="hero-section"> <!-- TUỲ CHỈNH: khối hero riêng của trang IR -->
       <div class="container">
-        <div class="hero-card row g-0 align-items-center shadow-sm">
-          <div class="col-lg-7">
-            <div class="hero-img"></div>
+        <div class="hero-card row g-0 align-items-center shadow-sm"> <!-- row: kích hoạt lưới; g-0: bỏ gutter; align-items-center: căn giữa theo trục dọc; shadow-sm: bóng nhẹ; hero-card: TUỲ CHỈNH -->
+          <div class="col-lg-7"> <!-- cột trái chiếm 7/12 từ ≥992px; dưới lg tự full width -->
+            <div class="hero-img"></div> <!-- TUỲ CHỈNH: vùng hình nền/ảnh minh hoạ -->
           </div>
-          <div class="col-lg-5">
-            <div class="hero-content">
-              <span class="badge bg-light text-dark mb-3">Quan hệ Nhà đầu tư</span>
-              <h1 class="display-5 fw-bold mb-3">Khung Tài chính bền vững</h1>
-              <p class="lead text-secondary mb-4">ACB đã ban hành Khung Tài chính bền vững nhằm thiết lập các tiêu chuẩn cơ bản để ACB phát hành trái phiếu/khoản vay bền vững, đồng thời giúp thúc đẩy hoạt động kinh doanh của ngân hàng thông qua cho vay có trách nhiệm và tài chính bền vững. Tải ngay bằng cách bấm vào nút "Đọc thêm" bên dưới.</p>
-              <a class="btn-hero" href="#">
+          <div class="col-lg-5"> <!-- cột phải 5/12 từ ≥992px -->
+            <div class="hero-content"> <!-- TUỲ CHỈNH: nội dung hero -->
+              <span class="badge bg-light text-dark mb-3">Quan hệ Nhà đầu tư</span> <!-- badge: huy hiệu nhỏ; bg-light + text-dark: nền sáng, chữ tối; mb-3: 1rem -->
+              <h1 class="display-5 fw-bold mb-3">Khung Tài chính bền vững</h1> <!-- display-5: heading cỡ lớn; fw-bold: đậm; mb-3: cách dưới -->
+              <p class="lead text-secondary mb-4">ACB đã ban hành Khung Tài chính bền vững nhằm thiết lập các tiêu chuẩn cơ bản để ACB phát hành trái phiếu/khoản vay bền vững, đồng thời giúp thúc đẩy hoạt động kinh doanh của ngân hàng thông qua cho vay có trách nhiệm và tài chính bền vững. Tải ngay bằng cách bấm vào nút "Đọc thêm" bên dưới.</p> <!-- lead: đoạn nhấn mạnh (font to & màu nhạt hơn); text-secondary: màu phụ; mb-4: 1.5rem -->
+              <a class="btn-hero" href="#"> <!-- TUỲ CHỈNH: nút phong cách riêng; nếu muốn dùng BS: .btn .btn-primary -->
                 <span>Đọc thêm</span>
-                <span class="circle"><i class="bi bi-chevron-right"></i></span>
+                <span class="circle"><i class="bi bi-chevron-right"></i></span> <!-- .bi: icon font; .bi-chevron-right: tên icon -->
               </a>
             </div>
           </div>
@@ -55,33 +70,33 @@
     </section>
 
     <!-- Periodic Reports -->
-    <section class="py-5">
+    <section class="py-5"> <!-- py-5: padding dọc 3rem tạo nhịp phân đoạn -->
       <div class="container">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4"> <!-- d-flex: bật flex; align-items-end: căn đáy theo trục dọc; justify-content-between: 2 đầu; flex-wrap: cho phép xuống dòng; gap-3: khoảng cách giữa items 1rem; mb-4: 1.5rem -->
           <div>
-            <h2 class="section-title mb-1">Báo cáo định kỳ</h2>
-            <p class="text-secondary mb-0">Tổng hợp các báo cáo Quản trị, Tài chính, Thường niên, Phát triển bền vững…</p>
+            <h2 class="section-title mb-1">Báo cáo định kỳ</h2> <!-- section-title: TUỲ CHỈNH; mb-1: 0.25rem -->
+            <p class="text-secondary mb-0">Tổng hợp các báo cáo Quản trị, Tài chính, Thường niên, Phát triển bền vững…</p> <!-- text-secondary: màu phụ; mb-0: bỏ khoảng dưới -->
           </div>
-          <a href="#" class="btn btn-outline-primary">Tất cả báo cáo</a>
+          <a href="#" class="btn btn-outline-primary">Tất cả báo cáo</a> <!-- btn: nút; btn-outline-primary: viền + chữ màu primary, nền trong -->
         </div>
 
-        <div id="reportsCarousel" class="carousel slide" data-bs-ride="false">
+        <div id="reportsCarousel" class="carousel slide" data-bs-ride="false"> <!-- carousel slide: kích hoạt component Carousel; data-bs-ride="false": không tự chạy -->
           <!-- dots -->
-          <div class="carousel-indicators position-static my-3">
-            <button type="button" data-bs-target="#reportsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <div class="carousel-indicators position-static my-3"> <!-- carousel-indicators: chấm điều hướng; position-static: đứng yên (mặc định indicators là absolute); my-3: margin trục dọc 1rem -->
+            <button type="button" data-bs-target="#reportsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> <!-- data-bs-slide-to: chỉ số slide; active: đang chọn -->
             <button type="button" data-bs-target="#reportsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           </div>
 
-          <div class="carousel-inner">
+          <div class="carousel-inner"> <!-- vùng chứa các .carousel-item; 1 item sẽ có .active -->
             <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <div class="row g-4 row-cols-1 row-cols-lg-3">
-                <div class="col">
-                  <div class="report-tile h-100">
-                    <img class="cover" src="/img/anh2k.jpg" alt="Khung Tài chính bền vững" />
-                    <div class="meta">
+            <div class="carousel-item active"> <!-- active: slide hiển thị ban đầu -->
+              <div class="row g-4 row-cols-1 row-cols-lg-3"> <!-- row-cols-1: tự chia 1 cột/row dưới lg; row-cols-lg-3: 3 cột/row từ ≥992px; g-4: gutter 1.5rem -->
+                <div class="col"> <!-- col: cột tự mở rộng đều trong cơ chế row-cols -->
+                  <div class="report-tile h-100"> <!-- report-tile: TUỲ CHỈNH; h-100: cao 100% để các thẻ bằng chiều cao -->
+                    <img class="cover" src="/img/anh2k.jpg" alt="Khung Tài chính bền vững" /> <!-- cover: TUỲ CHỈNH (thường object-fit:cover) -->
+                    <div class="meta"> <!-- TUỲ CHỈNH: vùng mô tả -->
                       <div class="title">Khung Tài chính bền vững</div>
-                      <a class="cta link-primary" href="#">Xem chi tiết <i class="bi bi-chevron-right"></i></a>
+                      <a class="cta link-primary" href="#">Xem chi tiết <i class="bi bi-chevron-right"></i></a> <!-- link-primary: màu link theo --bs-primary -->
                     </div>
                   </div>
                 </div>
@@ -106,8 +121,8 @@
               </div>
             </div>
             <!-- Slide 2 -->
-            <div class="carousel-item">
-              <div class="row g-4 row-cols-1 row-cols-lg-3">
+            <div class="carousel-item"> <!-- item thứ 2, không active -->
+              <div class="row g-4 row-cols-1 row-cols-lg-3"> <!-- bố cục tương tự slide 1 -->
                 <div class="col">
                   <div class="report-tile h-100">
                     <img class="cover" src="/img/anh2k.jpg" alt="Báo cáo thường niên" />
@@ -140,11 +155,11 @@
           </div>
 
           <!-- Optional controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#reportsCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+          <button class="carousel-control-prev" type="button" data-bs-target="#reportsCarousel" data-bs-slide="prev"> <!-- nút lùi slide; data-bs-slide="prev" kích hoạt JS -->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- icon mũi tên (background-image) -->
+            <span class="visually-hidden">Previous</span> <!-- chỉ đọc bởi screen reader, ẩn thị giác -->
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#reportsCarousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#reportsCarousel" data-bs-slide="next"> <!-- nút tiến slide -->
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -153,39 +168,39 @@
     </section>
 
     <!-- AGM Section -->
-    <section class="py-5 bg-body-tertiary">
+    <section class="py-5 bg-body-tertiary"> <!-- bg-body-tertiary: khối nền sáng để tách nội dung -->
       <div class="container">
         <h2 class="section-title mb-4">Đại hội đồng cổ đông thường niên</h2>
         <!-- Khối panel lớn bo tròn, nền sáng -->
-        <div class="panel-xl shadow-0">
-          <div class="row g-4 align-items-start">
+        <div class="panel-xl shadow-0"> <!-- panel-xl: TUỲ CHỈNH; shadow-0: KHÔNG PHẢI class BS, nếu muốn bỏ bóng dùng .shadow-none -->
+          <div class="row g-4 align-items-start"> <!-- g-4: 1.5rem; align-items-start: căn đầu theo trục dọc -->
             <!-- Cột trái: bộ lọc năm + danh mục dạng pill -->
-            <aside class="col-lg-4">
-              <div class="side-filter">
-                <div class="mb-3">
-                  <div class="label-caption mb-1">Năm</div>
-                  <select id="agmYear" class="form-select">
+            <aside class="col-lg-4"> <!-- col-lg-4: 4/12 từ ≥992px; semantic <aside> cho vùng phụ trợ -->
+              <div class="side-filter"> <!-- TUỲ CHỈNH: khối lọc -->
+                <div class="mb-3"> <!-- mb-3: 1rem khoảng cách dưới -->
+                  <div class="label-caption mb-1">Năm</div> <!-- TUỲ CHỈNH: nhãn -->
+                  <select id="agmYear" class="form-select"> <!-- form-select: style select mặc định BS -->
                     <option selected>2025</option>
                     <option>2024</option>
                     <option>2023</option>
                   </select>
                 </div>
-                <div class="pill-nav mt-3">
-                  <button type="button" class="btn btn-primary active">Thông báo và thư mời</button>
-                  <button type="button" class="btn btn-light disabled">Tài liệu họp</button>
+                <div class="pill-nav mt-3"> <!-- TUỲ CHỈNH: điều hướng dạng pill -->
+                  <button type="button" class="btn btn-primary active">Thông báo và thư mời</button> <!-- btn btn-primary: nút chủ đạo; active: trạng thái đang chọn (style đậm) -->
+                  <button type="button" class="btn btn-light disabled">Tài liệu họp</button> <!-- disabled: vô hiệu; với <button> là đủ, với <a> cần .disabled + aria-disabled -->
                   <button type="button" class="btn btn-light disabled">Biên bản họp và Nghị quyết</button>
                 </div>
               </div>
             </aside>
 
             <!-- Cột phải: danh sách items bo tròn + nút tải -->
-            <div class="col-lg-8">
-              <div class="items-wrap">
-                <div class="item-row">
-                  <div class="flex-grow-1">
+            <div class="col-lg-8"> <!-- 8/12 từ ≥992px -->
+              <div class="items-wrap"> <!-- TUỲ CHỈNH: bao danh sách -->
+                <div class="item-row"> <!-- TUỲ CHỈNH: một hàng mục; nên đặt display:flex trong CSS -->
+                  <div class="flex-grow-1"> <!-- flex-grow-1: phần này chiếm hết không gian còn lại -->
                     <div class="title">1. Thông báo về ngày đăng ký cuối cùng để thực hiện quyền tham dự họp Đại hội đồng cổ đông thường niên năm 2025</div>
                   </div>
-                  <a class="btn-download" href="#">Tải xuống <i class="bi bi-download"></i></a>
+                  <a class="btn-download" href="#">Tải xuống <i class="bi bi-download"></i></a> <!-- btn-download: TUỲ CHỈNH; icon tải xuống -->
                 </div>
                 <div class="item-row">
                   <div class="flex-grow-1">
@@ -197,7 +212,7 @@
                   <div class="flex-grow-1">
                     <div class="title">2.1. Giấy ủy quyền cá nhân</div>
                   </div>
-                  <a class="btn btn-outline-primary btn-download" href="#">Tải xuống <i class="bi bi-download ms-2"></i></a>
+                  <a class="btn btn-outline-primary btn-download" href="#">Tải xuống <i class="bi bi-download ms-2"></i></a> <!-- kết hợp btn-outline-primary với lớp tuỳ chỉnh btn-download; ms-2: cách trái icon 0.5rem -->
                 </div>
                 <div class="item-row">
                   <div class="flex-grow-1">
@@ -213,17 +228,17 @@
     </section>
 
     <!-- Charters / Prospectus -->
-    <section class="py-5">
+    <section class="py-5"> <!-- nền trắng xen kẽ -->
       <div class="container">
         <h2 class="section-title mb-4">Điều lệ, quy chế, bản cáo bạch</h2>
-        <div class="panel-xl">
-          <div class="row g-4 align-items-start">
+        <div class="panel-xl"> <!-- TUỲ CHỈNH: card/panel lớn -->
+          <div class="row g-4 align-items-start"> <!-- g-4: 1.5rem -->
             <!-- Bộ lọc trái -->
             <aside class="col-lg-4">
               <div class="side-filter">
                 <div class="mb-3">
                   <div class="label-caption mb-1">Năm</div>
-                  <select id="charterYear" class="form-select">
+                  <select id="charterYear" class="form-select"> <!-- form-select: input chọn dạng BS -->
                     <option selected>2025</option>
                     <option>2024</option>
                     <option>2023</option>
@@ -254,7 +269,7 @@
     </section>
 
     <!-- Disclosures -->
-    <section class="py-5 bg-body-tertiary">
+    <section class="py-5 bg-body-tertiary"> <!-- tông nền phụ để tách nhóm nội dung -->
       <div class="container">
         <h2 class="section-title mb-4">Công bố thông tin</h2>
         <div class="panel-xl">
@@ -300,7 +315,7 @@
     </section>
 
     <!-- Investor Toolkit / Downloads (panel giống ảnh) -->
-    <section class="py-5">
+    <section class="py-5"> <!-- lặp lại nhịp spacing đồng nhất -->
       <div class="container">
         <h2 class="section-title mb-4">Tài liệu nhà đầu tư</h2>
         <div class="panel-xl">
@@ -341,22 +356,22 @@
     
 
     <!-- Contact (giống ảnh: tiêu đề + nút Chỉ đường) -->
-    <section class="py-5 bg-body-tertiary">
+    <section class="py-5 bg-body-tertiary"> <!-- bg-body-tertiary: tách khối liên hệ -->
       <div class="container">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
-          <h2 class="section-title mb-0">Thông tin liên hệ ACB IR</h2>
-          <a class="btn btn-primary btn-pill" href="https://maps.google.com/?q=442+Nguyen+Thi+Minh+Khai,+Quan+3,+TPHCM" target="_blank" rel="noopener">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3"> <!-- căn giữa theo trục dọc + chia 2 đầu + cho phép wrap + khoảng cách -->
+          <h2 class="section-title mb-0">Thông tin liên hệ ACB IR</h2> <!-- mb-0: sát cạnh dưới -->
+          <a class="btn btn-primary btn-pill" href="https://maps.google.com/?q=442+Nguyen+Thi+Minh+Khai,+Quan+3,+TPHCM" target="_blank" rel="noopener"> <!-- btn-pill: TUỲ CHỈNH (nếu muốn BS chuẩn dùng .rounded-pill) -->
             Chỉ đường <span class="circle"><i class="bi bi-chevron-right"></i></span>
           </a>
         </div>
         <div class="row g-4">
-          <div class="col-lg-7">
-            <div class="p-4 bg-white rounded-3 shadow-sm h-100">
-              <ul class="list-group list-group-flush info-list">
-                <li class="list-group-item d-flex align-items-start gap-3">
+          <div class="col-lg-7"> <!-- 7/12 từ ≥992px; dưới lg sẽ full width và nằm trên -->
+            <div class="p-4 bg-white rounded-3 shadow-sm h-100"> <!-- p-4: 1.5rem; bg-white: nền trắng; rounded-3: bo góc vừa; shadow-sm; h-100: cao bằng cột đối diện -->
+              <ul class="list-group list-group-flush info-list"> <!-- list-group: nhóm danh sách kiểu card; list-group-flush: bỏ viền/bo tròn ngoài -->
+                <li class="list-group-item d-flex align-items-start gap-3"> <!-- list-group-item: phần tử danh sách chuẩn; d-flex: đặt icon & text cùng hàng; align-items-start: căn đỉnh; gap-3: 1rem -->
                   <i class="bi bi-geo-alt"></i>
                   <div>
-                    <div class="fw-semibold">442 Nguyễn Thị Minh Khai, Phường 5, Quận 3, TP.Hồ Chí Minh</div>
+                    <div class="fw-semibold">442 Nguyễn Thị Minh Khai, Phường 5, Quận 3, TP.Hồ Chí Minh</div> <!-- fw-semibold: ~600 -->
                   </div>
                 </li>
                 <li class="list-group-item d-flex align-items-start gap-3">
@@ -374,11 +389,11 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-5">
+          <div class="col-lg-5"> <!-- 5/12 từ ≥992px -->
             <div class="p-4 bg-white rounded-3 shadow-sm h-100">
               <h6 class="fw-semibold mb-3">Hỗ trợ 24/7</h6>
-              <p class="mb-2"><i class="bi bi-telephone me-2"></i>(028) 38 247 247</p>
-              <p class="mb-0"><i class="bi bi-telephone me-2"></i>1900 54 54 86</p>
+              <p class="mb-2"><i class="bi bi-telephone me-2"></i>(028) 38 247 247</p> <!-- me-2: margin-end .5rem cách icon-số -->
+              <p class="mb-0"><i class="bi bi-telephone me-2"></i>1900 54 54 86</p> <!-- mb-0: sát dưới -->
             </div>
           </div>
         </div>
@@ -386,15 +401,15 @@
     </section>
 
     <!-- Subscribe (đăng ký nhận thông tin) -->
-    <section class="py-5">
+    <section class="py-5"> <!-- form đăng ký -->
       <div class="container">
         <h2 class="section-title mb-4">Đăng ký nhận thông tin từ ACB IR</h2>
         <div class="panel-xl">
           <form>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <label class="form-label small text-uppercase text-secondary fw-semibold">Họ và tên *</label>
-                <input type="text" class="form-control input-soft" placeholder="Nguyễn Văn A" required />
+            <div class="row g-3"> <!-- g-3: 1rem khoảng cách giữa các ô input -->
+              <div class="col-md-4"> <!-- 4/12 từ ≥768px; dưới md full width -->
+                <label class="form-label small text-uppercase text-secondary fw-semibold">Họ và tên *</label> <!-- form-label: style nhãn; small: cỡ nhỏ; text-uppercase: in hoa; text-secondary: màu phụ; fw-semibold: đậm 600 -->
+                <input type="text" class="form-control input-soft" placeholder="Nguyễn Văn A" required /> <!-- form-control: style input chuẩn; input-soft: TUỲ CHỈNH -->
               </div>
               <div class="col-md-4">
                 <label class="form-label small text-uppercase text-secondary fw-semibold">Email *</label>
@@ -404,9 +419,9 @@
                 <label class="form-label small text-uppercase text-secondary fw-semibold">Tên doanh nghiệp *</label>
                 <input type="text" class="form-control input-soft" placeholder="Cty TNHH AZX" required />
               </div>
-              <div class="col-12 d-flex gap-3 mt-2">
-                <button type="submit" class="btn btn-primary btn-pill">Gửi yêu cầu</button>
-                <div class="panel-note small">Bằng cách gửi, bạn đồng ý nhận thông tin từ ACB IR.</div>
+              <div class="col-12 d-flex gap-3 mt-2"> <!-- col-12: full width; d-flex: xếp nút & ghi chú cùng hàng; gap-3: 1rem; mt-2: 0.5rem -->
+                <button type="submit" class="btn btn-primary btn-pill">Gửi yêu cầu</button> <!-- btn-pill: TUỲ CHỈNH bo viên; dùng .rounded-pill nếu theo BS -->
+                <div class="panel-note small">Bằng cách gửi, bạn đồng ý nhận thông tin từ ACB IR.</div> <!-- small: chữ nhỏ -->
               </div>
             </div>
           </form>
@@ -420,11 +435,11 @@
     </footer>
 
   <!-- Nút Back-to-top (tiện ích nhỏ) -->
-  <button id="backToTop" class="btn btn-primary rounded-circle back-to-top" aria-label="Lên đầu trang">
+  <button id="backToTop" class="btn btn-primary rounded-circle back-to-top" aria-label="Lên đầu trang"> <!-- btn: style nút; btn-primary: màu chủ đạo; rounded-circle: bo 50% tạo nút tròn; back-to-top: TUỲ CHỈNH định vị fixed + ẩn/hiện -->
     ↑
   </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/subpage/investor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- bundle gồm Popper cần cho các component -->
+    <script src="/js/subpage/investor.js"></script> <!-- JS tuỳ chỉnh của trang IR -->
   </body>
 </html>

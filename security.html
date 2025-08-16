@@ -4,9 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carousel Cảnh báo – Demo Clone</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/css/subpage/security.css">
+  
+  <!--
+  ===================== BOOTSTRAP 5 QUICK SHEET (v5.3.x) =====================
+  Breakpoints (min-width): sm≥576px, md≥768px, lg≥992px, xl≥1200px, xxl≥1400px
+  Container: 100% (<576), 540, 720, 960, 1140, 1320 theo breakpoint
+  Grid: .row (gutter dùng CSS vars), .col-*, .row-cols-*, .g-* (khoảng cách 2 chiều)
+  Spacing: m|p{t|b|s|e|x|y}-{0..5} → 0, .25, .5, 1, 1.5, 3rem
+  Flex: d-flex, flex-wrap, align-items-*, justify-content-*, gap-*
+  Text: .lead, .small, .fw-semibold|.fw-bold, .text-*, .opacity-* (0,25,50,75,100)
+  Radius/Shadows: .rounded-0..5, .rounded-pill (50rem), .rounded-circle (50%), .shadow-*
+  Components: Carousel (.carousel, .carousel-item, controls, indicators), Cards, Pagination
+  Icons: Bootstrap Icons dùng .bi .bi-<tên-icon>
+  LƯU Ý: các lớp như hero-banner, banner-slide, filter-pill, security-card, btn-cta, card-principle, actions-section… là TUỲ CHỈNH trong security.css (không thuộc Bootstrap)
+  ===========================================================================
+  -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" /> <!-- CSS Bootstrap core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- Bộ icon .bi -->
+  <link rel="stylesheet" href="/css/subpage/security.css"> <!-- CSS tuỳ chỉnh cho trang này -->
 
 </head>
 <body>
@@ -14,8 +30,8 @@
        HEADER - Header chung
        ======================================== -->
   <header>
-    <div id="header-container"></div>
-    <div id="hero"></div>
+    <div id="header-container"></div> <!-- KHÔNG phải class BS, vùng nhúng header dùng JS -->
+    <div id="hero"></div> <!-- TUỲ CHỈNH: khu vực hero -->
   </header>
 
   <!-- ========================================
@@ -23,39 +39,39 @@
        ======================================== -->
   <main>
 
-  <div class="container my-5">
+  <div class="container my-5"> <!-- container: căn giữa + max-width theo breakpoint; my-5: margin-top & bottom = 3rem -->
 
   <!-- Hero Carousel Banner (thay cho hero cũ) -->
-  <section class="hero-banner py-5 position-relative overflow-hidden">
-    <div class="container py-2">
-      <nav aria-label="breadcrumb" class="mb-3">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Nguyên tắc giao dịch an toàn</li>
+  <section class="hero-banner py-5 position-relative overflow-hidden"> <!-- hero-banner: TUỲ CHỈNH; py-5: padding dọc 3rem; position-relative: làm cha cho phần tử position absolute nếu có; overflow-hidden: ẩn phần tràn -->
+    <div class="container py-2"> <!-- lồng container để nội dung hẹp hơn bề rộng hero; py-2: padding dọc .5rem -->
+      <nav aria-label="breadcrumb" class="mb-3"> <!-- breadcrumb: điều hướng ngữ cảnh; mb-3: margin dưới 1rem -->
+        <ol class="breadcrumb"> <!-- .breadcrumb áp dụng style đặc trưng -->
+          <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li> <!-- breadcrumb-item: phần tử; text-decoration-none: bỏ gạch chân link -->
+          <li class="breadcrumb-item active" aria-current="page">Nguyên tắc giao dịch an toàn</li> <!-- active: trạng thái hiện tại -->
         </ol>
       </nav>
-      <div id="securityCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators" style="bottom:-2.25rem">
+      <div id="securityCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- carousel + slide: kích hoạt hiệu ứng trượt; data-bs-ride="carousel": auto cycle -->
+        <div class="carousel-indicators" style="bottom:-2.25rem"> <!-- indicators: các chấm điều hướng; inline style đẩy xuống dưới -->
           <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd">
-              <div class="row align-items-center g-4 banner-slide">
-                <div class="col-lg-7 text-white">
-                  <h2 class="display-6 fw-bold mb-3">Thông tin cảnh báo về hình thức lừa đảo khi giao dịch trực tuyến</h2>
-                  <p class="lead mb-4 opacity-90">Nhận biết kịch bản giả mạo, bảo vệ tài khoản, tránh cung cấp OTP/mật khẩu.</p>
-                  <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
+        <div class="carousel-inner"> <!-- nơi chứa các .carousel-item; phải có một item .active -->
+          <div class="carousel-item active"> <!-- slide #1 đang hiển thị -->
+            <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd"> <!-- rounded-5: bo góc lớn; p-5: padding 3rem (p-lg-5 trùng, có thể bỏ 1 cái); nền xanh inline -->
+              <div class="row align-items-center g-4 banner-slide"> <!-- row: lưới; align-items-center: căn giữa theo trục dọc; g-4: gutter 1.5rem; banner-slide: TUỲ CHỈNH -->
+                <div class="col-lg-7 text-white"> <!-- 7/12 từ ≥992px; text-white: chữ trắng -->
+                  <h2 class="display-6 fw-bold mb-3">Thông tin cảnh báo về hình thức lừa đảo khi giao dịch trực tuyến</h2> <!-- display-6: tiêu đề lớn vừa; fw-bold: đậm; mb-3: 1rem -->
+                  <p class="lead mb-4 opacity-90">Nhận biết kịch bản giả mạo, bảo vệ tài khoản, tránh cung cấp OTP/mật khẩu.</p> <!-- lead: đoạn giới thiệu; mb-4: 1.5rem; LƯU Ý: .opacity-90 KHÔNG có trong BS mặc định (BS có 0/25/50/75/100) → lớp TUỲ CHỈNH -->
+                  <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a> <!-- btn: nút; btn-light: nền sáng; btn-lg: kích cỡ lớn; rounded-pill: bo cực lớn; px-4: padding ngang 1.5rem -->
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                  <img class="w-100 h-auto" src="https://picsum.photos/seed/phish-banner/800/480" alt="Minh họa cảnh báo lừa đảo" style="border-radius:2rem" />
+                <div class="col-lg-5 d-none d-lg-block"> <!-- 5/12 từ ≥992px; d-none: ẩn; d-lg-block: chỉ hiện >=lg (ẩn ảnh trên mobile để tối ưu) -->
+                  <img class="w-100 h-auto" src="https://picsum.photos/seed/phish-banner/800/480" alt="Minh họa cảnh báo lừa đảo" style="border-radius:2rem" /> <!-- w-100: rộng 100%; h-auto: chiều cao tự động -->
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item"> <!-- slide #2 -->
             <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd">
               <div class="row align-items-center g-4 banner-slide">
                 <div class="col-lg-7 text-white">
@@ -69,7 +85,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item"> <!-- slide #3 -->
             <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd">
               <div class="row align-items-center g-4 banner-slide">
                 <div class="col-lg-7 text-white">
@@ -84,11 +100,11 @@
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev"> <!-- nút lùi slide -->
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- icon mũi tên (background-image) -->
+          <span class="visually-hidden">Previous</span> <!-- dành cho screen reader -->
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#securityCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#securityCarousel" data-bs-slide="next"> <!-- nút tiến slide -->
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -96,12 +112,12 @@
     </div>
   </section>
     <!-- Cảnh báo bảo mật (Grid) -->
-  <section class="alerts-section py-5">
+  <section class="alerts-section py-5"> <!-- alerts-section: TUỲ CHỈNH; py-5: spacing dọc 3rem -->
     <div class="container">
-      <h2 class="section-title mb-3">Cảnh báo bảo mật</h2>
+      <h2 class="section-title mb-3">Cảnh báo bảo mật</h2> <!-- section-title: TUỲ CHỈNH; mb-3: 1rem -->
       <!-- Pills filter -->
-      <div class="d-flex flex-wrap gap-2 mb-4">
-        <button class="filter-pill active" type="button">
+      <div class="d-flex flex-wrap gap-2 mb-4"> <!-- d-flex: xếp ngang; flex-wrap: xuống dòng khi hẹp; gap-2: khoảng cách 0.5rem; mb-4: 1.5rem -->
+        <button class="filter-pill active" type="button"> <!-- filter-pill: TUỲ CHỈNH pill; active: trạng thái chọn -->
           <span>Giao dịch ngân hàng số an toàn</span>
           <span class="filter-count">20</span>
         </button>
@@ -115,14 +131,14 @@
         </button>
       </div>
       <!-- Cards grid 3x2 -->
-      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <div class="col">
-          <div class="security-card card h-100">
-            <div class="img-top"><img src="https://picsum.photos/seed/acb1/900/675" alt=""/></div>
-            <div class="card-body">
-              <div class="fw-semibold mb-1">Cảnh báo</div>
-              <div class="text-secondary small mb-3">ACB cảnh báo SMS lừa đảo</div>
-              <a href="#" class="btn btn-primary btn-cta rounded-pill">Xem chi tiết <i class="bi bi-chevron-right"></i></a>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3"> <!-- row: lưới; g-4: gutter 1.5rem; row-cols-* đặt số cột auto theo breakpoint -->
+        <div class="col"> <!-- col: một ô tự chia theo row-cols -->
+          <div class="security-card card h-100"> <!-- card: khối thẻ Bootstrap; security-card: TUỲ CHỈNH; h-100: cao full để đồng đều -->
+            <div class="img-top"><img src="https://picsum.photos/seed/acb1/900/675" alt=""/></div> <!-- img-top: TUỲ CHỈNH để căn ảnh -->
+            <div class="card-body"> <!-- card-body: vùng nội dung -->
+              <div class="fw-semibold mb-1">Cảnh báo</div> <!-- fw-semibold: ~600; mb-1: .25rem -->
+              <div class="text-secondary small mb-3">ACB cảnh báo SMS lừa đảo</div> <!-- small: chữ nhỏ; text-secondary: màu phụ -->
+              <a href="#" class="btn btn-primary btn-cta rounded-pill">Xem chi tiết <i class="bi bi-chevron-right"></i></a> <!-- btn-cta: TUỲ CHỈNH; rounded-pill: pill -->
             </div>
           </div>
         </div>
@@ -178,11 +194,11 @@
         </div>
       </div>
       <!-- Pagination -->
-      <nav class="mt-4" aria-label="Security alerts pagination">
-        <ul class="pagination justify-content-center gap-2">
-          <li class="page-item"><a class="page-link rounded-pill" href="#" aria-label="Previous">&lsaquo;</a></li>
+      <nav class="mt-4" aria-label="Security alerts pagination"> <!-- aria-label: mô tả cho SR; mt-4: 1.5rem -->
+        <ul class="pagination justify-content-center gap-2"> <!-- pagination: component điều hướng; justify-content-center: căn giữa; gap-2: khoảng giữa các nút -->
+          <li class="page-item"><a class="page-link rounded-pill" href="#" aria-label="Previous">&lsaquo;</a></li> <!-- page-item + page-link: cặp tiêu chuẩn; rounded-pill: bo tròn -->
           <li class="page-item"><a class="page-link rounded-pill" href="#">1</a></li>
-          <li class="page-item active"><a class="page-link rounded-pill" href="#">2</a></li>
+          <li class="page-item active"><a class="page-link rounded-pill" href="#">2</a></li> <!-- .active trên .page-item để đánh dấu trang hiện tại -->
           <li class="page-item"><a class="page-link rounded-pill" href="#">3</a></li>
           <li class="page-item"><a class="page-link rounded-pill" href="#">4</a></li>
           <li class="page-item"><a class="page-link rounded-pill" href="#" aria-label="Next">&rsaquo;</a></li>
@@ -191,15 +207,15 @@
     </div>
   </section>
 
-    <section id="principles" class="principles-section py-5">
+    <section id="principles" class="principles-section py-5"> <!-- py-5: 3rem; principles-section: TUỲ CHỈNH -->
     <div class="container">
       <h2 class="section-title mb-3">Nguyên tắc an toàn chung</h2>
-      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3 principles-grid">
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3 principles-grid"> <!-- row-cols-* đặt số cột theo breakpoint; principles-grid: TUỲ CHỈNH -->
         <!-- 1 -->
         <div class="col">
-          <div class="card-principle">
-            <div class="icon-lg"><i class="bi bi-bug"></i></div>
-            <p class="mb-0"><span class="fw-semibold">Không tải tệp tin, cài đặt ứng dụng</span> <span class="desc">không rõ nguồn gốc và không truy cập đường dẫn lạ từ tin nhắn, email, mạng xã hội, cuộc gọi mạo danh.</span></p>
+          <div class="card-principle"> <!-- TUỲ CHỈNH: thẻ nội dung đơn giản -->
+            <div class="icon-lg"><i class="bi bi-bug"></i></div> <!-- icon-lg: TUỲ CHỈNH kích thước icon -->
+            <p class="mb-0"><span class="fw-semibold">Không tải tệp tin, cài đặt ứng dụng</span> <span class="desc">không rõ nguồn gốc và không truy cập đường dẫn lạ từ tin nhắn, email, mạng xã hội, cuộc gọi mạo danh.</span></p> <!-- mb-0: bỏ margin dưới -->
           </div>
         </div>
         <!-- 2 -->
@@ -213,7 +229,7 @@
         <div class="col">
           <div class="card-principle">
             <div class="icon-lg"><i class="bi bi-shield-lock"></i></div>
-            <p class="mb-0"><span class="fw-semibold">Đăng ký xác thực khuôn mặt</span> <span class="desc">để tăng cường bảo vệ khi giao dịch trực tuyến theo </span><a href="#" class="link-primary fw-semibold">Quyết định số 2345/QĐ-NHNN</a><span class="desc"> và </span><a href="#" class="link-primary fw-semibold">Thông tư 17, 18/2024/TT-NHNN của Ngân hàng Nhà nước</a><span class="desc">.</span></p>
+            <p class="mb-0"><span class="fw-semibold">Đăng ký xác thực khuôn mặt</span> <span class="desc">để tăng cường bảo vệ khi giao dịch trực tuyến theo </span><a href="#" class="link-primary fw-semibold">Quyết định số 2345/QĐ-NHNN</a><span class="desc"> và </span><a href="#" class="link-primary fw-semibold">Thông tư 17, 18/2024/TT-NHNN của Ngân hàng Nhà nước</a><span class="desc">.</span></p> <!-- link-primary: màu link theo theme; fw-semibold: nhấn mạnh -->
           </div>
         </div>
         <!-- 4 -->
@@ -232,10 +248,10 @@
         </div>
         <!-- 6 -->
         <div class="col">
-          <div class="card-principle text-start text-lg-start text-md-start text-center">
-            <div class="icon-lg text-center"><i class="bi bi-window"></i></div>
-            <p class="mb-2 text-center"><span class="fw-semibold">Website chính thức:</span></p>
-            <ul class="list-unstyled small m-0 text-center">
+          <div class="card-principle text-start text-lg-start text-md-start text-center"> <!-- text-center: căn giữa mặc định mobile; text-md-start & text-lg-start: từ md trở lên căn trái (không cần cả md và lg, 1 cái lớn nhất cũng đủ) -->
+            <div class="icon-lg text-center"><i class="bi bi-window"></i></div> <!-- text-center: căn giữa icon -->
+            <p class="mb-2 text-center"><span class="fw-semibold">Website chính thức:</span></p> <!-- mb-2: .5rem -->
+            <ul class="list-unstyled small m-0 text-center"> <!-- list-unstyled: bỏ bullet & padding; small: cỡ chữ nhỏ; m-0: bỏ margin -->
               <li><a class="link-primary" href="https://online.acb.com.vn">https://online.acb.com.vn</a></li>
               <li><a class="link-primary" href="https://business.acb.com.vn">https://business.acb.com.vn</a></li>
               <li><a class="link-primary" href="https://qrportal.acb.com.vn">https://qrportal.acb.com.vn</a></li>
@@ -247,20 +263,20 @@
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- bundle: gồm Popper + JS components (Carousel, Collapse, Dropdown…) -->
   <!-- Hành động ngay khi có dấu hiệu bất thường (grid 3x2) -->
     <!-- Tài liệu Quý khách cần tham khảo -->
-  <section class="docs-section py-5">
+  <section class="docs-section py-5"> <!-- docs-section: TUỲ CHỈNH; py-5: 3rem -->
     <div class="container">
       <h2 class="section-title mb-4">Tài liệu Quý khách cần tham khảo</h2>
 
-      <div class="doc-item py-3">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center gap-3">
+      <div class="doc-item py-3"> <!-- doc-item: TUỲ CHỈNH; py-3: padding dọc 1rem -->
+        <div class="d-flex align-items-center justify-content-between"> <!-- d-flex: xếp ngang; align-items-center: căn giữa dọc; justify-content-between: đẩy 2 đầu -->
+          <div class="d-flex align-items-center gap-3"> <!-- nhóm icon + tiêu đề -->
             <div class="doc-icon"><i class="bi bi-file-earmark"></i></div>
             <div class="doc-title">Chính sách bảo mật thông tin cá nhân</div>
           </div>
-          <a href="#" class="btn btn-outline-primary rounded-pill btn-doc d-inline-flex align-items-center gap-2">Tải xuống <i class="bi bi-download"></i></a>
+          <a href="#" class="btn btn-outline-primary rounded-pill btn-doc d-inline-flex align-items-center gap-2">Tải xuống <i class="bi bi-download"></i></a> <!-- btn-outline-primary: viền xanh; rounded-pill: bo tròn; d-inline-flex + align-items-center + gap-2: căn giữa icon & chữ, khoảng cách 0.5rem -->
         </div>
       </div>
 
@@ -294,7 +310,7 @@
         </div>
       </div>
 
-      <div class="doc-item py-3 last">
+      <div class="doc-item py-3 last"> <!-- last: TUỲ CHỈNH (ví dụ bỏ border-bottom) -->
         <div class="d-flex align-items-center justify-content-between">
           <div class="d-flex align-items-center gap-3">
             <div class="doc-icon"><i class="bi bi-file-earmark"></i></div>
@@ -306,14 +322,14 @@
     </div>
   </section>
 
-  <section id="actions" class="actions-section py-5 bg-white">
+  <section id="actions" class="actions-section py-5 bg-white"> <!-- actions-section: TUỲ CHỈNH; py-5: 3rem; bg-white: nền trắng -->
     <div class="container">
-      <h2 class="section-title text-center mb-4">Hành động ngay khi có dấu hiệu bất thường</h2>
-      <div class="row g-5 row-cols-1 row-cols-md-3">
+      <h2 class="section-title text-center mb-4">Hành động ngay khi có dấu hiệu bất thường</h2> <!-- text-center: căn giữa tiêu đề -->
+      <div class="row g-5 row-cols-1 row-cols-md-3"> <!-- g-5: gutter 3rem; 1 cột dưới md, 3 cột từ ≥768px -->
         <div class="col">
-          <div class="action-card text-center">
-            <div class="action-illus mx-auto mb-3"><img src="https://picsum.photos/seed/act1/450/800" alt="Tắt nguồn/Ngắt kết nối"></div>
-            <p class="small text-secondary m-0">Trong trường hợp nghi ngờ hay phát hiện điện thoại bị kiểm soát từ xa, ngay lập tức: <span class="fw-semibold">tắt nguồn điện thoại hoặc ngắt ngay tất cả các kết nối với wifi/4G</span>.</p>
+          <div class="action-card text-center"> <!-- action-card: TUỲ CHỈNH; text-center: căn giữa nội dung -->
+            <div class="action-illus mx-auto mb-3"><img src="https://picsum.photos/seed/act1/450/800" alt="Tắt nguồn/Ngắt kết nối"></div> <!-- mx-auto: căn giữa minh hoạ -->
+            <p class="small text-secondary m-0">Trong trường hợp nghi ngờ hay phát hiện điện thoại bị kiểm soát từ xa, ngay lập tức: <span class="fw-semibold">tắt nguồn điện thoại hoặc ngắt ngay tất cả các kết nối với wifi/4G</span>.</p> <!-- small: cỡ nhỏ; text-secondary: màu phụ; m-0: bỏ margin -->
           </div>
         </div>
         <div class="col">
@@ -354,14 +370,14 @@
        FOOTER - Footer chung
        ======================================== -->
   <footer>
-    <div id="footer-container"></div>
+    <div id="footer-container"></div> <!-- vùng nhúng footer chung -->
   </footer>
   <!-- ========================================
        JAVASCRIPT IMPORTS
        ======================================== -->
   <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Nên chỉ nạp MỘT lần bundle ở cuối body; ở trên đã nạp, tránh trùng -->
   <!-- JavaScript tùy chỉnh cho trang security -->
-  <script src="/js/subpage/security.js"></script>
+  <script src="/js/subpage/security.js"></script> <!-- logic sự kiện riêng cho trang -->
 </body>
 </html>

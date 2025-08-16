@@ -6,24 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACB Bank - Trang chủ</title>
   
+  <!--
+  ===================== GHI CHÚ BOOTSTRAP 5 (v5.3.x) =====================
+  • Breakpoints (min-width): sm≥576px, md≥768px, lg≥992px, xl≥1200px, xxl≥1400px
+  • Container: .container căn giữa + max-width theo breakpoint
+  • Grid: .row, .col-*, .g-*; Align: align-items-*, justify-content-*
+  • Spacing: m|p{t|b|s|e|x|y}-{0..5} → 0, .25, .5, 1, 1.5, 3rem
+  • Text: .text-*, .lead, .fw-* (thin→bolder); Opacity: .opacity-25/50/75/100
+  • Display: .d-{none|block|flex} + responsive (vd: .d-none .d-lg-flex)
+  • Buttons: .btn, .btn-{variant}; size .btn-lg; icon căn giữa: .d-inline-flex .align-items-center .gap-*
+  • Visible util: .visually-hidden (ẩn với mắt, đọc được bởi screen reader)
+  ======================================================================
+  -->
+  
   <!-- External Libraries & Custom CSS -->
-  <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/subpage/premium.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> <!-- bootstrap + bootstrap-icons: nạp đồng thời -->
+  <link href="css/subpage/premium.css" rel="stylesheet"> <!-- CSS tuỳ chỉnh của trang -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script> <!-- bundle: Popper + Components JS -->
 
 </head>
 <body>
   <!-- Header -->
 <header class="acb-header sticky-top bg-white">
+  <!-- acb-header: TUỲ CHỈNH; sticky-top: cố định header dính trên cùng khi scroll; bg-white: nền trắng -->
   
   <!-- ========================================
        TOPBAR - Thanh thông tin phụ trên cùng
        ======================================== -->
-  <div class="acb-topbar border-bottom">
-    <div class="wrap topbar-row">
+  <div class="acb-topbar border-bottom"> <!-- acb-topbar: TUỲ CHỈNH; border-bottom: đường viền dưới nhạt -->
+    <div class="wrap topbar-row"> <!-- wrap/topbar-row: TUỲ CHỈNH để canh chiều rộng/nội dung -->
       
       <!-- Menu links chính - ẩn trên mobile -->
-      <nav class="top-links d-none d-lg-flex">
+      <nav class="top-links d-none d-lg-flex"> <!-- d-none: ẩn tất cả; d-lg-flex: từ ≥992px thì hiển thị dạng flex -->
         <a href="/about.html">Về chúng tôi</a>
         <a href="/investors.html">Nhà đầu tư</a>
         <a href="#">Tuyển dụng</a>
@@ -34,13 +48,13 @@
       </nav>
       
       <!-- Các action buttons bên phải -->
-      <div class="top-actions">
-        <a href="#"><i class="bi bi-telephone-outbound me-2"></i>Hỗ trợ 24/7</a>
+      <div class="top-actions"> <!-- TUỲ CHỈNH -->
+        <a href="#"><i class="bi bi-telephone-outbound me-2"></i>Hỗ trợ 24/7</a> <!-- bi-*: icon Bootstrap Icons; me-2: margin-end 0.5rem -->
         <a href="#"><i class="bi bi-geo-alt me-2"></i>Liên hệ</a>
-        <button class="icon-btn" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button>
-        <button class="lang-btn" aria-label="Ngôn ngữ">
+        <button class="icon-btn" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button> <!-- icon-btn: TUỲ CHỈNH -->
+        <button class="lang-btn" aria-label="Ngôn ngữ"> <!-- lang-btn: TUỲ CHỈNH -->
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="VN">
-          <i class="bi bi-caret-down-fill ms-1 small"></i>
+          <i class="bi bi-caret-down-fill ms-1 small"></i> <!-- ms-1: margin-start 0.25rem; small: giảm cỡ font -->
         </button>
       </div>
     </div>
@@ -49,21 +63,21 @@
   <!-- ========================================
        NAVBAR - Menu chính của website
        ======================================== -->
-  <nav class="acb-navbar border-bottom">
-    <div class="wrap nav-row">
+  <nav class="acb-navbar border-bottom"> <!-- acb-navbar: TUỲ CHỈNH; border-bottom: gạch chân nhẹ -->
+    <div class="wrap nav-row"> <!-- TUỲ CHỈNH: layout container nội bộ -->
       
       <!-- Phần bên trái: Logo + Menu chính -->
-      <div class="nav-left">
+      <div class="nav-left"> <!-- TUỲ CHỈNH -->
         <!-- Logo ACB -->
-        <a href="/index.html" class="brand"><span class="logo-text">ACB</span></a>
+        <a href="/index.html" class="brand"><span class="logo-text">ACB</span></a> <!-- brand/logo-text: TUỲ CHỈNH -->
         
         <!-- Button toggle menu mobile -->
-        <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle menu">
+        <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle menu"> <!-- d-lg-none: ẩn từ lg trở lên (chỉ hiện trên mobile/tablet) -->
           <i class="bi bi-list"></i>
         </button>
         
         <!-- Menu navigation chính -->
-        <nav class="main-nav">
+        <nav class="main-nav"> <!-- main-nav: TUỲ CHỈNH -->
           <a class="active" href="/e-bank.html">Ngân hàng số</a>
           <a href="/index.html">Cá nhân</a>
           <a href="/index.html">Doanh nghiệp</a>
@@ -72,35 +86,35 @@
       </div>
       
       <!-- Phần bên phải: Button đăng nhập -->
-      <div class="nav-right">
-        <span class="nav-split"></span>
-        <a href="#" class="btn-acbone">
-          Đăng nhập&nbsp;<strong>ACB<span class="opacity-75">ONE</span></strong>
-          <i class="bi bi-chevron-right ms-2"></i>
+      <div class="nav-right"> <!-- TUỲ CHỈNH -->
+        <span class="nav-split"></span> <!-- TUỲ CHỈNH: vạch ngăn -->
+        <a href="#" class="btn-acbone"> <!-- btn-acbone: TUỲ CHỈNH dạng nút -->
+          Đăng nhập&nbsp;<strong>ACB<span class="opacity-75">ONE</span></strong> <!-- opacity-75: độ mờ 75% (Bootstrap utility) -->
+          <i class="bi bi-chevron-right ms-2"></i> <!-- ms-2: margin-start 0.5rem -->
         </a>
       </div>
     </div>
   </nav>
 </header>
 <!--Hero Banner-->
-<div class="hero2">
-      <img src="/img/premium.jpg" alt="Ngân hàng số" class="hero2__img" loading="lazy">
+<div class="hero2"> <!-- hero2: TUỲ CHỈNH kiểu banner lớn -->
+      <img src="/img/premium.jpg" alt="Ngân hàng số" class="hero2__img" loading="lazy"> <!-- hero2__img: TUỲ CHỈNH -->
       <div class="hero2__content"></div>
 </div>
 
 <!-- Main Content -->
  <main>
  <!-- ======= SECTION MỚI (Giới thiệu & Phân hạng hội viên) ======= -->
-<section class="premium-section text-center">
-  <div class="container">
-    <h2 class="display-5 fw-bold mb-3">Giới thiệu</h2>
-    <p class="lead">
+<section class="premium-section text-center"> <!-- premium-section: TUỲ CHỈNH; text-center: căn giữa nội dung -->
+  <div class="container"> <!-- container: căn giữa + max-width responsive -->
+    <h2 class="display-5 fw-bold mb-3">Giới thiệu</h2> <!-- display-5: cỡ chữ lớn; fw-bold: đậm; mb-3: margin-bottom 1rem -->
+    <p class="lead"> <!-- lead: cỡ chữ & line-height lớn hơn một chút -->
       ACB Privilege Banking được thiết kế dựa trên kim chỉ nam "Vị thời gian".
       Ngân hàng ưu tiên ACB tự hào tiên phong mang đến Quý Khách giải pháp
       rút ngắn thời gian gia tăng tài sản &amp; kéo dài thời gian tận hưởng cuộc sống.
     </p>
 
-    <div class="premium-divider"></div>
+    <div class="premium-divider"></div> <!-- TUỲ CHỈNH: đường phân cách -->
     <h2 class="display-5 fw-bold mb-3">Phân hạng hội viên</h2>
     <p class="lead">
       Với mong muốn mang đến sự trọn vẹn trong trải nghiệm, ưu đãi xứng tầm và
@@ -110,17 +124,18 @@
   </div>
   <!-- Carousel bắt đầu -->
     <div id="acbPrivilegeCarousel" class="carousel slide my-5" data-bs-ride="carousel" aria-label="Ưu đãi nổi bật">
-      <div class="carousel-indicators">
+      <!-- carousel: component trượt; slide: enable transition CSS; my-5: margin-y 3rem; data-bs-ride="carousel": auto-init -->
+      <div class="carousel-indicators"> <!-- chấm điều hướng dưới -->
         <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
-      <div class="carousel-inner rounded-4 shadow">
-        <div class="carousel-item active" data-bs-interval="5000">
+      <div class="carousel-inner rounded-4 shadow"> <!-- carousel-inner: vùng chứa slides; rounded-4: bo góc lớn; shadow: đổ bóng -->
+        <div class="carousel-item active" data-bs-interval="5000"> <!-- carousel-item: từng slide; active: slide hiện tại; interval 5s -->
           <!-- Thay ảnh của bạn -->
-          <img src="/img/anh2k.jpg" class="d-block w-100" alt="Không gian giao dịch ưu tiên" loading="lazy">
-          <div class="carousel-caption d-none d-md-block">
+          <img src="/img/anh2k.jpg" class="d-block w-100" alt="Không gian giao dịch ưu tiên" loading="lazy"> <!-- d-block: hiển thị block; w-100: rộng 100% -->
+          <div class="carousel-caption d-none d-md-block"> <!-- caption: chú thích; d-none: ẩn; d-md-block: hiện từ ≥768px -->
             <h5 class="fw-bold">Đặc quyền giao dịch nhanh</h5>
             <p class="mb-0">Quầy riêng, ưu tiên xếp hàng &amp; RM đồng hành.</p>
           </div>
@@ -154,18 +169,18 @@
 </section>
 <!-- ======= /SECTION MỚI ======= -->
 <!-- SECTION: Dịch vụ & Đặc quyền -->
-<section class="priv-section">
+<section class="priv-section"> <!-- TUỲ CHỈNH: nền/tông màu riêng -->
   <div class="container">
-    <h2 class="display-6 fw-bold text-white mb-4">Dịch vụ &amp; Đặc quyền</h2>
+    <h2 class="display-6 fw-bold text-white mb-4">Dịch vụ &amp; Đặc quyền</h2> <!-- text-white: chữ trắng -->
 
-    <div class="priv-grid">
+    <div class="priv-grid"> <!-- TUỲ CHỈNH: lưới cards, không dùng .row/.col -->
       <!-- Hàng 1: 2 thẻ lớn -->
-      <a href="#" class="priv-card priv-card--xl">
+      <a href="#" class="priv-card priv-card--xl"> <!-- TUỲ CHỈNH: kích thước xl -->
         <img src="/img/anh2k.jpg" alt="Đặc quyền Vị thời gian">
-        <div class="priv-cap">
+        <div class="priv-cap"> <!-- overlay caption TUỲ CHỈNH -->
           <div class="priv-title">Đặc quyền Vị thời gian</div>
         </div>
-        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i> <!-- bi-*: icon; priv-arrow: TUỲ CHỈNH đặt vị trí icon -->
       </a>
 
       <a href="#" class="priv-card priv-card--xl">
@@ -229,19 +244,19 @@
   </div>
 </section>
 <!-- SECTION: Sản phẩm được thiết kế chuyên biệt -->
-<section class="prod-section">
+<section class="prod-section"> <!-- TUỲ CHỈNH: nền tối + style riêng -->
   <div class="container">
-    <div class="row g-4 align-items-start">
+    <div class="row g-4 align-items-start"> <!-- row: lưới; g-4: gutter 1.5rem; align-items-start: canh đỉnh theo trục dọc -->
       <!-- Trái: tiêu đề + list -->
-      <div class="col-lg-7">
+      <div class="col-lg-7"> <!-- từ ≥992px chiếm 7/12; dưới lg: 12/12 -->
         <h2 class="display-6 fw-bold text-white mb-2">Sản phẩm được thiết kế chuyên biệt</h2>
-        <p class="lead text-white-50 mb-4">
+        <p class="lead text-white-50 mb-4"> <!-- text-white-50: chữ trắng mờ 50% -->
           Tại ACB Privilege Banking, sứ mệnh phục vụ Quý khách được chúng tôi đặt lên hàng đầu
           từ các sản phẩm tài chính chuyên biệt được cá nhân hoá theo nhu cầu, cùng với các
           quyền lợi phong cách sống đẳng cấp.
         </p>
 
-        <nav class="prod-list" aria-label="Danh mục sản phẩm">
+        <nav class="prod-list" aria-label="Danh mục sản phẩm"> <!-- prod-list: TUỲ CHỈNH (menu link dạng danh sách) -->
           <a class="prod-link" href="#"><span>Tài khoản ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
           <a class="prod-link" href="#"><span>Thẻ ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
           <a class="prod-link" href="#"><span>Tiết kiệm ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
@@ -251,8 +266,8 @@
       </div>
 
       <!-- Phải: ảnh minh hoạ -->
-      <div class="col-lg-5">
-        <figure class="prod-visual rounded-4 shadow">
+      <div class="col-lg-5"> <!-- 5/12 từ ≥992px; dưới lg full width -->
+        <figure class="prod-visual rounded-4 shadow"> <!-- rounded-4: bo góc lớn; shadow: đổ bóng -->
           <!-- thay ảnh của bạn cho đúng dự án -->
           <img src="/img/anh2k.jpg" alt="Privilege cards" loading="lazy">
         </figure>
@@ -261,13 +276,13 @@
   </div>
 </section>
 <!-- SECTION: Ưu đãi -->
-<section class="promo-section" id="uu-dai">
+<section class="promo-section" id="uu-dai"> <!-- TUỲ CHỈNH -->
   <div class="container">
     <h2 class="display-6 fw-bold text-white mb-4">Ưu đãi</h2>
 
-    <div class="promo-grid">
+    <div class="promo-grid"> <!-- TUỲ CHỈNH: grid thẻ ưu đãi -->
       <!-- Card 1 -->
-      <article class="promo-card">
+      <article class="promo-card"> <!-- TUỲ CHỈNH (không phải .card BS) -->
         <a href="#" class="promo-media" aria-label="Xem ưu đãi 1">
           <img src="/img/anh2k.jpg" alt="Chọn tài khoản số đẹp">
         </a>
@@ -309,39 +324,39 @@
       </article>
     </div>
 
-    <div class="text-center">
-      <a href="#" class="promo-more btn">
-        <span>Xem thêm</span> <i class="bi bi-chevron-right ms-1"></i>
+    <div class="text-center"> <!-- text-center: căn giữa nút "Xem thêm" -->
+      <a href="#" class="promo-more btn"> <!-- btn: lớp cơ bản của Bootstrap (không có variant → style phụ thuộc CSS tuỳ chỉnh) -->
+        <span>Xem thêm</span> <i class="bi bi-chevron-right ms-1"></i> <!-- ms-1: margin-start 0.25rem -->
       </a>
     </div>
   </div>
 </section>
 <!-- SECTION: Tài liệu & Đặt hẹn -->
-<section class="docs-appt-section">
+<section class="docs-appt-section"> <!-- TUỲ CHỈNH: nền tối/gradient + style -->
   <div class="container">
     <h2 class="display-6 fw-bold text-white mb-4">Các tài liệu Quý khách cần tham khảo</h2>
 
     <!-- Hàng tài liệu + nút tải -->
-    <div class="docs-row d-flex flex-wrap align-items-center justify-content-between mb-5">
-      <a class="doc-item d-inline-flex align-items-center gap-3 text-decoration-none" href="#">
-        <span class="doc-icon rounded-circle d-inline-flex align-items-center justify-content-center">
+    <div class="docs-row d-flex flex-wrap align-items-center justify-content-between mb-5"> <!-- d-flex: bật flex; flex-wrap: xuống hàng khi chật; align-items-center: căn giữa theo trục dọc; justify-content-between: giãn cách 2 đầu -->
+      <a class="doc-item d-inline-flex align-items-center gap-3 text-decoration-none" href="#"> <!-- d-inline-flex: flex inline; gap-3: khoảng cách 1rem; text-decoration-none: bỏ gạch chân -->
+        <span class="doc-icon rounded-circle d-inline-flex align-items-center justify-content-center"> <!-- rounded-circle: bo tròn 100%; d-inline-flex + align-items-center + justify-content-center: căn icon giữa -->
           <i class="bi bi-file-earmark-text"></i>
         </span>
         <span class="doc-text">Điều kiện &amp; Điều khoản Hội viên ACB Privilege Banking</span>
       </a>
-      <a class="btn btn-download" href="#">
+      <a class="btn btn-download" href="#"> <!-- btn: nền tảng nút; btn-download: TUỲ CHỈNH biến thể -->
         Tải xuống <i class="bi bi-download ms-2"></i>
       </a>
     </div>
 
     <!-- Khối đặt hẹn -->
-    <div class="appt-card rounded-4">
+    <div class="appt-card rounded-4"> <!-- appt-card: TUỲ CHỈNH; rounded-4: bo góc lớn -->
       <h3 class="fw-bold text-white mb-4">Đặt hẹn ngay</h3>
 
-      <form class="row g-3">
-        <div class="col-lg-4">
-          <label class="form-label label-caps">HỌ VÀ TÊN <span class="text-danger">*</span></label>
-          <input type="text" class="form-control form-control-ghost" placeholder="Nguyễn Văn A">
+      <form class="row g-3"> <!-- row + g-3: layout form grid, gutter 1rem -->
+        <div class="col-lg-4"> <!-- mỗi input chiếm 1/3 hàng trên màn hình ≥992px; nhỏ hơn sẽ tự xếp dọc -->
+          <label class="form-label label-caps">HỌ VÀ TÊN <span class="text-danger">*</span></label> <!-- form-label: style label; text-danger: màu đỏ cảnh báo -->
+          <input type="text" class="form-control form-control-ghost" placeholder="Nguyễn Văn A"> <!-- form-control: input BS chuẩn; form-control-ghost: TUỲ CHỈNH (nền/transparency) -->
         </div>
         <div class="col-lg-4">
           <label class="form-label label-caps">SỐ ĐIỆN THOẠI <span class="text-danger">*</span></label>
@@ -354,14 +369,14 @@
 
         <div class="col-lg-6">
           <label class="form-label label-caps">KHU VỰC</label>
-          <div class="select-wrap">
-            <select class="form-select form-control-ghost">
+          <div class="select-wrap"> <!-- TUỲ CHỈNH: vỏ bọc select để thêm caret -->
+            <select class="form-select form-control-ghost"> <!-- form-select: select chuẩn BS; kèm lớp ghost tuỳ chỉnh -->
               <option selected>TP Hồ Chí Minh</option>
               <option>Hà Nội</option>
               <option>Đà Nẵng</option>
               <option>Cần Thơ</option>
             </select>
-            <i class="bi bi-chevron-down select-caret" aria-hidden="true"></i>
+            <i class="bi bi-chevron-down select-caret" aria-hidden="true"></i> <!-- select-caret: TUỲ CHỈNH: icon mũi tên -->
           </div>
         </div>
 
@@ -378,8 +393,8 @@
           </div>
         </div>
 
-        <div class="col-12 mt-2">
-          <button type="button" class="btn appt-submit">
+        <div class="col-12 mt-2"> <!-- col-12: full width; mt-2: margin-top .5rem -->
+          <button type="button" class="btn appt-submit"> <!-- btn: nền tảng nút; appt-submit: TUỲ CHỈNH màu/hiệu ứng -->
             Đăng ký <i class="bi bi-chevron-right ms-1"></i>
           </button>
         </div>
@@ -389,11 +404,11 @@
 </section>
 
 <!-- SECTION: Liên hệ Ngân hàng Ưu tiên -->
-<section class="contact-priv-section">
+<section class="contact-priv-section"> <!-- TUỲ CHỈNH -->
   <div class="container">
     <h2 class="display-6 fw-bold text-white mb-4">Liên hệ Ngân hàng Ưu tiên</h2>
 
-    <div class="priv-contact-card">
+    <div class="priv-contact-card"> <!-- TUỲ CHỈNH: khung liên hệ -->
       <p class="lead text-white-50 mb-4">
         Các kênh chăm sóc chuyên biệt luôn sẵn sàng đồng hành cùng Quý Khách:
       </p>
@@ -424,9 +439,9 @@
 <!-- ========================================
      SECTION 1: CTA TẢI ỨNG DỤNG
      ======================================== -->
-<section class="app-cta">
-  <div class="wrap">
-    <div class="cta-grid">
+<section class="app-cta"> <!-- TUỲ CHỈNH: background đậm + lưới 2 cột -->
+  <div class="wrap"> <!-- TUỲ CHỈNH: max-width -->
+    <div class="cta-grid"> <!-- TUỲ CHỈNH: grid layout -->
       <!-- Ảnh mockup điện thoại (bên trái) -->
       <div>
         <img class="phone-mock"
@@ -436,16 +451,16 @@
 
       <!-- Nội dung + QR + badge stores (bên phải) -->
       <div>
-        <h3 class="fw-bold text-white" style="margin:0 0 8px">Tải ứng dụng ACB ONE</h3>
+        <h3 class="fw-bold text-white" style="margin:0 0 8px">Tải ứng dụng ACB ONE</h3> <!-- fw-bold + text-white: util BS; style inline margin -->
         <p class="text-white" style="margin:0 0 20px; opacity:.95">Khám phá muôn ngàn tiện ích từ dịch vụ ngân hàng số ACB ONE</p>
 
         <!-- QR code và badge stores -->
-        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap">
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap"> <!-- dùng inline style Flex; có thể thay bằng .d-flex .align-items-center .gap-3 .flex-wrap -->
           <!-- QR code để tải app -->
           <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https%3A%2F%2Facb.com.vn" alt="QR tải ACB ONE" loading="lazy">
 
           <!-- Badge stores (Google Play & App Store) -->
-          <div class="badges">
+          <div class="badges"> <!-- TUỲ CHỈNH: wrap badges -->
             <a href="#" class="badge-store" aria-label="Tải trên Google Play">
               <img src="https://developer.android.com/images/brand/vi_generic_rgb_wo_60.png" alt="Google Play">
             </a>
@@ -462,12 +477,12 @@
 <!-- ========================================
      SECTION 2: FOOTER LINKS - 5 cột thông tin
      ======================================== -->
-<section class="footer-links">
+<section class="footer-links"> <!-- TUỲ CHỈNH -->
   <div class="wrap">
-    <div class="footer-cols">
+    <div class="footer-cols"> <!-- TUỲ CHỈNH: grid 5 cột -->
       
       <!-- Cột 1: Về ACB -->
-      <div class="col">
+      <div class="col"> <!-- LƯU Ý: .col ở đây là TUỲ CHỈNH, KHÔNG phải .col của Bootstrap Grid -->
         <h6 class="footer-hd">Về ACB</h6>
         <ul class="footer-list">
           <li><a href="#">Về chúng tôi</a></li>
@@ -521,7 +536,7 @@
       <!-- Cột 5: Hỗ trợ -->
       <div class="col">
         <h6 class="footer-hd">Hỗ trợ</h6>
-        <div class="support-group">
+        <div class="support-group"> <!-- TUỲ CHỈNH: nhóm nút hỗ trợ -->
           <!-- Nút liên hệ -->
           <a href="#" class="support-btn" aria-label="Liên hệ">
             <span class="ico"><i class="bi bi-geo-alt"></i></span>
@@ -544,7 +559,7 @@
           </a>
 
           <!-- Social media links -->
-          <div class="socials">
+          <div class="socials"> <!-- TUỲ CHỈNH: hàng icon mạng xã hội -->
             <a href="#" class="social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="social" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
@@ -557,8 +572,8 @@
 <!-- ========================================
      SECTION 3: BOTTOM - Copyright
      ======================================== -->
-<section class="footer-bottom">
-  <div class="wrap" style="display:flex; align-items:center; gap:12px;">
+<section class="footer-bottom"> <!-- TUỲ CHỈNH -->
+  <div class="wrap" style="display:flex; align-items:center; gap:12px;"> <!-- inline flex; có thể thay bằng .d-flex .align-items-center .gap-2 -->
     <span class="brand">ACB</span>
     <span class="copy">© 2023 Ngân hàng thương mại cổ phần Á Châu</span>
   </div>
@@ -567,8 +582,8 @@
 </footer>
 
 <!-- Import Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> <!-- LƯU Ý: đã nạp icons ở trên; link này BỊ TRÙNG → có thể bỏ để tránh tải lại -->
 <!-- Import JavaScript cho header -->
-<script src="/js/partials/header.js" defer></script>
+<script src="/js/partials/header.js" defer></script> <!-- TUỲ CHỈNH: script gắn header động -->
 </body>
 </html>
