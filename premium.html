@@ -8,11 +8,13 @@
   
   <!-- External Libraries & Custom CSS -->
   <link href="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css,npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/premium.css" rel="stylesheet">
+  <link href="css/subpage/premium.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </head>
 <body>
-
-    <header class="acb-header sticky-top bg-white">
+  <!-- Header -->
+<header class="acb-header sticky-top bg-white">
   
   <!-- ========================================
        TOPBAR - Thanh thông tin phụ trên cùng
@@ -80,7 +82,489 @@
     </div>
   </nav>
 </header>
-    
+<!--Hero Banner-->
+<div class="hero2">
+      <img src="/img/premium.jpg" alt="Ngân hàng số" class="hero2__img" loading="lazy">
+      <div class="hero2__content"></div>
+</div>
+
+<!-- Main Content -->
+ <main>
+ <!-- ======= SECTION MỚI (Giới thiệu & Phân hạng hội viên) ======= -->
+<section class="premium-section text-center">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-3">Giới thiệu</h2>
+    <p class="lead">
+      ACB Privilege Banking được thiết kế dựa trên kim chỉ nam "Vị thời gian".
+      Ngân hàng ưu tiên ACB tự hào tiên phong mang đến Quý Khách giải pháp
+      rút ngắn thời gian gia tăng tài sản &amp; kéo dài thời gian tận hưởng cuộc sống.
+    </p>
+
+    <div class="premium-divider"></div>
+    <h2 class="display-5 fw-bold mb-3">Phân hạng hội viên</h2>
+    <p class="lead">
+      Với mong muốn mang đến sự trọn vẹn trong trải nghiệm, ưu đãi xứng tầm và
+      những đặc quyền chuyên biệt, ACB giới thiệu đến Quý Khách 3 phân hạng
+      hội viên Ngân hàng ưu tiên
+    </p>
+  </div>
+  <!-- Carousel bắt đầu -->
+    <div id="acbPrivilegeCarousel" class="carousel slide my-5" data-bs-ride="carousel" aria-label="Ưu đãi nổi bật">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner rounded-4 shadow">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <!-- Thay ảnh của bạn -->
+          <img src="/img/anh2k.jpg" class="d-block w-100" alt="Không gian giao dịch ưu tiên" loading="lazy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold">Đặc quyền giao dịch nhanh</h5>
+            <p class="mb-0">Quầy riêng, ưu tiên xếp hàng &amp; RM đồng hành.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/anh2k.jpg" class="d-block w-100" alt="Giải pháp đầu tư cá nhân hóa" loading="lazy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold">Giải pháp đầu tư cá nhân hóa</h5>
+            <p class="mb-0">Tối ưu hoá danh mục để gia tăng tài sản bền vững.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="/img/anh2k.jpg" class="d-block w-100" alt="Đặc quyền tận hưởng cuộc sống" loading="lazy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fw-bold">Ưu đãi phong cách sống</h5>
+            <p class="mb-0">Dịch vụ sân bay, nghỉ dưỡng &amp; ẩm thực chọn lọc.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide="prev" aria-label="Slide trước">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#acbPrivilegeCarousel" data-bs-slide="next" aria-label="Slide sau">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <!-- Carousel kết thúc -->
+</section>
+<!-- ======= /SECTION MỚI ======= -->
+<!-- SECTION: Dịch vụ & Đặc quyền -->
+<section class="priv-section">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-white mb-4">Dịch vụ &amp; Đặc quyền</h2>
+
+    <div class="priv-grid">
+      <!-- Hàng 1: 2 thẻ lớn -->
+      <a href="#" class="priv-card priv-card--xl">
+        <img src="/img/premium/time.jpg" alt="Đặc quyền Vị thời gian">
+        <div class="priv-cap">
+          <div class="priv-title">Đặc quyền Vị thời gian</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" class="priv-card priv-card--xl">
+        <img src="/img/premium/staff.jpg" alt="Đội ngũ nhân sự ưu tú">
+        <div class="priv-cap">
+          <div class="priv-title">Đội ngũ nhân sự ưu tú</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <!-- Hàng 2: 3 thẻ vừa -->
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/support.jpg" alt="Hỗ trợ ưu tiên">
+        <div class="priv-cap">
+          <div class="priv-title">Hỗ trợ<br>Ưu tiên</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/lounge.jpg" alt="Không gian phục vụ sang trọng">
+        <div class="priv-cap">
+          <div class="priv-title">Không gian phục vụ<br>sang trọng</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/priority-trade.jpg" alt="Giao dịch ưu tiên">
+        <div class="priv-cap">
+          <div class="priv-title">Giao dịch<br>Ưu tiên</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <!-- Hàng 3: 3 thẻ vừa -->
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/airport.jpg" alt="Đặc quyền phòng chờ Thương gia">
+        <div class="priv-cap">
+          <div class="priv-title">Đặc quyền phòng chờ<br>Thương gia</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/gift.jpg" alt="Quà tặng ý nghĩa">
+        <div class="priv-cap">
+          <div class="priv-title">Quà tặng<br>ý nghĩa</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="#" class="priv-card priv-card--md">
+        <img src="/img/premium/family.jpg" alt="Đặc quyền gia đình">
+        <div class="priv-cap">
+          <div class="priv-title">Đặc quyền<br>gia đình</div>
+        </div>
+        <i class="bi bi-arrow-up-right priv-arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- SECTION: Sản phẩm được thiết kế chuyên biệt -->
+<section class="prod-section">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <!-- Trái: tiêu đề + list -->
+      <div class="col-lg-7">
+        <h2 class="display-6 fw-bold text-white mb-2">Sản phẩm được thiết kế chuyên biệt</h2>
+        <p class="lead text-white-50 mb-4">
+          Tại ACB Privilege Banking, sứ mệnh phục vụ Quý khách được chúng tôi đặt lên hàng đầu
+          từ các sản phẩm tài chính chuyên biệt được cá nhân hoá theo nhu cầu, cùng với các
+          quyền lợi phong cách sống đẳng cấp.
+        </p>
+
+        <nav class="prod-list" aria-label="Danh mục sản phẩm">
+          <a class="prod-link" href="#"><span>Tài khoản ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="prod-link" href="#"><span>Thẻ ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="prod-link" href="#"><span>Tiết kiệm ưu tiên</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="prod-link" href="#"><span>Bảo hiểm</span><i class="bi bi-arrow-up-right"></i></a>
+          <a class="prod-link" href="#"><span>Vay</span><i class="bi bi-arrow-up-right"></i></a>
+        </nav>
+      </div>
+
+      <!-- Phải: ảnh minh hoạ -->
+      <div class="col-lg-5">
+        <figure class="prod-visual rounded-4 shadow">
+          <!-- thay ảnh của bạn cho đúng dự án -->
+          <img src="/img/premium/cards.jpg" alt="Privilege cards" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECTION: Ưu đãi -->
+<section class="promo-section" id="uu-dai">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-white mb-4">Ưu đãi</h2>
+
+    <div class="promo-grid">
+      <!-- Card 1 -->
+      <article class="promo-card">
+        <a href="#" class="promo-media" aria-label="Xem ưu đãi 1">
+          <img src="/img/premium/promo-1.jpg" alt="Chọn tài khoản số đẹp">
+        </a>
+        <div class="promo-body">
+          <h3 class="promo-title">CHỌN TÀI KHOẢN SỐ ĐẸP – KHỞI DẤU ẤN, ĐỊNH VỊ THẾ</h3>
+          <div class="promo-date">25/06/2025</div>
+          <p class="promo-desc">Ưu đãi phí đến 80% các số siêu phẩm</p>
+          <div class="promo-rule"></div>
+          <a class="promo-link" href="#">Xem chi tiết <i class="bi bi-chevron-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="promo-card">
+        <a href="#" class="promo-media" aria-label="Xem ưu đãi 2">
+          <img src="/img/premium/promo-2.jpg" alt="Thời gian dẫn lối - Kết nối toàn cầu">
+        </a>
+        <div class="promo-body">
+          <h3 class="promo-title">THỜI GIAN DẪN LỐI – KẾT NỐI TOÀN CẦU</h3>
+          <div class="promo-date">25/06/2025</div>
+          <p class="promo-desc">Tận hưởng 180 điểm tỷ giá khi giao dịch ngoại tệ</p>
+          <div class="promo-rule"></div>
+          <a class="promo-link" href="#">Xem chi tiết <i class="bi bi-chevron-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="promo-card">
+        <a href="#" class="promo-media" aria-label="Xem ưu đãi 3">
+          <img src="/img/premium/promo-3.jpg" alt="Privilege Circle - Kết nối tinh hoa">
+        </a>
+        <div class="promo-body">
+          <h3 class="promo-title">PRIVILEGE CIRCLE – KẾT NỐI TINH HOA</h3>
+          <div class="promo-date">04/08/2025</div>
+          <p class="promo-desc">&nbsp;</p>
+          <div class="promo-rule"></div>
+          <a class="promo-link" href="#">Xem chi tiết <i class="bi bi-chevron-right"></i></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center">
+      <a href="#" class="promo-more btn">
+        <span>Xem thêm</span> <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- SECTION: Tài liệu & Đặt hẹn -->
+<section class="docs-appt-section">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-white mb-4">Các tài liệu Quý khách cần tham khảo</h2>
+
+    <!-- Hàng tài liệu + nút tải -->
+    <div class="docs-row d-flex flex-wrap align-items-center justify-content-between mb-5">
+      <a class="doc-item d-inline-flex align-items-center gap-3 text-decoration-none" href="#">
+        <span class="doc-icon rounded-circle d-inline-flex align-items-center justify-content-center">
+          <i class="bi bi-file-earmark-text"></i>
+        </span>
+        <span class="doc-text">Điều kiện &amp; Điều khoản Hội viên ACB Privilege Banking</span>
+      </a>
+      <a class="btn btn-download" href="#">
+        Tải xuống <i class="bi bi-download ms-2"></i>
+      </a>
+    </div>
+
+    <!-- Khối đặt hẹn -->
+    <div class="appt-card rounded-4">
+      <h3 class="fw-bold text-white mb-4">Đặt hẹn ngay</h3>
+
+      <form class="row g-3">
+        <div class="col-lg-4">
+          <label class="form-label label-caps">HỌ VÀ TÊN <span class="text-danger">*</span></label>
+          <input type="text" class="form-control form-control-ghost" placeholder="Nguyễn Văn A">
+        </div>
+        <div class="col-lg-4">
+          <label class="form-label label-caps">SỐ ĐIỆN THOẠI <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control form-control-ghost" placeholder="0912345678">
+        </div>
+        <div class="col-lg-4">
+          <label class="form-label label-caps">EMAIL <span class="text-danger">*</span></label>
+          <input type="email" class="form-control form-control-ghost" placeholder="nguyenvana@gmail.com">
+        </div>
+
+        <div class="col-lg-6">
+          <label class="form-label label-caps">KHU VỰC</label>
+          <div class="select-wrap">
+            <select class="form-select form-control-ghost">
+              <option selected>TP Hồ Chí Minh</option>
+              <option>Hà Nội</option>
+              <option>Đà Nẵng</option>
+              <option>Cần Thơ</option>
+            </select>
+            <i class="bi bi-chevron-down select-caret" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <label class="form-label label-caps">THỜI GIAN LIÊN HỆ THÍCH HỢP</label>
+          <div class="select-wrap">
+            <select class="form-select form-control-ghost">
+              <option selected>8h–10h</option>
+              <option>10h–12h</option>
+              <option>13h–15h</option>
+              <option>15h–17h</option>
+            </select>
+            <i class="bi bi-chevron-down select-caret" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <button type="button" class="btn appt-submit">
+            Đăng ký <i class="bi bi-chevron-right ms-1"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: Liên hệ Ngân hàng Ưu tiên -->
+<section class="contact-priv-section">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-white mb-4">Liên hệ Ngân hàng Ưu tiên</h2>
+
+    <div class="priv-contact-card">
+      <p class="lead text-white-50 mb-4">
+        Các kênh chăm sóc chuyên biệt luôn sẵn sàng đồng hành cùng Quý Khách:
+      </p>
+
+      <p class="fw-semibold mb-2">Hotline Contact Center:</p>
+
+      <p class="contact-hotline mb-3">
+        <a class="contact-phone" href="tel:1800577775">1800 577 775</a>
+        <span class="contact-note"> (miễn phí dành riêng cho Khách hàng ưu tiên)</span>
+      </p>
+
+      <p class="contact-hotline mb-4">
+        <a class="contact-phone" href="tel:+842838247247">(028) 38 247 247</a>
+      </p>
+
+      <p class="mb-0">
+        Email:
+        <a class="contact-email" href="mailto:nganhanguutien@acb.com.vn">
+          nganhanguutien@acb.com.vn
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+<!-- Footer -->
+<footer>
+<!-- ========================================
+     SECTION 1: CTA TẢI ỨNG DỤNG
+     ======================================== -->
+<section class="app-cta">
+  <div class="wrap">
+    <div class="cta-grid">
+      <!-- Ảnh mockup điện thoại (bên trái) -->
+      <div>
+        <img class="phone-mock"
+             src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=900&auto=format&fit=crop"
+             alt="ACB ONE App" loading="lazy">
+      </div>
+
+      <!-- Nội dung + QR + badge stores (bên phải) -->
+      <div>
+        <h3 class="fw-bold text-white" style="margin:0 0 8px">Tải ứng dụng ACB ONE</h3>
+        <p class="text-white" style="margin:0 0 20px; opacity:.95">Khám phá muôn ngàn tiện ích từ dịch vụ ngân hàng số ACB ONE</p>
+
+        <!-- QR code và badge stores -->
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap">
+          <!-- QR code để tải app -->
+          <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https%3A%2F%2Facb.com.vn" alt="QR tải ACB ONE" loading="lazy">
+
+          <!-- Badge stores (Google Play & App Store) -->
+          <div class="badges">
+            <a href="#" class="badge-store" aria-label="Tải trên Google Play">
+              <img src="https://developer.android.com/images/brand/vi_generic_rgb_wo_60.png" alt="Google Play">
+            </a>
+            <a href="#" class="badge-store" aria-label="Tải trên App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 2: FOOTER LINKS - 5 cột thông tin
+     ======================================== -->
+<section class="footer-links">
+  <div class="wrap">
+    <div class="footer-cols">
+      
+      <!-- Cột 1: Về ACB -->
+      <div class="col">
+        <h6 class="footer-hd">Về ACB</h6>
+        <ul class="footer-list">
+          <li><a href="#">Về chúng tôi</a></li>
+          <li><a href="#">Nhà đầu tư</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Lãi suất cá nhân</a></li>
+          <li><a href="#">Lãi suất doanh nghiệp</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 2: Cá nhân -->
+      <div class="col">
+        <h6 class="footer-hd">Cá nhân</h6>
+        <ul class="footer-list">
+          <li><a href="#">Tài khoản thanh toán</a></li>
+          <li><a href="#">Gửi tiết kiệm</a></li>
+          <li><a href="#">Thẻ</a></li>
+          <li><a href="#">Vay vốn</a></li>
+          <li><a href="#">Bảo hiểm</a></li>
+          <li><a href="#">Giao dịch cùng ACB</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Doanh nghiệp -->
+      <div class="col">
+        <h6 class="footer-hd">Doanh nghiệp</h6>
+        <ul class="footer-list">
+          <li><a href="#">Vay vốn</a></li>
+          <li><a href="#">Tài trợ xuất nhập khẩu</a></li>
+          <li><a href="#">Dịch vụ tài chính</a></li>
+          <li><a href="#">Tiền gửi có kỳ hạn</a></li>
+          <li><a href="#">Giải pháp thanh toán</a></li>
+          <li><a href="#">Thẻ doanh nghiệp</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Thư viện -->
+      <div class="col">
+        <h6 class="footer-hd">Thư viện</h6>
+        <ul class="footer-list">
+          <li><a href="#">Thông báo từ ACB</a></li>
+          <li><a href="#">Thông cáo báo chí</a></li>
+          <li><a href="#">Ưu đãi khách hàng cá nhân</a></li>
+          <li><a href="#">Ưu đãi cho Ngân hàng số</a></li>
+          <li><a href="#">Biểu mẫu, biểu phí cá nhân</a></li>
+          <li><a href="#">Biểu mẫu, biểu phí DN</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 5: Hỗ trợ -->
+      <div class="col">
+        <h6 class="footer-hd">Hỗ trợ</h6>
+        <div class="support-group">
+          <!-- Nút liên hệ -->
+          <a href="#" class="support-btn" aria-label="Liên hệ">
+            <span class="ico"><i class="bi bi-geo-alt"></i></span>
+            <span class="label">Liên hệ</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+          
+          <!-- Hotline 1900 -->
+          <a href="tel:1900545486" class="support-btn" aria-label="Gọi 1900 54 54 86">
+            <span class="ico"><i class="bi bi-telephone"></i></span>
+            <span class="label">1900 54 54 86</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+          
+          <!-- Số điện thoại văn phòng -->
+          <a href="tel:02838247247" class="support-btn" aria-label="Gọi (028) 38 247 247">
+            <span class="ico"><i class="bi bi-telephone-forward"></i></span>
+            <span class="label">(028) 38 247 247</span>
+            <i class="bi bi-chevron-right" style="margin-left:auto"></i>
+          </a>
+
+          <!-- Social media links -->
+          <div class="socials">
+            <a href="#" class="social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 3: BOTTOM - Copyright
+     ======================================== -->
+<section class="footer-bottom">
+  <div class="wrap" style="display:flex; align-items:center; gap:12px;">
+    <span class="brand">ACB</span>
+    <span class="copy">© 2023 Ngân hàng thương mại cổ phần Á Châu</span>
+  </div>
+</section>
+<!-- Import Bootstrap Icons -->
+</footer>
 
 <!-- Import Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
