@@ -57,48 +57,45 @@
           <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner"> <!-- nơi chứa các .carousel-item; phải có một item .active -->
-          <div class="carousel-item active"> <!-- slide #1 đang hiển thị -->
-            <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd"> <!-- rounded-5: bo góc lớn; p-5: padding 3rem (p-lg-5 trùng, có thể bỏ 1 cái); nền xanh inline -->
-              <div class="row align-items-center g-4 banner-slide"> <!-- row: lưới; align-items-center: căn giữa theo trục dọc; g-4: gutter 1.5rem; banner-slide: TUỲ CHỈNH -->
-                <div class="col-lg-7 text-white"> <!-- 7/12 từ ≥992px; text-white: chữ trắng -->
-                  <h2 class="display-6 fw-bold mb-3">Thông tin cảnh báo về hình thức lừa đảo khi giao dịch trực tuyến</h2> <!-- display-6: tiêu đề lớn vừa; fw-bold: đậm; mb-3: 1rem -->
-                  <p class="lead mb-4 opacity-90">Nhận biết kịch bản giả mạo, bảo vệ tài khoản, tránh cung cấp OTP/mật khẩu.</p> <!-- lead: đoạn giới thiệu; mb-4: 1.5rem; LƯU Ý: .opacity-90 KHÔNG có trong BS mặc định (BS có 0/25/50/75/100) → lớp TUỲ CHỈNH -->
-                  <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a> <!-- btn: nút; btn-light: nền sáng; btn-lg: kích cỡ lớn; rounded-pill: bo cực lớn; px-4: padding ngang 1.5rem -->
-                </div>
-                <div class="col-lg-5 d-none d-lg-block"> <!-- 5/12 từ ≥992px; d-none: ẩn; d-lg-block: chỉ hiện >=lg (ẩn ảnh trên mobile để tối ưu) -->
-                  <img class="w-100 h-auto" src="https://picsum.photos/seed/phish-banner/800/480" alt="Minh họa cảnh báo lừa đảo" style="border-radius:2rem" /> <!-- w-100: rộng 100%; h-auto: chiều cao tự động -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item"> <!-- slide #2 -->
-            <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd">
-              <div class="row align-items-center g-4 banner-slide">
-                <div class="col-lg-7 text-white">
-                  <h2 class="display-6 fw-bold mb-3">Cảnh giác với SMS chứa liên kết lạ</h2>
-                  <p class="lead mb-4 opacity-90">Không bấm liên kết và không cài app ngoài kho chính thức.</p>
-                  <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                  <img class="w-100 h-auto" src="https://picsum.photos/seed/sms-banner/800/480" alt="Minh họa SMS lừa đảo" style="border-radius:2rem" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item"> <!-- slide #3 -->
-            <div class="rounded-5 p-5 p-lg-5" style="background:#0d89fd">
-              <div class="row align-items-center g-4 banner-slide">
-                <div class="col-lg-7 text-white">
-                  <h2 class="display-6 fw-bold mb-3">Giảm hạn mức online về 0 khi nghi ngờ</h2>
-                  <p class="lead mb-4 opacity-90">Đăng nhập online.acb.com.vn để điều chỉnh tạm thời, rồi liên hệ hotline.</p>
-                  <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                  <img class="w-100 h-auto" src="https://picsum.photos/seed/limit-banner/800/480" alt="Minh họa hạn mức" style="border-radius:2rem" />
-                </div>
-              </div>
-            </div>
-          </div>
+         <div class="carousel-item active">
+  <div class="rounded-5 p-5 p-lg-5 slide-bg"
+       style="background-image:url('https://picsum.photos/seed/phish-bg/1600/900')">
+    <div class="row align-items-center g-4 banner-slide">
+      <div class="col-lg-7 text-white">
+        <h2 class="display-6 fw-bold mb-3">Thông tin cảnh báo về hình thức lừa đảo khi giao dịch trực tuyến</h2>
+        <p class="lead mb-4 opacity-90">Nhận biết kịch bản giả mạo, bảo vệ tài khoản, tránh cung cấp OTP/mật khẩu.</p>
+        <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
+      </div>
+      <!-- ĐÃ BỎ cột ảnh bên phải -->
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <div class="rounded-5 p-5 p-lg-5 slide-bg"
+       style="background-image:url('https://picsum.photos/seed/sms-bg/1600/900')">
+    <div class="row align-items-center g-4 banner-slide">
+      <div class="col-lg-7 text-white">
+        <h2 class="display-6 fw-bold mb-3">Cảnh giác với SMS chứa liên kết lạ</h2>
+        <p class="lead mb-4 opacity-90">Không bấm liên kết và không cài app ngoài kho chính thức.</p>
+        <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item">
+  <div class="rounded-5 p-5 p-lg-5 slide-bg"
+       style="background-image:url('https://picsum.photos/seed/limit-bg/1600/900')">
+    <div class="row align-items-center g-4 banner-slide">
+      <div class="col-lg-7 text-white">
+        <h2 class="display-6 fw-bold mb-3">Giảm hạn mức online về 0 khi nghi ngờ</h2>
+        <p class="lead mb-4 opacity-90">Đăng nhập online.acb.com.vn để điều chỉnh tạm thời, rồi liên hệ hotline.</p>
+        <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev"> <!-- nút lùi slide -->
           <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- icon mũi tên (background-image) -->
@@ -214,42 +211,42 @@
         <!-- 1 -->
         <div class="col">
           <div class="card-principle"> <!-- TUỲ CHỈNH: thẻ nội dung đơn giản -->
-            <div class="icon-lg"><i class="bi bi-bug"></i></div> <!-- icon-lg: TUỲ CHỈNH kích thước icon -->
+            <div class="icon-lg"><i class="bi bi-bug fs-1"></i></div> <!-- icon-lg: TUỲ CHỈNH kích thước icon -->
             <p class="mb-0"><span class="fw-semibold">Không tải tệp tin, cài đặt ứng dụng</span> <span class="desc">không rõ nguồn gốc và không truy cập đường dẫn lạ từ tin nhắn, email, mạng xã hội, cuộc gọi mạo danh.</span></p> <!-- mb-0: bỏ margin dưới -->
           </div>
         </div>
         <!-- 2 -->
         <div class="col">
           <div class="card-principle">
-            <div class="icon-lg"><i class="bi bi-key"></i></div>
+            <div class="icon-lg"><i class="bi bi-key fs-1"></i></div>
             <p class="mb-0"><span class="fw-semibold">Không cung cấp</span> <span class="desc">OTP – Password – Username vào các ứng dụng, website lạ.</span></p>
           </div>
         </div>
         <!-- 3 -->
         <div class="col">
           <div class="card-principle">
-            <div class="icon-lg"><i class="bi bi-shield-lock"></i></div>
+            <div class="icon-lg"><i class="bi bi-shield-lock fs-1"></i></div>
             <p class="mb-0"><span class="fw-semibold">Đăng ký xác thực khuôn mặt</span> <span class="desc">để tăng cường bảo vệ khi giao dịch trực tuyến theo </span><a href="#" class="link-primary fw-semibold">Quyết định số 2345/QĐ-NHNN</a><span class="desc"> và </span><a href="#" class="link-primary fw-semibold">Thông tư 17, 18/2024/TT-NHNN của Ngân hàng Nhà nước</a><span class="desc">.</span></p> <!-- link-primary: màu link theo theme; fw-semibold: nhấn mạnh -->
           </div>
         </div>
         <!-- 4 -->
         <div class="col">
           <div class="card-principle">
-            <div class="icon-lg"><i class="bi bi-person-lock"></i></div>
+            <div class="icon-lg"><i class="bi bi-person-lock fs-1"></i></div>
             <p class="mb-0"><span class="fw-semibold">Chủ động</span> <span class="desc">nhập sai mật khẩu 5 lần khi bị mất thông tin bảo mật.</span></p>
           </div>
         </div>
         <!-- 5 -->
         <div class="col">
           <div class="card-principle">
-            <div class="icon-lg"><i class="bi bi-phone"></i></div>
+            <div class="icon-lg"><i class="bi bi-phone fs-1"></i></div>
             <p class="mb-0"><span class="fw-semibold">Chỉ cài đặt</span> <span class="desc">ứng dụng ACB ONE / ACB ONE BIZ trên </span><span class="fw-semibold">Google Play</span><span class="desc"> hoặc </span><span class="fw-semibold">App Store</span><span class="desc">.</span></p>
           </div>
         </div>
         <!-- 6 -->
         <div class="col">
           <div class="card-principle text-start text-lg-start text-md-start text-center"> <!-- text-center: căn giữa mặc định mobile; text-md-start & text-lg-start: từ md trở lên căn trái (không cần cả md và lg, 1 cái lớn nhất cũng đủ) -->
-            <div class="icon-lg text-center"><i class="bi bi-window"></i></div> <!-- text-center: căn giữa icon -->
+            <div class="icon-lg text-center"><i class="bi bi-window fs-1"></i></div> <!-- text-center: căn giữa icon -->
             <p class="mb-2 text-center"><span class="fw-semibold">Website chính thức:</span></p> <!-- mb-2: .5rem -->
             <ul class="list-unstyled small m-0 text-center"> <!-- list-unstyled: bỏ bullet & padding; small: cỡ chữ nhỏ; m-0: bỏ margin -->
               <li><a class="link-primary" href="https://online.acb.com.vn">https://online.acb.com.vn</a></li>
