@@ -1,19 +1,26 @@
 :root {
-  /* Brand Colors - đồng bộ với các subpage khác */
+  /* Brand Colors */
   --acb-blue: #0d6efd;
   --acb-blue-dark: #0b5ed7;
   --acb-blue-light: #e8f1ff;
+  --acb-blue-rgb: 13, 110, 253;
   --acb-dark: #1f2937;
   --acb-muted: #64748b;
   --border: #e5e7eb;
   
-  /* Container width - đồng bộ với các subpage khác */
+  /* Layout */
   --container-max: 1000px;
   --container-padding: 20px;
   --section-padding: 2rem;
+  --card-height: clamp(150px, 22vw, 200px);
   
-  /* Chiều cao chuẩn của mỗi thẻ */
-  --cardH: clamp(150px, 22vw, 200px);
+  /* Common values */
+  --radius-lg: 32px;
+  --radius-md: 20px;
+  --radius-sm: 16px;
+  --shadow-1: 0 8px 24px rgba(8,31,62,0.06);
+  --shadow-2: 0 20px 40px rgba(2,6,23,0.12);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * { box-sizing: border-box; }
@@ -100,15 +107,16 @@ body {
 .card {
   display: flex;
   flex-direction: column;
+  height: auto;
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(2,6,23,0.05);
   overflow: visible;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: auto;
   outline: none;
+  transition: var(--transition);
+  will-change: transform;
 }
 
 .card:hover { 
@@ -477,18 +485,18 @@ body {
 }
 
 .carousel-card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 32px;
-  box-shadow: 0 8px 24px rgba(8,31,62,0.06);
-  padding: 48px 36px 44px;
-  text-align: center;
-  min-height: 320px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  min-height: 320px;
+  padding: 48px 36px 44px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.95);
+  will-change: transform;
 }
 
 .carousel-card::before {
@@ -589,15 +597,16 @@ body {
 }
 
 .offer-card {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 6px 24px rgba(10, 53, 120, 0.08);
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
   isolation: isolate;
+  will-change: transform;
 }
 
 .offer-card::before {
@@ -663,14 +672,18 @@ body {
 }
 
 @keyframes shimmer {
-  0% {
-    background-image: linear-gradient(90deg, #2d77ff, #27c1ff, #2d77ff);
+  from {
     background-position: 200% 0;
   }
-  100% {
-    background-image: linear-gradient(90deg, #2d77ff, #27c1ff, #2d77ff);
+  to {
     background-position: -200% 0;
   }
+}
+
+/* Optimize paint operations */
+.will-animate {
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .offer-left {
@@ -759,16 +772,17 @@ body {
 }
 
 .integr-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 16px 16px 18px;
-  box-shadow: 0 8px 24px rgba(10, 53, 120, 0.08);
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  padding: 16px 16px 18px;
+  background: #fff;
+  border: 1px solid rgba(var(--acb-blue-rgb), 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
   overflow: hidden;
-  border: 1px solid rgba(var(--acb-blue-rgb, 13,110,253), 0.1);
+  transition: var(--transition);
+  will-change: transform;
 }
 
 .integr-card::before {

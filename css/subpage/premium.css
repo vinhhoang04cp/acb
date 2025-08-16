@@ -14,7 +14,7 @@
   --acb-border: #3b4652;
   
   /* Layout */
-  --wrap-max: 1280px;
+  --wrap-max: 1120px;
   --section-padding: 56px 0;
   --card-radius: 24px;
   
@@ -41,7 +41,7 @@
 .wrap{
   max-width: var(--wrap-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 90px;
 }
 
 /* ===========================
@@ -565,12 +565,13 @@ a:focus, button:focus{
 
 /* Ảnh bên phải */
 .prod-visual{
-  width: 100%;
+  width: calc(100% - 100px);
   height: 460px;                      /* chiều cao khung ảnh như ảnh mẫu */
   background: #0e141b;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  margin: 0 auto;
 }
 .prod-visual img{
   width: 100%;
@@ -928,7 +929,7 @@ body {
 
 .footer-cols {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 32px;
   align-items: start;
 }
