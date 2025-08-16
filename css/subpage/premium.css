@@ -14,7 +14,8 @@
   --acb-border: #3b4652;
   
   /* Layout */
-  --wrap-max: 1120px;
+  --wrap-max: calc(1120px * 11/16);
+  --content-ratio: calc(11/16 * 100%);
   --section-padding: 56px 0;
   --card-radius: 24px;
   
