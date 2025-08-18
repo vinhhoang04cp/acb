@@ -457,3 +457,21 @@ a:hover{
     .award-card{ min-height: 440px; padding-bottom: 150px; }
     .award-figure{ width: 88%; height: 50%; }
   }
+
+  .hero2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero2__content { 
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  color: #fff;
+  text-align: center;
+}
