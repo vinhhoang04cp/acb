@@ -289,7 +289,7 @@ a:hover{
     content: "";
     position: absolute;
     inset: 0;
-    background: url("/img/anh2k.jpg") center/cover no-repeat;
+    background: url("./img/anh2k.jpg") center/cover no-repeat;
     transition: transform 0.5s ease;
   }
 

@@ -41,16 +41,16 @@
     }
     
     /* Tile background images */
-    .tile-acb-one { background-image: url('/img/download.jpg'); }
-    .tile-acb-biz { background-image: url('/img/download (2).jpg'); }
-    .tile-personal { background-image: url('/img/anh2k.jpg'); }
-    .tile-digital { background-image: url('/img/bg-ebank.jpg'); }
-    .tile-business { background-image: url('/img/about1.jpg'); }
-    .tile-docs { background-image: url('/img/CxK9vbvJ1C4b0m3vENaNe93OQK1R9Ek2PcMzsLXW.jpg'); }
-    .tile-knowledge { background-image: url('/img/download.jpg'); }
-    .tile-news { background-image: url('/img/download (2).jpg'); }
-    .tile-video { background-image: url('/img/bg-ebank.jpg'); }
-    .tile-special { background-image: url('/img/about1.jpg'); }
+    .tile-acb-one { background-image: url('./img/download.jpg'); }
+    .tile-acb-biz { background-image: url('./img/download (2).jpg'); }
+    .tile-personal { background-image: url('./img/anh2k.jpg'); }
+    .tile-digital { background-image: url('./img/bg-ebank.jpg'); }
+    .tile-business { background-image: url('./img/about1.jpg'); }
+    .tile-docs { background-image: url('./img/CxK9vbvJ1C4b0m3vENaNe93OQK1R9Ek2PcMzsLXW.jpg'); }
+    .tile-knowledge { background-image: url('./img/download.jpg'); }
+    .tile-news { background-image: url('./img/download (2).jpg'); }
+    .tile-video { background-image: url('./img/bg-ebank.jpg'); }
+    .tile-special { background-image: url('./img/about1.jpg'); }
     
     .tile:hover {
       transform: translateY(-5px);

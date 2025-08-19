@@ -82,7 +82,7 @@ body {
 
 .hero-img {
   min-height: var(--hero-height-desktop);
-  background: url('/img/anh2k.jpg') center/cover no-repeat;
+  background: url('./img/anh2k.jpg') center/cover no-repeat;
   transition: var(--transition-smooth);
 }
 
