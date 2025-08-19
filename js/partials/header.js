@@ -1,52 +1,53 @@
 /**
  * ========================================
  * FILE: header.js
- * 
- * CHỨC NĂNG CHÍNH:
- * - Xử lý mobile menu toggle
- * - Quản lý responsive behavior của header
- * - Xử lý các tương tác người dùng với menu
- * 
- * COMPONENTS:
- * 1. Mobile Menu Toggle
- *    - Toggle menu visibility
- *    - Icon animation (hamburger ↔ X)
- *    - Click outside to close
- * 
- * 2. Responsive Behavior
- *    - Window resize handling
- *    - Mobile/Desktop state management
- * 
- * 3. User Interactions
- *    - Menu item highlights
- *    - Dropdown behaviors
- *    - Scroll effects
- * 
- * DEPENDENCIES:
- * - DOM Elements: .mobile-nav-toggle, .main-nav
- * - Bootstrap Icons
+ * CHỨC NĂNG: Xử lý mobile menu toggle và responsive
  * ========================================
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  
-  if (mobileToggle && mainNav) {
-    mobileToggle.addEventListener('click', function() {
-      mainNav.classList.toggle('show');
-      
-      // Toggle icon
-      const icon = this.querySelector('.bi');
-      if (icon) {
-        icon.classList.toggle('bi-list');        // Icon hamburger
-        icon.classList.toggle('bi-x');           // Icon X
-      }
-    });
+    // Lấy các elements cần thiết
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuToggle && mobileMenu) {
+        const iconElement = mobileMenuToggle.querySelector('.bi');
+        let isMenuOpen = false;
 
-    // ========================================
-    // CLOSE MENU WHEN CLICKING OUTSIDE
-    // ========================================
+        // Xử lý sự kiện click vào nút toggle
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('active');
+            
+            // Chuyển đổi icon
+            iconElement.classList.toggle('bi-list');
+            iconElement.classList.toggle('bi-x-lg');
+        });
+
+        // Xử lý đóng menu khi click ra ngoài
+        document.addEventListener('click', function(event) {
+            if (isMenuOpen && 
+                !mobileMenu.contains(event.target) && 
+                !mobileMenuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                iconElement.classList.remove('bi-x-lg');
+                iconElement.classList.add('bi-list');
+                isMenuOpen = false;
+            }
+        });
+
+        // Đóng menu khi resize window to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 992 && isMenuOpen) {
+                mobileMenu.classList.remove('active');
+                iconElement.classList.remove('bi-x-lg');
+                iconElement.classList.add('bi-list');
+                isMenuOpen = false;
+            }
+        });
+    }
+});
     
     // Event listener cho click outside menu
     document.addEventListener('click', function(e) {
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-  }
+  
 
   // ========================================
   // WINDOW RESIZE HANDLER - Xử lý khi resize window
@@ -96,4 +97,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, 250);                                     // Delay 250ms
   });
-});
+;

@@ -3,6 +3,23 @@
 
 <!-- Header chính - sticky top để luôn hiển thị khi scroll -->
 <header class="acb-header sticky-top bg-white">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links">
+      <a href="./e-bank.html">Ngân hàng số</a>
+      <a href="./index.html">Cá nhân</a>
+      <a href="./index.html">Doanh nghiệp</a>
+      <a href="./premium.html">Ngân hàng Ưu tiên</a>
+      <hr>
+      <a href="./about.html">Về chúng tôi</a>
+      <a href="./investors.html">Nhà đầu tư</a>
+      <a href="#">Tuyển dụng</a>
+      <a href="./reward.html">ACB Rewards</a>
+      <a href="./library.html">Thư viện</a>
+      <a href="./security.html">An toàn</a>
+      <a href="./liquidation.html">Thanh lý tài sản</a>
+    </nav>
+  </div>
   
   <!-- ========================================
        TOPBAR - Thanh thông tin phụ trên cùng
@@ -67,29 +84,66 @@
           <i class="bi bi-chevron-right ms-2"></i>
         </a>
       </div>
+    </div>
+  </nav>
 
-      <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-menu-links">
-          <a href="/e-bank.html">Ngân hàng số</a>
-          <a href="./index.html">Cá nhân</a>
-          <a href="./index.html">Doanh nghiệp</a>
-          <a href="./premium.html">Ngân hàng Ưu tiên</a>
-          <a href="./about.html">Về chúng tôi</a>
-          <a href="./investors.html">Nhà đầu tư</a>
-          <a href="#">Tuyển dụng</a>
-          <a href="./reward.html">ACB Rewards</a>
-          <a href="./library.html">Thư viện</a>
-          <a href="./security.html">An toàn</a>
-          <a href="./liquidation.html">Thanh lý tài sản</a>
-        </nav>
-      </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links">
+      <a href="/e-bank.html">Ngân hàng số</a>
+      <a href="./index.html">Cá nhân</a>
+      <a href="./index.html">Doanh nghiệp</a>
+      <a href="./premium.html">Ngân hàng Ưu tiên</a>
+      <a href="./about.html">Về chúng tôi</a>
+      <a href="./investors.html">Nhà đầu tư</a>
+      <a href="#">Tuyển dụng</a>
+      <a href="./reward.html">ACB Rewards</a>
+      <a href="./library.html">Thư viện</a>
+      <a href="./security.html">An toàn</a>
+      <a href="./liquidation.html">Thanh lý tài sản</a>
+    </nav>
+  </div>
     </div>
   </nav>
 </header>
 
-<!-- Import Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
 <!-- Import JavaScript cho header -->
-<script src="./js/partials/header.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuToggle && mobileMenu) {
+        const iconElement = mobileMenuToggle.querySelector('.bi');
+        let isMenuOpen = false;
+
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('active');
+            
+            iconElement.classList.toggle('bi-list');
+            iconElement.classList.toggle('bi-x-lg');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (isMenuOpen && 
+                !mobileMenu.contains(event.target) && 
+                !mobileMenuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                iconElement.classList.remove('bi-x-lg');
+                iconElement.classList.add('bi-list');
+                isMenuOpen = false;
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 992 && isMenuOpen) {
+                mobileMenu.classList.remove('active');
+                iconElement.classList.remove('bi-x-lg');
+                iconElement.classList.add('bi-list');
+                isMenuOpen = false;
+            }
+        });
+    }
+});</script>
