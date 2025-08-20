@@ -1,102 +1,188 @@
-/* ===========================
-   ACB HEADER – MATCH MOCKUP
-   =========================== */
-
-/* Màu & biến dùng chung */
+/* ACB Header - Dark Theme */
 :root {
-  /* Colors */
-  --acb-bg: #262e36;
-  --acb-bg-2: #2a333c;
-  --acb-text: #cfd6de;
-  --acb-text-strong: #ffffff;
-  --acb-text-dim: #9eabb8;
+  --acb-bg: #262E36;
+  --acb-bg-2: #2A333C;
+  --acb-text: #CFD6DE;
+  --acb-text-strong: #FFFFFF;
+  --acb-text-dim: #9EABB8;
   --acb-accent: #00a6e0;
-  --acb-border: #3b4652;
-  
-  /* Layout */
-  --wrap-max: calc(1120px * 11/16);
-  --content-ratio: calc(11/16 * 100%);
-  --section-padding: 56px 0;
-  --card-radius: 24px;
-  
-  /* Gradients */
-  --gradient-overlay: linear-gradient(to top, rgba(9,19,29,.78) 0%, rgba(9,19,29,.45) 38%, rgba(9,19,29,0) 62%);
-  --gradient-border: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
-  
-  /* Shadows */
-  --shadow-sm: 0 8px 24px rgba(0,0,0,.25);  
-  --shadow-md: 0 12px 32px rgba(0,0,0,.35);
-  --shadow-lg: 0 18px 48px rgba(0,0,0,.45);
+  --acb-border: #3B4652;
+  --wrap-max: 1280px;
 }
 
-/* Ghi đè class bg-white từ bootstrap nếu có */
-.acb-header.bg-white{ background-color: var(--acb-bg) !important; }
-
-/* Sticky + đổ bóng nhẹ */
-.acb-header.sticky-top{
-  position: sticky; top: 0; z-index: 1000;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 10px 30px rgba(0,0,0,0.25);
+.acb-header.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--acb-bg);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 4%), 0 10px 30px rgb(0 0 0 / 8%);
 }
 
-/* Container hẹp giữa */
-.wrap{
+.wrap {
   max-width: var(--wrap-max);
   margin: 0 auto;
-  padding: 0 90px;
+  padding: 0 20px;
 }
 
-/* ===========================
-   TOPBAR
-   =========================== */
-.acb-topbar{
+/* Topbar */
+.acb-topbar {
   background: var(--acb-bg);
-  border-color: var(--acb-border) !important;
+  border-bottom: 1px solid var(--acb-border) !important;
 }
-.topbar-row{
+
+/* Desktop Menu Styles */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: var(--acb-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--acb-text-strong);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height, 120px);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 120px));
+  background: var(--acb-bg);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu-inner {
+  padding: 1rem 0;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--acb-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--acb-border);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  background: var(--acb-bg-2);
+  color: var(--acb-text-strong);
+  padding-left: 2rem;
+}
+
+/* Nút Toggle Mobile */
+.mobile-nav-toggle {
+  border: none;
+  background: transparent;
+  color: var(--acb-text);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+}
+
+.mobile-nav-toggle:hover {
+  color: var(--acb-text-strong);
+}
+
+.mobile-nav-toggle .bi {
+  display: block;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-toggle .bi-x-lg {
+  transform: rotate(180deg);
+}
+
+.topbar-row {
   height: 44px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.top-links a{
+
+.top-links a {
   font-size: 14px;
   color: var(--acb-text);
   text-decoration: none;
   margin-right: 24px;
-  transition: color .15s ease;
+  transition: color 0.15s ease;
 }
-.top-links a:last-child{ margin-right: 0; }
-.top-links a:hover{ color: var(--acb-text-strong); }
 
-/* Actions phải */
-.top-actions{
-  display: flex; align-items: center; gap: 14px;
+.top-links a:last-child {
+  margin-right: 0;
 }
-.top-actions a{
-  display: inline-flex; align-items: center;
+
+.top-links a:hover {
+  color: var(--acb-text-strong);
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-actions a {
+  display: inline-flex;
+  align-items: center;
   font-size: 14px;
   color: var(--acb-text);
   text-decoration: none;
-  transition: color .15s ease;
+  transition: color 0.15s ease;
 }
-.top-actions a:hover{ color: var(--acb-text-strong); }
 
-.icon-btn{
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px;
+.top-actions a:hover {
+  color: var(--acb-text-strong);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
   background: transparent;
   border: 1px solid transparent;
   color: var(--acb-text);
   cursor: pointer;
-  transition: border-color .15s ease, color .15s ease, background .15s ease;
+  transition: background 0.15s, border-color 0.15s;
 }
-.icon-btn:hover{
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
   border-color: var(--acb-border);
-  background: rgba(255,255,255,0.04);
   color: var(--acb-text-strong);
 }
 
-.lang-btn{
-  display: inline-flex; align-items: center; gap: 8px;
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 4px 10px 4px 6px;
   height: 36px;
   border-radius: 999px;
@@ -104,148 +190,350 @@
   background: transparent;
   color: var(--acb-text);
   cursor: pointer;
-  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
-.lang-btn:hover{
-  background: rgba(255,255,255,0.04);
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #4A5663;
   color: var(--acb-text-strong);
-  border-color: #4a5663;
-}
-.lang-btn img{
-  width: 18px; height: 18px; border-radius: 2px; display: block;
 }
 
-/* ===========================
-   NAVBAR
-   =========================== */
-.acb-navbar{
+.lang-btn img {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  display: block;
+}
+
+/* Navbar */
+.acb-navbar {
   background: var(--acb-bg);
-  border-color: var(--acb-border) !important;
+  border-bottom: 1px solid var(--acb-border) !important;
 }
-.nav-row{
+
+.nav-row {
   height: 88px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Trái: logo + menu */
-.nav-left{
-  display: flex; align-items: center; gap: 22px;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
-/* Logo chữ "ACB" lớn như mockup */
-.brand{
-  display: inline-flex; align-items: center;
+.brand {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
-.logo-text{
+
+.logo-text {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   font-weight: 800;
-  letter-spacing: .5px;
-  font-size: 56px;                 /* kích cỡ lớn */
+  letter-spacing: 0.5px;
+  font-size: 56px;
   line-height: 1;
   color: var(--acb-text-strong);
   position: relative;
 }
-/* chấm xanh trong chữ giống logo ACB */
-.logo-text::after{
+.logo-text::after {
   content: "";
   position: absolute;
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   background: var(--acb-accent);
-  /* căn vào giữa khoảng chữ, tùy font có thể tinh chỉnh 1-2px */
-  left: 57px; top: 24px;
+  left: 57px;
+  top: 24px;
 }
 
-/* Nút bật menu mobile */
-.mobile-nav-toggle{
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border-radius: 10px;
-  background: transparent; color: var(--acb-text);
+.mobile-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fff;
+  color: #344054;
   border: 1px solid var(--acb-border);
   cursor: pointer;
 }
 
-/* Menu chính – cỡ chữ lớn trắng như ảnh */
-.main-nav{
-  display: flex; align-items: center; gap: 36px;
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
-.main-nav a{
+
+.main-nav a {
   text-decoration: none;
-  font-size: 24px;                /* menu lớn */
+  font-size: 24px;
   font-weight: 700;
-  color: #e6edf4;
-  opacity: .75;
-  transition: opacity .15s ease, color .15s ease;
+  color: #1d2939;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, color 0.15s ease;
 }
-.main-nav a:hover{ opacity: 1; }
-.main-nav a.active{
-  color: var(--acb-text-strong);
+
+.main-nav a:hover {
+  opacity: 1;
+  color: #111827;
+}
+
+.main-nav a.active {
+  color: #101828;
   opacity: 1;
 }
 
-/* Phải: chia vạch + nút ACBONE */
-.nav-right{
-  display: flex; align-items: center; gap: 16px;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.nav-split{
-  width: 1px; height: 36px; background: var(--acb-border);
+
+.nav-split {
+  width: 1px;
+  height: 36px;
+  background: var(--acb-border);
   display: inline-block;
 }
 
-/* Nút Đăng nhập ACBONE – pill + viền như ảnh */
-.btn-acbone{
-  display: inline-flex; align-items: center; justify-content: center;
+.btn-acbone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 10px 18px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid #505d6b;
-  color: #eaf1f8;
-  background: transparent;
+  border: 1px solid #d0d5dd;
+  color: #1d2939;
+  background: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
-}
-.btn-acbone strong{
-  letter-spacing: .5px;
-}
-.btn-acbone .opacity-75{ opacity: .75; }
-.btn-acbone:hover{
-  background: rgba(255,255,255,0.04);
-  border-color: #5b6a79;
-  color: #ffffff;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-/* ===========================
-   Generic utilities (đủ dùng nếu không có Bootstrap)
-   =========================== */
-.border-bottom{ border-bottom: 1px solid var(--acb-border) !important; }
-.me-2{ margin-right: .5rem; }
-.ms-1{ margin-left: .25rem; }
-.ms-2{ margin-left: .5rem; }
-.small{ font-size: 12px; }
-
-/* Ẩn/hiện theo breakpoint ~lg (992px) */
-.d-none{ display: none !important; }
-.d-lg-flex{ display: none !important; }
-.d-lg-none{ display: inline-flex !important; }
-@media (min-width: 992px){
-  .d-lg-flex{ display: flex !important; }
-  .d-lg-none{ display: none !important; }
-  .main-nav a{ font-size: 26px; } /* to hơn chút ở desktop lớn */
-  .nav-row{ height: 92px; }
+.btn-acbone strong {
+  letter-spacing: 0.5px;
 }
 
-/* Trạng thái focus cho accessibility */
-a:focus, button:focus{
-  outline: 2px solid var(--acb-accent);
-  outline-offset: 2px;
-  border-radius: 6px;
+.btn-acbone .opacity-75 {
+  opacity: 0.75;
 }
 
-/* Tinh chỉnh icon bootstrap cho đồng đều */
-.bi{ line-height: 1; font-size: 16px; }
+.btn-acbone:hover {
+  background: #f9fafb;
+  border-color: #cfd5df;
+  color: #0f172a;
+}
 
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--acb-bg);
+  padding: 120px 20px 20px;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-in-out;
+  z-index: 998;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menu-links a {
+  color: var(--acb-text);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-links a:hover {
+  background: #f5f5f5;
+  color: var(--acb-text-strong);
+}
+
+.mobile-menu-links hr {
+  margin: 10px 0;
+  border-color: var(--acb-border);
+  opacity: 0.5;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-menu-links a {
+  font-size: 18px;
+  color: var(--acb-text);
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-links a:hover {
+  background-color: #f9fafb;
+  color: var(--acb-text-strong);
+}
+
+/* Utilities */
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.ms-1 {
+  margin-left: 0.25rem;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-lg-flex {
+  display: none !important;
+}
+
+.d-lg-none {
+  display: inline-flex !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .logo-text {
+    font-size: 40px;
+  }
+  
+  .logo-text::after {
+    width: 8px;
+    height: 8px;
+    left: 42px;
+    top: 18px;
+  }
+
+  .nav-row {
+    height: 72px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    margin-left: auto;
+  }
+
+  .nav-right {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+  .main-nav a {
+    font-size: 26px;
+  }
+  .nav-row {
+    height: 92px;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Navbar Theme */
+.acb-navbar {
+  background: var(--acb-bg);
+  border-bottom: 1px solid var(--acb-border) !important;
+}
+
+.nav-right .nav-split {
+  background: var(--acb-border);
+}
+
+.brand .logo-text {
+  color: var(--acb-text-strong);
+}
+
+.brand .logo-text::after {
+  background: var(--acb-accent);
+}
+
+.acb-navbar .main-nav a {
+  color: var(--acb-text);
+  opacity: 0.85;
+}
+
+.acb-navbar .main-nav a:hover {
+  color: var(--acb-text-strong);
+  opacity: 1;
+}
+
+.acb-navbar .main-nav a.active {
+  color: var(--acb-text-strong);
+  opacity: 1;
+}
+
+.acb-navbar .btn-acbone {
+  background: transparent;
+  border: 1px solid #505D6B;
+  color: #EAF1F8;
+}
+
+.acb-navbar .btn-acbone:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #5B6A79;
+  color: #FFFFFF;
+}
+
+/* Hero section */
 .hero2 {
   position: relative;
   width: 100%;

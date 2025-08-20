@@ -72,16 +72,34 @@
         <a href="./index.html" class="brand"><span class="logo-text">ACB</span></a> <!-- brand/logo-text: TUỲ CHỈNH -->
         
         <!-- Button toggle menu mobile -->
-        <button class="mobile-nav-toggle d-lg-none" aria-label="Toggle menu"> <!-- d-lg-none: ẩn từ lg trở lên (chỉ hiện trên mobile/tablet) -->
+        <button id="mobileMenuToggle" class="mobile-nav-toggle d-lg-none" aria-label="Toggle menu">
           <i class="bi bi-list"></i>
         </button>
         
         <!-- Menu navigation chính -->
-        <nav class="main-nav"> <!-- main-nav: TUỲ CHỈNH -->
+        <nav class="main-nav d-none d-lg-flex">
           <a class="active" href="/e-bank.html">Ngân hàng số</a>
           <a href="./index.html">Cá nhân</a>
           <a href="./index.html">Doanh nghiệp</a>
           <a href="#">Ngân hàng Ưu tiên</a>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <nav id="mobileMenu" class="mobile-menu">
+          <div class="mobile-menu-inner">
+            <a class="active" href="/e-bank.html">Ngân hàng số</a>
+            <a href="./index.html">Cá nhân</a>
+            <a href="./index.html">Doanh nghiệp</a>
+            <a href="#">Ngân hàng Ưu tiên</a>
+            <!-- Menu items từ topbar -->
+            <a href="./about.html">Về chúng tôi</a>
+            <a href="./investors.html">Nhà đầu tư</a>
+            <a href="#">Tuyển dụng</a>
+            <a href="./reward.html">ACB Rewards</a>
+            <a href="./library.html">Thư viện</a>
+            <a href="./security.html">An toàn</a>
+            <a href="./liquidation.html">Thanh lý tài sản</a>
+          </div>
         </nav>
       </div>
       
@@ -584,6 +602,6 @@
 <!-- Import Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> <!-- LƯU Ý: đã nạp icons ở trên; link này BỊ TRÙNG → có thể bỏ để tránh tải lại -->
 <!-- Import JavaScript cho header -->
-<script src="./js/partials/header.js" defer></script> <!-- TUỲ CHỈNH: script gắn header động -->
+<script src="./js/subpage/premium.js" defer></script> <!-- TUỲ CHỈNH: script gắn header động -->
 </body>
 </html>
