@@ -5,6 +5,7 @@
  * ========================================
  */
 
+
 async function loadSection(targetId, file) {
   try {
     // Fetch nội dung HTML từ file
@@ -20,48 +21,15 @@ async function loadSection(targetId, file) {
     
     // Insert HTML vào element đích
     document.getElementById(targetId).innerHTML = htmlContent;
+
+    // Initialize header functionality if this is the header
+    if (file.includes('header.html')) {
+      initializeHeader();
+    }
   } catch (error) {
-    // Xử lý lỗi nếu có
-    // console.error(`Error loading ${file}:`, error);
+    console.error(`Error loading ${file}:`, error);
   }
 }
-
-/**
- * ========================================
- * LOAD CÁC COMPONENT KHI TRANG ĐÃ SẴN SÀNG
- * ========================================
- */
-
-// Đợi DOM load xong hoàn toàn trước khi thực hiện
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // ========================================
-  // LOAD CÁC COMPONENT CHUNG (HEADER & FOOTER)
-  // ========================================
-  
-  // Load header và footer
-  loadSection('header-container', 'partials/header.html');
-  loadSection('footer-container', 'partials/footer.html');
-
-  // ========================================
-  // LOAD CÁC SECTION CỦA TRANG CHỦ
-  // ========================================
-  
-  // Load hero section - banner chính với carousel
-  loadSection('hero', 'homepage/carousel.html');
-  
-  // Load services section - giới thiệu dịch vụ ngân hàng
-  loadSection('services', 'homepage/services_5per.html');
-  
-  // Load features section - tính năng nổi bật
-  loadSection('features', 'homepage/features.html');
-  
-  // Load tools section - công cụ tiện ích
-  loadSection('tools', 'homepage/tools_acb.html');
-  
-  // Load offers section - ưu đãi khuyến mãi
-  loadSection('offers', 'homepage/offers.html');
-});
 
 function initializeHeader() {
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -109,3 +77,40 @@ function initializeHeader() {
     });
   }
 }
+
+/**
+ * ========================================
+ * LOAD CÁC COMPONENT KHI TRANG ĐÃ SẴN SÀNG
+ * ========================================
+ */
+
+// Đợi DOM load xong hoàn toàn trước khi thực hiện
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // ========================================
+  // LOAD CÁC COMPONENT CHUNG (HEADER & FOOTER)
+  // ========================================
+  
+  // Load header và footer
+  loadSection('header-container', 'partials/header.html');
+  loadSection('footer-container', 'partials/footer.html');
+
+  // ========================================
+  // LOAD CÁC SECTION CỦA TRANG CHỦ
+  // ========================================
+  
+  // Load hero section - banner chính với carousel
+  loadSection('hero', 'homepage/carousel.html');
+  
+  // Load services section - giới thiệu dịch vụ ngân hàng
+  loadSection('services', 'homepage/services_5per.html');
+  
+  // Load features section - tính năng nổi bật
+  loadSection('features', 'homepage/features.html');
+  
+  // Load tools section - công cụ tiện ích
+  loadSection('tools', 'homepage/tools_acb.html');
+  
+  // Load offers section - ưu đãi khuyến mãi
+  loadSection('offers', 'homepage/offers.html');
+});
