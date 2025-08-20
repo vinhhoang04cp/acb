@@ -1,37 +1,116 @@
-// ====================================================================
-// main.js
-// - Viết các JS nhỏ phục vụ UX: hiện nút back-to-top, thêm shadow khi scroll
-// ====================================================================
+/**
+ * ========================================
+ * FILE: app.js - JavaScript chính của trang chủ
+ * CHỨC NĂNG: Load các component HTML vào trang một cách động
+ * ========================================
+ */
 
-(function () {
-  // Hiện/ẩn nút "Back to top"
-  const backToTop = document.getElementById('backToTop');
-  const onScroll = () => {
-    // Khi cuộn quá 300px thì hiện nút
-    if (window.scrollY > 300) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
+
+async function loadSection(targetId, file) {
+  try {
+    // Fetch nội dung HTML từ file
+    const response = await fetch(file);
+    
+    // Kiểm tra nếu request thành công
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  };
-  window.addEventListener('scroll', onScroll);
+    
+    // Lấy text content từ response
+    const htmlContent = await response.text();
+    
+    // Insert HTML vào element đích
+    document.getElementById(targetId).innerHTML = htmlContent;
 
-  // Sự kiện click để cuộn mượt lên đầu trang
-  backToTop?.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-})();
-
-async function loadSection(targetId, file){
-  const res = await fetch(file);
-  document.getElementById(targetId).innerHTML = await res.text();
+    // Initialize header functionality if this is the header
+    if (file.includes('header.html')) {
+      initializeHeader();
+    }
+  } catch (error) {
+    console.error(`Error loading ${file}:`, error);
+  }
 }
 
-// nạp header/footer + carousel
-loadSection('header-container', 'partials/header.html');
-loadSection('footer-container', 'partials/footer.html');
-loadSection('hero', 'homepage/carousel.html'); // carousel.html bản full-width 60vh
+function initializeHeader() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    const iconElement = mobileMenuToggle.querySelector('.bi');
+    let isMenuOpen = false;
 
+    mobileMenuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      isMenuOpen = !isMenuOpen;
+      mobileMenu.classList.toggle('active');
+      
+      // Toggle icon
+      if (isMenuOpen) {
+        iconElement.classList.remove('bi-list');
+        iconElement.classList.add('bi-x-lg');
+      } else {
+        iconElement.classList.remove('bi-x-lg');
+        iconElement.classList.add('bi-list');
+      }
+    });
 
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (isMenuOpen && 
+          !mobileMenu.contains(event.target) && 
+          !mobileMenuToggle.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+        iconElement.classList.remove('bi-x-lg');
+        iconElement.classList.add('bi-list');
+        isMenuOpen = false;
+      }
+    });
 
+    // Close menu on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 992 && isMenuOpen) {
+        mobileMenu.classList.remove('active');
+        iconElement.classList.remove('bi-x-lg');
+        iconElement.classList.add('bi-list');
+        isMenuOpen = false;
+      }
+    });
+  }
+}
+
+/**
+ * ========================================
+ * LOAD CÁC COMPONENT KHI TRANG ĐÃ SẴN SÀNG
+ * ========================================
+ */
+
+// Đợi DOM load xong hoàn toàn trước khi thực hiện
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // ========================================
+  // LOAD CÁC COMPONENT CHUNG (HEADER & FOOTER)
+  // ========================================
+  
+  // Load header và footer
+  loadSection('header-container', 'partials/header.html');
+  loadSection('footer-container', 'partials/footer.html');
+
+  // ========================================
+  // LOAD CÁC SECTION CỦA TRANG CHỦ
+  // ========================================
+  
+  // Load hero section - banner chính với carousel
+  loadSection('hero', 'homepage/carousel.html');
+  
+  // Load services section - giới thiệu dịch vụ ngân hàng
+  loadSection('services', 'homepage/services_5per.html');
+  
+  // Load features section - tính năng nổi bật
+  loadSection('features', 'homepage/features.html');
+  
+  // Load tools section - công cụ tiện ích
+  loadSection('tools', 'homepage/tools_acb.html');
+  
+  // Load offers section - ưu đãi khuyến mãi
+  loadSection('offers', 'homepage/offers.html');
+});
